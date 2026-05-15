@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Resume - Karim",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "resumeData",
+      "data": {
+        "intro": {
+          "name": "I am Karim",
+          "role": "Data Engineer | Data Management Engineer",
+          "bio": "Data Engineer focused on building scalable data platforms, APIs, and analytics solutions. Experienced in ETL, data modeling, and BI to deliver reliable data systems and actionable insights.",
+          "photo": "assets/img/profile-img.jpg",
+          "photoAlt": "Karim"
+        },
+        "contacts": {
+          "phone": "+",
+          "phoneHref": "+",
+          "email": "karim.elshetihy@gmail.com"
+        },
+        "socialLinks": [
+          {
+            "label": "LinkedIn",
+            "icon": "bi-linkedin",
+            "href": "https://www.linkedin.com/in/karim-elshetihy"
+          },
+          {
+            "label": "GitHub",
+            "icon": "bi-github",
+            "href": "https://github.com/karimelshetihy"
+          }
+        ],
+        "experience": [
+          {
+            "company": "E-Finance",
+            "meta": "Full-time · September 2022 – Present",
+            "roles": [
+              {
+                "title": "Senior Data Management Engineer",
+                "ariaLabel": "Senior Data Management Engineer role",
+                "highlights": [
+                  "Designed centralized data models to unify data across the E-Finance Investment group, enhancing the Fees Profile model and improving consistency and accessibility of enterprise data.",
+                  "Integrated data from multiple ERP systems using APIs and ETL pipelines, with a strong focus on automation and reliable data workflows.",
+                  "Implemented version control for SSAS solutions and improved monitoring of the data team’s machines to reduce infrastructure costs and optimize performance."
+                ]
+              },
+              {
+                "title": "Data Management Engineer",
+                "ariaLabel": "Data Management Engineer role",
+                "highlights": [
+                  "Developed and maintained analytical reports and dashboards using Power BI, Power BI Report Server, and Jaspersoft to deliver business insights across multiple systems.",
+                  "Built and optimized data models and queries across diverse databases including SQL Server, Oracle, PostgreSQL, MySQL, and MongoDB, leveraging SSAS and DAX for advanced analytics.",
+                  "Used Python to build ETL pipelines, perform data parsing, and develop machine learning models to support data-driven decision-making."
+                ]
+              }
+            ]
+          },
+          {
+            "company": "Fractal Investors",
+            "meta": "Full-time · October 2023 – Present",
+            "roles": [
+              {
+                "title": "Backend & Data Platform Developer",
+                "dates": "March 2025 – Present",
+                "ariaLabel": "Backend and Data Platform Developer role",
+                "highlights": [
+                  "Developed a scalable backend application using FastAPI, building RESTful APIs and integrating with PostgreSQL for robust data storage and querying.",
+                  "Containerized the backend with Docker and deployed it on Azure Cloud to ensure consistent environments and reliable deployment.",
+                  "Used Git for version control across application code and dbt models, enabling collaborative development and managed data transformation workflows."
+                ]
+              },
+              {
+                "title": "Power BI Developer",
+                "dates": "October 2023 – March 2025",
+                "ariaLabel": "Power BI Developer role",
+                "highlights": [
+                  "Developed financial reporting dashboards using Power BI connected to PostgreSQL, delivering interactive insights for business and financial analysis.",
+                  "Implemented Row-Level Security (RLS) and managed workspace access to ensure secure, role-based data visibility for different stakeholders.",
+                  "Built custom visuals for a specific module, used version control for Power BI, and deployed reports through Microsoft Fabric for scalable distribution."
+                ]
+              }
+            ]
+          }
+        ],
+        "education": [
+          {
+            "school": "ESLSCA University",
+            "period": "November 2025 – Present",
+            "degree": "Master of Business Administration (MBA)."
+          },
+          {
+            "school": "Menoufia University — Faculty of Applied Medical Sciences",
+            "period": "April 2022 – July 2022",
+            "degree": "Bachelor of Technology of Biomedical Engineering."
+          }
+        ],
+        "skills": [
+          {
+            "name": "Data wrangling / cleaning",
+            "iconType": "bootstrap",
+            "icon": "bi-funnel",
+            "level": 5
+          },
+          {
+            "name": "Statistical modeling",
+            "iconType": "bootstrap",
+            "icon": "bi-graph-up-arrow",
+            "level": 4
+          },
+          {
+            "name": "Apache Spark",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/apachespark.svg",
+            "level": 5
+          },
+          {
+            "name": "Apache Airflow",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/apacheairflow.svg",
+            "level": 5
+          },
+          {
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/python.svg",
+            "level": 5
+          },
+          {
+            "name": "FastAPI",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/fastapi.svg",
+            "level": 4
+          },
+          {
+            "name": "PostgreSQL · data modelling",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/postgresql.svg",
+            "level": 4
+          },
+          {
+            "name": "Microsoft SQL Server & SSAS",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/microsoftsqlserver.svg",
+            "level": 5
+          },
+          {
+            "name": "Power BI / DAX / Tableau",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/powerbi.svg",
+            "level": 5
+          },
+          {
+            "name": "Docker",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/docker.svg",
+            "level": 4
+          }
+        ],
+        "familiarWith": [
+          {
+            "name": "HTML5",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/html5.svg",
+            "level": 3
+          },
+          {
+            "name": "CSS3",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/css3.svg",
+            "level": 3
+          },
+          {
+            "name": "JavaScript",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/javascript.svg",
+            "level": 2
+          },
+          {
+            "name": "React",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/react.svg",
+            "level": 2
+          },
+          {
+            "name": "Tailwind CSS",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tailwindcss.svg",
+            "level": 3
+          },
+          {
+            "name": "Kubernetes",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/kubernetes.svg",
+            "level": 2
+          },
+          {
+            "name": "Terraform",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/terraform.svg",
+            "level": 2
+          },
+          {
+            "name": "Apache Kafka",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/apachekafka.svg",
+            "level": 2
+          },
+          {
+            "name": "LLMs",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg",
+            "level": 2
+          },
+          {
+            "name": "Linux",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linux.svg",
+            "level": 2
+          }
+        ],
+        "latestWorks": [
+          {
+            "title": "Mug Sticker Designing",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+            "alt": "Mug sticker designing",
+            "href": "portfolio-details.html"
+          },
+          {
+            "title": "Mobile App Design",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+            "alt": "Mobile app design",
+            "href": "portfolio-details.html"
+          },
+          {
+            "title": "Fashion Website Template",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "alt": "Fashion website template",
+            "href": "portfolio-details.html"
+          },
+          {
+            "title": "Book Cover Design",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-4.jpg",
+            "alt": "Book cover design",
+            "href": "portfolio-details.html"
+          }
+        ]
+      }
+    }
+  ]
+}

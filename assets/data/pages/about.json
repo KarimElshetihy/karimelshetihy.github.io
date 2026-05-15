@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "title": "About - Karim",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "resumeData",
+      "data": {
+        "heroOnly": true,
+        "sectionId": "about",
+        "sectionTitle": "About me",
+        "intro": {
+          "name": "I am Karim",
+          "role": "Data Engineer | Data Management Engineer",
+          "bio": "Data Engineer focused on building scalable data platforms, APIs, and analytics solutions. Experienced in ETL, data modeling, and BI to deliver reliable data systems and actionable insights.",
+          "photo": "assets/img/profile-img.jpg",
+          "photoAlt": "Karim"
+        },
+        "contacts": {
+          "phone": "+00 000 000 0000",
+          "phoneHref": "+0000000000",
+          "showPhone": false,
+          "showEmail": false,
+          "contactButton": {
+            "label": "Contact Me",
+            "href": "mailto:karim.elshetihy@gmail.com",
+            "icon": "bi-envelope-fill"
+          }
+        },
+        "socialLinks": [
+          {
+            "label": "LinkedIn",
+            "icon": "bi-linkedin",
+            "href": "https://www.linkedin.com/in/karim-elshetihy"
+          },
+          {
+            "label": "Upwork",
+            "icon": "assets/img/icons/Brand-Upwork--Streamline-White.svg",
+            "href": "https://www.upwork.com/freelancers/karimelshetihy"
+          },
+          {
+            "label": "مستقل",
+            "icon": "bi-stop-circle-fill",
+            "href": "https://mostaqel.sa/en/freelancer/karim-elshetihy"
+          },
+          {
+            "label": "GitHub",
+            "icon": "bi-github",
+            "href": "https://github.com/karimelshetihy"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aboutData",
+      "data": {
+        "omitAboutSection": true,
+        "skillsTitle": "Skills",
+        "skillsSubtitle": "Data engineering and analytics delivery: reliable pipelines, clear models, and insights your teams can trust.",
+        "skills": [
+          {
+            "name": "Data Modeling",
+            "iconType": "bootstrap",
+            "icon": "bi-diagram-3-fill",
+            "level": 5
+          },
+          {
+            "name": "Data Cleaning",
+            "iconType": "bootstrap",
+            "icon": "bi-funnel-fill",
+            "level": 5
+          },
+          {
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/python.svg",
+            "level": 5
+          },
+          {
+            "name": "APIs",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/fastapi.svg",
+            "level": 4
+          },
+          {
+            "name": "ETL & Data Pipelines",
+            "iconType": "bootstrap",
+            "icon": "bi-database-fill",
+            "level": 5
+          },
+          {
+            "name": "Data Visualization & Reporting",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Power_bi_logo_black.svg",
+            "level": 5
+          },
+          {
+            "name": "Cloud Computing",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlecloud.svg",
+            "level": 4
+          },
+          {
+            "name": "AI & Machine Learning",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pytorch.svg",
+            "level": 4
+          },
+          {
+            "name": "Workflow Automation",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/n8n.svg",
+            "level": 4
+          },
+          {
+            "name": "Data Governance & Security",
+            "iconType": "bootstrap",
+            "icon": "bi bi-shield-fill-check",
+            "level": 4
+          }
+        ],
+        "stats": {
+          "items": [
+            {
+              "label": "Years of Experience",
+              "value": 4,
+              "suffix": "+"
+            },
+            {
+              "label": "Projects",
+              "value": 40
+            },
+            {
+              "label": "Dashboards",
+              "value": 60
+            },
+            {
+              "label": "Pipelines",
+              "value": 35
+            },
+            {
+              "label": "Data Sources Integrated",
+              "value": 20
+            }
+          ]
+        },
+        "latestWorksTitle": "Latest Works",
+        "latestWorks": [
+          {
+            "title": "Mug Sticker Designing",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+            "alt": "Mug sticker designing",
+            "href": "portfolio-details.html"
+          },
+          {
+            "title": "Mobile App Design",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+            "alt": "Mobile app design",
+            "href": "portfolio-details.html"
+          },
+          {
+            "title": "Fashion Website Template",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "alt": "Fashion website template",
+            "href": "portfolio-details.html"
+          },
+          {
+            "title": "Book Cover Design",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-4.jpg",
+            "alt": "Book cover design",
+            "href": "portfolio-details.html"
+          }
+        ],
+        "testimonials": {
+          "title": "Testimonials",
+          "subtitle": "Feedback from collaborations.",
+          "items": [
+            {
+              "name": "Product Manager",
+              "role": "FinTech",
+              "stars": 5,
+              "image": "assets/img/testimonials/testimonials-1.jpg",
+              "quote": "Karim consistently turned fragmented sources into trustworthy analytics."
+            },
+            {
+              "name": "BI Lead",
+              "role": "Investment Group",
+              "stars": 5,
+              "image": "assets/img/testimonials/testimonials-2.jpg",
+              "quote": "Strong execution from data modeling to dashboard delivery."
+            },
+            {
+              "name": "Engineering Manager",
+              "role": "Startup",
+              "stars": 5,
+              "image": "assets/img/testimonials/testimonials-3.jpg",
+              "quote": "Reliable backend + data platform work with clear ownership."
+            }
+          ]
+        },
+        "hireMe": {
+          "heading": "Let’s Work Together",
+          "highlight": "Work",
+          "subtitle": "If you need a data engineer to build reliable pipelines, clean data models, and practical analytics solutions, let's work together.",
+          "buttonLabel": "Hire Me",
+          "buttonHref": "mailto:karim.elshetihy@gmail.com",
+          "backgroundImage": "assets/img/hero-bg.jpg"
+        }
+      }
+    }
+  ]
+}

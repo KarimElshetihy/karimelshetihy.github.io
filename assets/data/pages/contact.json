@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "Contact - Karim",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "contactData",
+      "data": {
+        "title": "Contact",
+        "subtitle": "Let’s discuss your data platform and analytics goals.",
+        "infoItems": [
+          {
+            "icon": "bi-geo-alt",
+            "title": "Address",
+            "value": "Cairo, Egypt"
+          },
+          {
+            "icon": "bi-envelope",
+            "title": "Email",
+            "value": "karim.elshetihy@gmail.com"
+          }
+        ],
+        "form": {
+          "action": "forms/contact.php",
+          "nameLabel": "Your Name",
+          "emailLabel": "Your Email",
+          "subjectLabel": "Subject",
+          "messageLabel": "Message",
+          "loadingLabel": "Loading",
+          "sentMessage": "Your message has been sent. Thank you!",
+          "submitLabel": "Send Message"
+        }
+      }
+    }
+  ]
+}

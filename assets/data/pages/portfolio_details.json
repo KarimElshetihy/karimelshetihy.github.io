@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "Portfolio Details - Karim",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "portfolioDetailsData",
+      "data": {
+        "title": "Portfolio Details",
+        "subtitle": "Project highlights and implementation overview.",
+        "infoTitle": "Project information",
+        "projects": [
+          {
+            "id": "real-time-sales-data-pipeline",
+            "title": "Real-Time Sales Data Pipeline",
+            "subtitle": "Streaming-first ingestion and transformation architecture.",
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+                "alt": "Real-Time Sales Data Pipeline preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Data Pipeline"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, Airflow, PostgreSQL, BigQuery"
+              },
+              {
+                "label": "Repository",
+                "value": "View on GitHub",
+                "href": "https://github.com/yourusername/sales-data-pipeline"
+              }
+            ],
+            "description": {
+              "title": "Scalable ingestion for near real-time reporting",
+              "body": "Designed and orchestrated a robust sales ingestion pipeline with scheduled quality checks and warehouse-ready outputs for analytics use cases."
+            }
+          },
+          {
+            "id": "customer-analytics-warehouse",
+            "title": "Customer Analytics Warehouse",
+            "subtitle": "Dimensional modeling for BI-ready customer insights.",
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+                "alt": "Customer Analytics Warehouse preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Warehouse"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, dbt, Snowflake, Power BI"
+              },
+              {
+                "label": "Repository",
+                "value": "View on GitHub",
+                "href": "https://github.com/yourusername/customer-warehouse"
+              }
+            ],
+            "description": {
+              "title": "Reliable customer metrics with star-schema modeling",
+              "body": "Built a dimensional warehouse model focused on behavior analytics and reusable metric definitions for dashboard consumers."
+            }
+          },
+          {
+            "id": "data-quality-monitoring-system",
+            "title": "Data Quality Monitoring System",
+            "subtitle": "Automated validation checks across critical data assets.",
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Data Quality Monitoring System preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Data Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, SQL, Great Expectations, Airflow"
+              },
+              {
+                "label": "Repository",
+                "value": "View on GitHub",
+                "href": "https://github.com/yourusername/data-quality-monitoring"
+              }
+            ],
+            "description": {
+              "title": "Early anomaly detection for dependable pipelines",
+              "body": "Implemented validation suites for freshness, uniqueness, and schema integrity to detect and alert on pipeline regressions quickly."
+            }
+          },
+          {
+            "id": "data-modeling-accelerator",
+            "title": "Data Modeling Accelerator",
+            "subtitle": "Reusable data model templates and semantic conventions.",
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Data Modeling Accelerator preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, dbt, PostgreSQL"
+              },
+              {
+                "label": "Repository",
+                "value": "View on GitHub",
+                "href": "https://github.com/yourusername/data-modeling"
+              }
+            ],
+            "description": {
+              "title": "Faster analytics delivery with consistent patterns",
+              "body": "Introduced standardized model layers and naming conventions to reduce duplicate effort and improve downstream metric consistency."
+            }
+          },
+          {
+            "id": "etl-modeling-workflow",
+            "title": "ETL Modeling Workflow",
+            "subtitle": "Structured ETL orchestration and reusable transform patterns.",
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "ETL Modeling Workflow preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "ETL"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, dbt, PostgreSQL"
+              }
+            ],
+            "description": {
+              "title": "Maintained ETL reliability across repeated workloads",
+              "body": "Packaged transformation logic and scheduling practices into a modular workflow that improves maintainability and deployment speed."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

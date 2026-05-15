@@ -1,0 +1,39 @@
+{
+  "brand": {
+    "name": "Karim",
+    "homeHref": "index.html",
+    "logoSrc": null,
+    "logoAlt": ""
+  },
+  "meta": {
+    "defaultTitleSuffix": "Karim",
+    "defaultDescription": ""
+  },
+  "nav": [
+    { "id": "home", "label": "Home", "href": "index.html" },
+    { "id": "about", "label": "About", "href": "about.html" },
+    { "id": "services", "label": "Services", "href": "services.html" },
+    { "id": "portfolio", "label": "Portfolio", "href": "portfolio.html" }
+  ],
+  "headerSocial": [
+    {
+      "class": "upwork",
+      "label": "Upwork",
+      "href": "https://www.upwork.com/freelancers/karimelshetihy",
+      "icon": "assets/img/icons/Brand-Upwork--Streamline-Gray.svg",
+      "iconHover": "assets/img/icons/Brand-Upwork--Streamline-Theme.svg"
+    },
+    {
+      "class": "mostaqel",
+      "label": "Mostaqel",
+      "href": "https://mostaqel.sa/en/freelancer/karim-elshetihy",
+      "icon": "bi-stop-circle-fill"
+    },
+    {
+      "class": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/karim-elshetihy",
+      "icon": "bi-linkedin"
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "meta": {
+    "title": "CV - Karim",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "resumeData",
+      "data": {
+        "intro": {
+          "name": "I am Karim",
+          "role": "Data Engineer | Data Management Engineer",
+          "bio": "Data Engineer focused on building scalable data platforms, APIs, and analytics solutions. Experienced in ETL, data modeling, and BI to deliver reliable data systems and actionable insights.",
+          "photo": "assets/img/profile-img.jpg",
+          "photoAlt": "Karim"
+        },
+        "contacts": {
+          "phone": "+00 000 000 0000",
+          "phoneHref": "+0000000000",
+          "showPhone": false,
+          "email": "karim.elshetihy@gmail.com"
+        },
+        "printSelection": {
+          "enabled": true,
+          "title": "Customize CV for printing",
+          "storageKey": "cv-print-selection"
+        },
+        "socialLinks": [
+          {
+            "label": "LinkedIn",
+            "icon": "bi-linkedin",
+            "href": "https://www.linkedin.com/in/karim-elshetihy"
+          },
+          {
+            "label": "Upwork",
+            "icon": "assets/img/icons/Brand-Upwork--Streamline-White.svg",
+            "href": "https://www.upwork.com/freelancers/karimelshetihy"
+          },
+          {
+            "label": "مستقل",
+            "icon": "bi-stop-circle-fill",
+            "href": "https://mostaqel.sa/en/freelancer/karim-elshetihy"
+          },
+          {
+            "label": "GitHub",
+            "icon": "bi-github",
+            "href": "https://github.com/karimelshetihy"
+          }
+        ],
+        "experience": [
+          {
+            "company": "E-Finance",
+            "meta": "September 2022 – Present",
+            "roles": [
+              {
+                "title": "Senior Data Management Engineer",
+                "ariaLabel": "Senior Data Management Engineer role",
+                "highlights": [
+                  "Designed centralized data models to unify data across the E-Finance Investment group, enhancing the Fees Profile model and improving consistency and accessibility of enterprise data.",
+                  "Integrated data from multiple ERP systems using APIs and ETL pipelines, with a strong focus on automation and reliable data workflows.",
+                  "Implemented version control for SSAS solutions and improved monitoring of the data team’s machines to reduce infrastructure costs and optimize performance."
+                ]
+              },
+              {
+                "title": "Data Management Engineer",
+                "ariaLabel": "Data Management Engineer role",
+                "highlights": [
+                  "Developed and maintained analytical reports and dashboards using Power BI, Power BI Report Server, and Jaspersoft to deliver business insights across multiple systems.",
+                  "Built and optimized data models and queries across diverse databases including SQL Server, Oracle, PostgreSQL, MySQL, and MongoDB, leveraging SSAS and DAX for advanced analytics.",
+                  "Used Python to build ETL pipelines, perform data parsing, and develop machine learning models to support data-driven decision-making."
+                ]
+              }
+            ]
+          },
+          {
+            "company": "Fractal Investors",
+            "meta": "Freelance · October 2023 – March 2026",
+            "roles": [
+              {
+                "title": "Backend & Data Platform Developer",
+                "dates": "March 2025 – March 2026",
+                "ariaLabel": "Backend and Data Platform Developer role",
+                "highlights": [
+                  "Developed a scalable backend application using FastAPI, building RESTful APIs and integrating with PostgreSQL for robust data storage and querying.",
+                  "Containerized the backend with Docker and deployed it on Azure Cloud to ensure consistent environments and reliable deployment.",
+                  "Used Git for version control across application code and dbt models, enabling collaborative development and managed data transformation workflows."
+                ]
+              },
+              {
+                "title": "Power BI Developer",
+                "dates": "October 2023 – March 2025",
+                "ariaLabel": "Power BI Developer role",
+                "highlights": [
+                  "Developed financial reporting dashboards using Power BI connected to PostgreSQL, delivering interactive insights for business and financial analysis.",
+                  "Implemented Row-Level Security (RLS) and managed workspace access to ensure secure, role-based data visibility for different stakeholders.",
+                  "Built custom visuals for a specific module, used version control for Power BI, and deployed reports through Microsoft Fabric for scalable distribution."
+                ]
+              }
+            ]
+          },
+          {
+            "company": "Wizeline",
+            "meta": "Internship · August 2023 – October 2023",
+            "roles": [
+              {
+                "title": "Data Engineer",
+                "ariaLabel": "Data Engineer role",
+                "highlights": [
+                  "Docker, Kubernetes, Apache Airflow, Apache Spark, Terraform, GCP, PostgreSQL"
+                ]
+              }
+            ]
+          },
+          {
+            "company": "Information Technology Institute - ITI",
+            "meta": "Part-time · July 2022 – August 2023",
+            "roles": [
+              {
+                "title": "Business Intelligence Instructor",
+                "dates": "",
+                "ariaLabel": "Business Intelligence Instructor role",
+                "highlights": [
+                  "Taught ETL development and data integration using SSIS.",
+                  "Delivered training on data warehousing, dimensional modeling, and SSAS.",
+                  "Built reporting and dashboard solutions using SSRS and Power BI.",
+                  "Introduced Big Data technologies including Hadoop, Spark, Kafka, and PySpark."
+                ]
+              }
+            ]
+          },
+          {
+            "company": "Fellowship.AI",
+            "meta": "Full-time · June 2022 – August 2022",
+            "roles": [
+              {
+                "title": "Data Science & Machine Learning Fellow",
+                "dates": "",
+                "ariaLabel": "Data Science & Machine Learning Fellow role",
+                "highlights": [
+                  "Data Science & Machine Learning, Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TensorFlow, Keras, PyTorch, etc.",
+                  "Machine Learning, Deep Learning, Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks, etc.",
+                  "Data Visualization, Data Analysis, Data Mining, Data Wrangling, Data Preprocessing, Data Cleaning, Data Transformation, Data Loading, etc."
+                ]
+              }
+            ]
+          }
+        ],
+        "education": [
+          {
+            "school": "ESLSCA University",
+            "period": "November 2025 – Present",
+            "degree": "Master of Business Administration (MBA)."
+          },
+          {
+            "school": "Information Technology Institute - ITI",
+            "period": "April 2022 – July 2022",
+            "degree": "Business Intelligence Diploma."
+          }, 
+          {
+            "school": "Menoufia University — Faculty of Applied Medical Sciences",
+            "period": "September 2014 – September 2020",
+            "degree": "Bachelor of Technology of Biomedical Engineering."
+          }
+        ],
+        "skills": [
+          {
+            "name": "Data Modeling",
+            "iconType": "bootstrap",
+            "icon": "bi-diagram-2-fill",
+            "level": 5
+          },
+          {
+            "name": "Data Cleaning",
+            "iconType": "bootstrap",
+            "icon": "bi-funnel",
+            "level": 5
+          },
+          {
+            "name": "Apache Spark",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/apachespark.svg",
+            "level": 5
+          },
+          {
+            "name": "Apache Airflow",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/apacheairflow.svg",
+            "level": 5
+          },
+          {
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/python.svg",
+            "level": 5
+          },
+          {
+            "name": "FastAPI",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/fastapi.svg",
+            "level": 4
+          },
+          {
+            "name": "ETL & Data Pipelines",
+            "iconType": "bootstrap",
+            "icon": "bi-database-fill",
+            "level": 5
+          },
+          {
+            "name": "Power BI, DAX & SSAS",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Power_bi_logo_black.svg",
+            "level": 5
+          },
+          {
+            "name": "Cloud Computing",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlecloud.svg",
+            "level": 4
+          },
+          {
+            "name": "Docker",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/docker.svg",
+            "level": 4
+          },
+          {
+            "name": "Git & Version Control",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/git.svg",
+            "level": 4
+          },
+          {
+            "name": "GitHub",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/github.svg",
+            "level": 4
+          },
+          {
+            "name": "dbt",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/dbt.svg",
+            "level": 4
+          },
+          {
+            "name": "ClickHouse",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/clickhouse.svg",
+            "level": 4
+          },
+          {
+            "name": "Machine Learning",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pytorch.svg",
+            "level": 4
+          },
+          {
+            "name": "n8n",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/n8n.svg",
+            "level": 4
+          },
+          {
+            "name": "SQL",
+            "iconType": "bootstrap",
+            "icon": "bi-table",
+            "level": 4
+          },
+          {
+            "name": "Pandas & NumPy",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pandas.svg",
+            "level": 4
+          },
+          {
+            "name": "JasperSoft Reporting",
+            "iconType": "bootstrap",
+            "icon": "bi-file-earmark-bar-graph",
+            "level": 4
+          }
+        ],
+        "familiarWith": [
+          {
+            "name": "Firebase",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/firebase.svg",
+            "level": 3
+          },
+          {
+            "name": "Databricks",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/databricks.svg",
+            "level": 3
+          },
+          {
+            "name": "MongoDB",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/mongodb.svg",
+            "level": 3
+          },
+          {
+            "name": "Snowflake",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/snowflake.svg",
+            "level": 3
+          },
+          {
+            "name": "Kubernetes",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/kubernetes.svg",
+            "level": 3
+          },
+          {
+            "name": "Terraform",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/terraform.svg",
+            "level": 3
+          },
+          {
+            "name": "Apache Kafka",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/apachekafka.svg",
+            "level": 3
+          },
+          {
+            "name": "Talend",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/talend.svg",
+            "level": 3
+          },
+          {
+            "name": "Tableau",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tableau.svg",
+            "level": 3
+          },
+          {
+            "name": "LLMs",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg",
+            "level": 3
+          },
+          {
+            "name": "Linux",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linux.svg",
+            "level": 3
+          }, {
+            "name": "Flask",
+            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/flask.svg",
+            "level": 3
+          }
+        ],
+        "latestWorks": [
+          {
+            "title": "Mug Sticker Designing",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+            "alt": "Mug sticker designing",
+            "href": "portfolio-details.html"
+          },
+          {
+            "title": "Mobile App Design",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+            "alt": "Mobile app design",
+            "href": "portfolio-details.html"
+          },
+          {
+            "title": "Fashion Website Template",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "alt": "Fashion website template",
+            "href": "portfolio-details.html"
+          },
+          {
+            "title": "Book Cover Design",
+            "client": "John Honnai",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-4.jpg",
+            "alt": "Book cover design",
+            "href": "portfolio-details.html"
+          }
+        ]
+      }
+    }
+  ]
+}

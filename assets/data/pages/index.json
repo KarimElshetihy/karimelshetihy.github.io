@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "Karim — Home",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "data": {
+        "backgroundImage": "assets/img/hero-bg.jpg",
+        "heading": "Karim",
+        "subheading": "I'm a Data Engineer focused on scalable data platforms, analytics, and reliable delivery.",
+        "ctaLabel": "About Me",
+        "ctaHref": "about.html"
+      }
+    }
+  ]
+}

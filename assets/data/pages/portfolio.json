@@ -1,0 +1,265 @@
+{
+  "meta": {
+    "title": "Portfolio — Karim",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "portfolioDynamic",
+      "data": {
+        "title": "Portfolio",
+        "subtitle": "Data engineering projects loaded from this page configuration.",
+        "projects": [
+          {
+            "id": "financial-analytics-solution",
+            "title": "Financial Analytics Solution",
+            "description": "",
+            "category": "end-to-end",
+            "categoryLabel": "End-to-End",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+            "github": "",
+            "url": "",
+            "demo": "",
+            "is_featured": 1,
+            "tools": [
+              "Jython",
+              "ODI",
+              "ERP",
+              "DWH",
+              "SSAS",
+              "Power BI",
+              "Reporting",
+              "Oracle Apex",
+              "APIs"
+            ]
+          },
+          {
+            "id": "ssas-version-control-ci-cd-pipeline",
+            "title": "SSAS Version Control & CI/CD Pipeline",
+            "description": "",
+            "category": "ci-cd",
+            "categoryLabel": "Version Control & CI/CD",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+            "github": "",
+            "url": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "SSAS",
+              "Power Shell",
+              "CI/CD",
+              "Git",
+              "Jenkins",
+              "Ansible",
+              "Azure DevOps"
+            ]
+          },
+          {
+            "id": "master-data-management-system",
+            "title": "Master Data Management System",
+            "description": "",
+            "category": "end-to-end",
+            "categoryLabel": "End-to-End",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "url": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "Data Modeling",
+              "Oracle Apex",
+              "Data Integration",
+              "Data Governance",
+              "Data Quality"
+            ]
+          },
+          {
+            "id": "master-data-modeling",
+            "title": "Master Data Modeling",
+            "description": "",
+            "category": "data-modeling",
+            "categoryLabel": "Data Modeling",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "url": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "SQL",
+              "Data Modeling",
+              "Data Warehouse",
+              "Data Integration",
+              "Data Governance",
+              "Data Quality",
+              "Data Architecture"
+            ]
+          },
+          {
+            "id": "rls-and-data-access-control-system",
+            "title": "RLS & Data Access Control System",
+            "description": "",
+            "category": "data-modeling",
+            "categoryLabel": "Data Modeling",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "SQL",
+              "SSAS",
+              "Power BI",
+              "Reporting",
+              "Oracle Apex"
+            ]
+          },
+          {
+            "id": "erp-analytics-warehouse",
+            "title": "ERP Analytics Warehouse",
+            "description": "",
+            "category": "data-modeling",
+            "categoryLabel": "Data Modeling",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "SQL",
+              "SSAS",
+              "Power BI",
+              "Reporting",
+              "Oracle Apex",
+              "APIs"
+            ]
+          },
+          {
+            "id": "fuel-consumption-analytics",
+            "title": "Fuel Consumption Analytics",
+            "description": "",
+            "category": "data-modeling",
+            "categoryLabel": "Data Modeling",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "SQL",
+              "SSAS",
+              "Power BI",
+              "Reporting"
+            ]
+          },
+          {
+            "id": "fuel-consumption-fraud-detection",
+            "title": "Fuel Consumption Fraud Detection",
+            "description": "",
+            "category": "machine-learning",
+            "categoryLabel": "Machine Learning",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "SQL",
+              "SSAS",
+              "Power BI",
+              "Machine Learning"
+            ]
+          },
+          {
+            "id": "retail-management-analysis",
+            "title": "Retail Management Analysis",
+            "description": "Client: Fractal Investors",
+            "category": "data-modeling",
+            "categoryLabel": "Data Modeling",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "SQL",
+              "Data Warehouse",
+              "Power BI",
+              "DAX",
+              "Git",
+              "GitHub",
+              "Fabric"
+            ]
+          },
+          {
+            "id": "currencies-conversion-rate-scraping",
+            "title": "Currencies Conversion Rate Scraping",
+            "description": "",
+            "category": "data-extraction",
+            "categoryLabel": "Data Extraction",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "Python",
+              "Web Scraping",
+              "APIs"
+            ]
+          },
+          {
+            "id": "stock-market-streak-analysis",
+            "title": "Stock Market Streak Analysis",
+            "description": "",
+            "category": "data-extraction",
+            "categoryLabel": "Data Extraction",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "Python",
+              "Pandas",
+              "APIs",
+              "Bash"
+            ]
+          },
+          {
+            "id": "atm-data-parsing-solution",
+            "title": "ATM Data Parsing Solution",
+            "description": "",
+            "category": "data-extraction",
+            "categoryLabel": "Data Extraction",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "Python",
+              "Pandas",
+              "Regex",
+              "DWH",
+              "Bash"
+            ]
+          },
+          { 
+            "id": "retail-financial-analytics-dashboard",
+            "title": "Retail Financial Analytics Dashboard",
+            "description": "",
+            "category": "data-visualisation",
+            "categoryLabel": "Data Visualisation",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "github": "",
+            "demo": "",
+            "is_featured": 1,
+            "tools": [
+              "Python",
+              "FastAPI",
+              "PostgreSQL",
+              "Docker",
+              "Git",
+              "GitHub",
+              "Typescript",
+              "Data Governance",
+              "Data Warehouse"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

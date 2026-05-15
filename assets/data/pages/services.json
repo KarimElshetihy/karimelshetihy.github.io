@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "Services - Karim",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "servicesData",
+      "data": {
+        "title": "Services",
+        "subtitle": "Data engineering and analytics delivery: reliable pipelines, clear models, and insights your teams can trust.",
+        "items": [
+          {
+            "title": "ETL & data pipelines",
+            "description": "Design and run batch and incremental pipelines with Python, orchestration tools, and SQL.",
+            "icon": "bi-diagram-3",
+            "variantClass": "item-cyan",
+            "delay": 100
+          },
+          {
+            "title": "Data modeling & warehousing",
+            "description": "Build dimensional and relational models with consistent business logic.",
+            "icon": "bi-database",
+            "variantClass": "item-orange",
+            "delay": 200
+          },
+          {
+            "title": "BI & reporting",
+            "description": "Deliver Power BI dashboards and semantic models with governance and RLS.",
+            "icon": "bi-graph-up-arrow",
+            "variantClass": "item-teal",
+            "delay": 300
+          },
+          {
+            "title": "APIs & data platforms",
+            "description": "Develop data APIs and backend services with FastAPI, PostgreSQL, and Docker.",
+            "icon": "bi-hdd-network",
+            "variantClass": "item-red",
+            "delay": 400
+          },
+          {
+            "title": "Integration & ERP connectivity",
+            "description": "Unify ERP and operational sources into a single analytics-ready data layer.",
+            "icon": "bi-plug",
+            "variantClass": "item-indigo",
+            "delay": 500
+          },
+          {
+            "title": "Analytics engineering & quality",
+            "description": "Implement tests, lineage, and monitoring for trusted and maintainable datasets.",
+            "icon": "bi-clipboard-data",
+            "variantClass": "item-pink",
+            "delay": 600
+          },
+          {
+            "title": "Machine learning",
+            "description": "Support model training, evaluation, and operationalization on top of clean data.",
+            "icon": "bi-cpu",
+            "variantClass": "item-cyan",
+            "delay": 700
+          },
+          {
+            "title": "Agentic AI",
+            "description": "Build practical agent workflows with guardrails and clear business outcomes.",
+            "icon": "bi-robot",
+            "variantClass": "item-orange",
+            "delay": 800
+          },
+          {
+            "title": "LLMs & GenAI",
+            "description": "Integrate LLM features such as retrieval, summarization, and assistant experiences.",
+            "icon": "bi-chat-dots",
+            "variantClass": "item-teal",
+            "delay": 900
+          }
+        ]
+      }
+    }
+  ]
+}

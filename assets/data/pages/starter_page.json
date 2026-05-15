@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "Starter - Karim",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "starterData",
+      "data": {
+        "title": "Starter Section",
+        "subtitle": "Simple starter content rendered from JSON.",
+        "body": "Use this page as a starter for your own custom pages."
+      }
+    }
+  ]
+}
