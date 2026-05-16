@@ -636,17 +636,20 @@ function renderServicesData(data) {
 
 function renderContactData(data) {
   const map = data.map ?? {};
-  const form = data.form ?? {};
+  const googleForm = data.googleForm ?? {};
   const infoItems = data.infoItems ?? [];
+  const formEmbedUrl = String(googleForm.embedUrl ?? "").trim();
+  const formWidth = Number(googleForm.width) || 800;
+  const formHeight = Number(googleForm.height) || 1200;
+  const mapEmbedUrl = String(map.embedUrl ?? "").trim();
+  const mapIframe = mapEmbedUrl
+    ? `<iframe src="${escapeAttr(mapEmbedUrl)}" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+    : "";
+  const hasSidebar = infoItems.length > 0 || mapIframe;
+  const formColumnClass = hasSidebar ? "col-lg-7" : "col-12";
 
-  return `
-    <section id="contact" class="contact section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>${escapeHtml(data.title ?? "Contact")}</h2>
-        <p>${escapeHtml(data.subtitle ?? "")}</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
+  const sidebarHtml = hasSidebar
+    ? `
           <div class="col-lg-5">
             <div class="info-wrap">
               ${infoItems.map((item, index) => `
@@ -658,36 +661,34 @@ function renderContactData(data) {
                   </div>
                 </div>
               `).join("")}
-              <iframe src="${escapeAttr(map.embedUrl ?? "")}" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              ${mapIframe}
             </div>
-          </div>
-          <div class="col-lg-7">
-            <form action="${escapeAttr(form.action ?? "forms/contact.php")}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">${escapeHtml(form.nameLabel ?? "Your Name")}</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required>
-                </div>
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">${escapeHtml(form.emailLabel ?? "Your Email")}</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">${escapeHtml(form.subjectLabel ?? "Subject")}</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">${escapeHtml(form.messageLabel ?? "Message")}</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
-                </div>
-                <div class="col-md-12 text-center">
-                  <div class="loading">${escapeHtml(form.loadingLabel ?? "Loading")}</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">${escapeHtml(form.sentMessage ?? "Your message has been sent. Thank you!")}</div>
-                  <button type="submit">${escapeHtml(form.submitLabel ?? "Send Message")}</button>
-                </div>
-              </div>
-            </form>
+          </div>`
+    : "";
+
+  return `
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>${escapeHtml(data.title ?? "Contact")}</h2>
+        <p>${escapeHtml(data.subtitle ?? "")}</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          ${sidebarHtml}
+          <div class="${formColumnClass}">
+            <div class="contact-google-form-wrap" data-aos="fade-up" data-aos-delay="200">
+              <iframe
+                src="${escapeAttr(formEmbedUrl)}"
+                title="${escapeAttr(googleForm.title ?? "Contact form")}"
+                width="${formWidth}"
+                height="${formHeight}"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                loading="lazy"
+              >Loading…</iframe>
+            </div>
+
           </div>
         </div>
       </div>

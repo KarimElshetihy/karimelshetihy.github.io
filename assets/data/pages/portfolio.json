@@ -14,8 +14,6 @@
             "id": "financial-analytics-solution",
             "title": "Financial Analytics Solution",
             "description": "",
-            "category": "end-to-end",
-            "categoryLabel": "End-to-End",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
             "github": "",
             "url": "",
@@ -31,14 +29,15 @@
               "Reporting",
               "Oracle Apex",
               "APIs"
+            ],
+            "categories": [
+              "End-to-End"
             ]
           },
           {
             "id": "ssas-version-control-ci-cd-pipeline",
             "title": "SSAS Version Control & CI/CD Pipeline",
             "description": "",
-            "category": "ci-cd",
-            "categoryLabel": "Version Control & CI/CD",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
             "github": "",
             "url": "",
@@ -52,14 +51,36 @@
               "Jenkins",
               "Ansible",
               "Azure DevOps"
+            ],
+            "categories": [
+              "Version Control & CI/CD"
+            ]
+          },
+          {
+            "id": "ssas-version-control-ci-cd-pipeline",
+            "title": "Unified Master Fees Calculation Model",
+            "description": "",
+            "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+            "github": "",
+            "url": "",
+            "demo": "",
+            "is_featured": 0,
+            "tools": [
+              "Data Warehouse",
+              "Data Modeling",
+              "SQL",
+              "Apex",
+              "Business Analysis",
+              "APIs"
+            ],
+            "categories": [
+              "Data Modeling"
             ]
           },
           {
             "id": "master-data-management-system",
             "title": "Master Data Management System",
             "description": "",
-            "category": "end-to-end",
-            "categoryLabel": "End-to-End",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "url": "",
@@ -71,14 +92,15 @@
               "Data Integration",
               "Data Governance",
               "Data Quality"
+            ],
+            "categories": [
+              "End-to-End"
             ]
           },
           {
             "id": "master-data-modeling",
             "title": "Master Data Modeling",
             "description": "",
-            "category": "data-modeling",
-            "categoryLabel": "Data Modeling",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "url": "",
@@ -92,14 +114,16 @@
               "Data Governance",
               "Data Quality",
               "Data Architecture"
+            ],
+            "categories": [
+              "Data Modeling",
+              "End-to-End"
             ]
           },
           {
             "id": "rls-and-data-access-control-system",
             "title": "RLS & Data Access Control System",
             "description": "",
-            "category": "data-modeling",
-            "categoryLabel": "Data Modeling",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
@@ -110,14 +134,15 @@
               "Power BI",
               "Reporting",
               "Oracle Apex"
+            ],
+            "categories": [
+              "Data Modeling"
             ]
           },
           {
             "id": "erp-analytics-warehouse",
             "title": "ERP Analytics Warehouse",
             "description": "",
-            "category": "data-modeling",
-            "categoryLabel": "Data Modeling",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
@@ -129,14 +154,15 @@
               "Reporting",
               "Oracle Apex",
               "APIs"
+            ],
+            "categories": [
+              "Data Modeling"
             ]
           },
           {
             "id": "fuel-consumption-analytics",
             "title": "Fuel Consumption Analytics",
             "description": "",
-            "category": "data-modeling",
-            "categoryLabel": "Data Modeling",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
@@ -146,14 +172,15 @@
               "SSAS",
               "Power BI",
               "Reporting"
+            ],
+            "categories": [
+              "Data Modeling"
             ]
           },
           {
             "id": "fuel-consumption-fraud-detection",
             "title": "Fuel Consumption Fraud Detection",
             "description": "",
-            "category": "machine-learning",
-            "categoryLabel": "Machine Learning",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
@@ -163,14 +190,15 @@
               "SSAS",
               "Power BI",
               "Machine Learning"
+            ],
+            "categories": [
+              "Machine Learning"
             ]
           },
           {
             "id": "retail-management-analysis",
             "title": "Retail Management Analysis",
             "description": "Client: Fractal Investors",
-            "category": "data-modeling",
-            "categoryLabel": "Data Modeling",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
@@ -183,14 +211,15 @@
               "Git",
               "GitHub",
               "Fabric"
+            ],
+            "categories": [
+              "Data Modeling"
             ]
           },
           {
             "id": "currencies-conversion-rate-scraping",
             "title": "Currencies Conversion Rate Scraping",
             "description": "",
-            "category": "data-extraction",
-            "categoryLabel": "Data Extraction",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
@@ -199,14 +228,15 @@
               "Python",
               "Web Scraping",
               "APIs"
+            ],
+            "categories": [
+              "Data Extraction"
             ]
           },
           {
             "id": "stock-market-streak-analysis",
             "title": "Stock Market Streak Analysis",
             "description": "",
-            "category": "data-extraction",
-            "categoryLabel": "Data Extraction",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
@@ -216,14 +246,15 @@
               "Pandas",
               "APIs",
               "Bash"
+            ],
+            "categories": [
+              "Data Extraction"
             ]
           },
           {
             "id": "atm-data-parsing-solution",
             "title": "ATM Data Parsing Solution",
             "description": "",
-            "category": "data-extraction",
-            "categoryLabel": "Data Extraction",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
@@ -234,14 +265,15 @@
               "Regex",
               "DWH",
               "Bash"
+            ],
+            "categories": [
+              "Data Extraction"
             ]
           },
-          { 
+          {
             "id": "retail-financial-analytics-dashboard",
             "title": "Retail Financial Analytics Dashboard",
             "description": "",
-            "category": "data-visualisation",
-            "categoryLabel": "Data Visualisation",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
@@ -256,6 +288,9 @@
               "Typescript",
               "Data Governance",
               "Data Warehouse"
+            ],
+            "categories": [
+              "Data Visualisation"
             ]
           }
         ]

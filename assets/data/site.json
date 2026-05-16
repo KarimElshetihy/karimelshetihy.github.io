@@ -13,7 +13,8 @@
     { "id": "home", "label": "Home", "href": "index.html" },
     { "id": "about", "label": "About", "href": "about.html" },
     { "id": "services", "label": "Services", "href": "services.html" },
-    { "id": "portfolio", "label": "Portfolio", "href": "portfolio.html" }
+    { "id": "portfolio", "label": "Portfolio", "href": "portfolio.html" },
+    { "id": "contact", "label": "Contact", "href": "contact.html" }
   ],
   "headerSocial": [
     {

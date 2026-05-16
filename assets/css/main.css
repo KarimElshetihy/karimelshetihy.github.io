@@ -2389,6 +2389,21 @@ body.resume-page .resume-layout .rl-work-client {
   color: var(--contrast-color);
 }
 
+.contact .contact-google-form-wrap {
+  background-color: var(--surface-color);
+  height: 100%;
+  padding: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.contact .contact-google-form-wrap iframe {
+  display: block;
+  width: 100%;
+  min-height: 1200px;
+  border: 0;
+}
+
 .contact .php-email-form {
   background-color: var(--surface-color);
   height: 100%;
@@ -2397,6 +2412,14 @@ body.resume-page .resume-layout .rl-work-client {
 }
 
 @media (max-width: 575px) {
+  .contact .contact-google-form-wrap {
+    padding: 20px;
+  }
+
+  .contact .contact-google-form-wrap iframe {
+    min-height: 1100px;
+  }
+
   .contact .php-email-form {
     padding: 20px;
   }

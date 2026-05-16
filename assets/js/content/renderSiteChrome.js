@@ -40,6 +40,17 @@ function socialIconDualMarkup(defaultIcon, hoverIcon, imgClass) {
   </span>`;
 }
 
+function navCtaHtml(navCta, activeNavId) {
+  const cta = navCta ?? {};
+  const href = String(cta.href ?? "contact.html").trim() || "contact.html";
+  const label = cta.label ?? "Request";
+  const icon = String(cta.icon ?? "bi-send").trim() || "bi-send";
+  const ctaId = cta.id ?? "contact";
+  const active = ctaId && activeNavId === ctaId ? " active" : "";
+
+  return `<li class="nav-cta-item"><a href="${escapeAttr(href)}" class="nav-cta-btn${active}" title="${escapeAttr(label)}" aria-label="${escapeAttr(label)}"><i class="bi ${escapeAttr(icon)}" aria-hidden="true"></i></a></li>`;
+}
+
 function navItemsHtml(items, activeNavId) {
   return (items ?? [])
     .map((item) => {
@@ -135,6 +146,7 @@ export function renderSiteChrome(site, activeNavId) {
       <nav id="navmenu" class="navmenu">
         <ul>
           ${navItemsHtml(site?.nav, activeNavId)}
+          ${site?.navCta ? navCtaHtml(site.navCta, activeNavId) : ""}
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

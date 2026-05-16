@@ -24,7 +24,7 @@
           "showEmail": false,
           "contactButton": {
             "label": "Contact Me",
-            "href": "mailto:karim.elshetihy@gmail.com",
+            "href": "contact.html",
             "icon": "bi-envelope-fill"
           }
         },
