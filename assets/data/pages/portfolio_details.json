@@ -12,35 +12,149 @@
         "infoTitle": "Project information",
         "projects": [
           {
-            "id": "real-time-sales-data-pipeline",
-            "title": "Real-Time Sales Data Pipeline",
-            "subtitle": "Streaming-first ingestion and transformation architecture.",
+            "id": "financial-analytics-solution",
+            "title": "Financial Analytics Solution",
+            "subtitle": "End-to-end financial data platform from ERP extraction to executive dashboards.",
             "infoTitle": "Project information",
             "sliderImages": [
               {
                 "src": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
-                "alt": "Real-Time Sales Data Pipeline preview"
+                "alt": "Financial Analytics Solution overview"
               }
             ],
             "projectInfo": [
               {
                 "label": "Category",
-                "value": "Data Pipeline"
+                "value": "End-to-End, Data Modeling, Data Visualisation"
               },
               {
                 "label": "Stack",
-                "value": "Python, Airflow, PostgreSQL, BigQuery"
+                "value": "Jython, ODI, ERP, DWH, SSAS, Power BI, Oracle Apex, APIs"
               },
               {
                 "label": "Repository",
                 "value": "View on GitHub",
-                "href": "https://github.com/yourusername/sales-data-pipeline"
+                "href": "https://github.com/yourusername/financial-analytics-solution"
+              },
+              {
+                "label": "Dashboard",
+                "value": "View Dashboard",
+                "href": "https://github.com/yourusername/financial-analytics-solution"
               }
             ],
-            "description": {
-              "title": "Scalable ingestion for near real-time reporting",
-              "body": "Designed and orchestrated a robust sales ingestion pipeline with scheduled quality checks and warehouse-ready outputs for analytics use cases."
-            }
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "This project delivered a complete financial analytics platform for a mid-size enterprise running Oracle ERP. Finance teams needed trusted numbers in one place — from ledger balances and budget variance to operational KPIs — without waiting days for manual spreadsheet consolidation."
+              },
+              {
+                "type": "paragraph",
+                "text": "I owned the solution end to end: extraction from ERP, warehouse modeling, SSAS semantic layer, Power BI reporting, and lightweight Oracle Apex apps for data entry and approvals where the ERP UI was too rigid."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Financial data lived across ERP modules, spreadsheets, and legacy reports with no single source of truth.",
+                  "Month-end close took too long because reconciliations were manual and error-prone.",
+                  "Business users could not self-serve; every new metric required IT involvement.",
+                  "Existing batch jobs had no monitoring, so failures surfaced only when someone noticed missing numbers."
+                ]
+              },
+              {
+                "type": "quote",
+                "text": "We do not need more reports — we need one version of the truth that finance and operations both trust.",
+                "cite": "Finance director, project kickoff"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Ingestion and orchestration"
+              },
+              {
+                "type": "paragraph",
+                "text": "Oracle Data Integrator (ODI) packages pulled GL, AP, AR, and budget data from ERP on a nightly schedule. Jython scripts handled edge cases — custom validations, file-based supplements, and API callbacks — where pure ODI mappings were not enough."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Warehouse and semantic layer"
+              },
+              {
+                "type": "paragraph",
+                "text": "The data warehouse followed a Kimball-style star schema: conformed dimensions for account, cost center, period, and entity, with fact tables for transactions, balances, and budget snapshots. SSAS tabular models exposed reusable measures (YTD, variance %, rolling averages) so Power BI reports stayed consistent."
+              },
+              {
+                "type": "list",
+                "style": "ordered",
+                "items": [
+                  "Staging layer for raw ERP extracts and audit columns.",
+                  "Integration layer with business rules and slowly changing dimensions.",
+                  "Presentation layer aligned to finance terminology, not source system codes.",
+                  "SSAS as the governed metrics layer for all downstream consumers."
+                ]
+              },
+              {
+                "type": "image",
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+                "alt": "Financial dashboard mockup",
+                "caption": "Executive dashboard — P&L, variance, and drill-down by cost center."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Reporting and self-service"
+              },
+              {
+                "type": "paragraph",
+                "text": "Power BI became the primary consumption layer for leadership and FP&A. Oracle Apex filled gaps: adjustment workflows, one-off uploads, and admin screens for mapping tables that analysts could maintain without redeploying ETL."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Month-end reporting cycle shortened significantly by automating reconciliations.",
+                  "Finance and operations aligned on shared KPIs through the SSAS semantic model.",
+                  "New dashboard requests dropped because self-service Power BI covered most ad hoc needs.",
+                  "Pipeline failures became visible early through ODI logging and simple email alerts."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "If I rebuilt this today, I would add explicit data quality checks at staging (row counts, balance tie-outs, referential integrity) and push more orchestration metadata into a small ops dashboard. The architecture held up well, but observability was the main area I would invest in earlier."
+              }
+            ]
           },
           {
             "id": "customer-analytics-warehouse",
@@ -68,10 +182,17 @@
                 "href": "https://github.com/yourusername/customer-warehouse"
               }
             ],
-            "description": {
-              "title": "Reliable customer metrics with star-schema modeling",
-              "body": "Built a dimensional warehouse model focused on behavior analytics and reusable metric definitions for dashboard consumers."
-            }
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Reliable customer metrics with star-schema modeling"
+              },
+              {
+                "type": "paragraph",
+                "text": "Built a dimensional warehouse model focused on behavior analytics and reusable metric definitions for dashboard consumers."
+              }
+            ]
           },
           {
             "id": "data-quality-monitoring-system",
@@ -99,10 +220,17 @@
                 "href": "https://github.com/yourusername/data-quality-monitoring"
               }
             ],
-            "description": {
-              "title": "Early anomaly detection for dependable pipelines",
-              "body": "Implemented validation suites for freshness, uniqueness, and schema integrity to detect and alert on pipeline regressions quickly."
-            }
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Early anomaly detection for dependable pipelines"
+              },
+              {
+                "type": "paragraph",
+                "text": "Implemented validation suites for freshness, uniqueness, and schema integrity to detect and alert on pipeline regressions quickly."
+              }
+            ]
           },
           {
             "id": "data-modeling-accelerator",
@@ -130,10 +258,17 @@
                 "href": "https://github.com/yourusername/data-modeling"
               }
             ],
-            "description": {
-              "title": "Faster analytics delivery with consistent patterns",
-              "body": "Introduced standardized model layers and naming conventions to reduce duplicate effort and improve downstream metric consistency."
-            }
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Faster analytics delivery with consistent patterns"
+              },
+              {
+                "type": "paragraph",
+                "text": "Introduced standardized model layers and naming conventions to reduce duplicate effort and improve downstream metric consistency."
+              }
+            ]
           },
           {
             "id": "etl-modeling-workflow",
@@ -156,10 +291,17 @@
                 "value": "SQL, dbt, PostgreSQL"
               }
             ],
-            "description": {
-              "title": "Maintained ETL reliability across repeated workloads",
-              "body": "Packaged transformation logic and scheduling practices into a modular workflow that improves maintainability and deployment speed."
-            }
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Maintained ETL reliability across repeated workloads"
+              },
+              {
+                "type": "paragraph",
+                "text": "Packaged transformation logic and scheduling practices into a modular workflow that improves maintainability and deployment speed."
+              }
+            ]
           }
         ]
       }

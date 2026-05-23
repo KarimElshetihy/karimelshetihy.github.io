@@ -2,6 +2,11 @@
  * Renders page sections declared in assets/data/pages/*.json
  */
 
+import {
+  normalizeProjectContent,
+  renderPortfolioContent
+} from "../portfolio/renderContent.js";
+
 function escapeHtml(text) {
   return String(text ?? "")
     .replace(/&/g, "&amp;")
@@ -719,7 +724,8 @@ function renderPortfolioDetailsData(data) {
 
   const sliderImages = detailsData.sliderImages ?? data.sliderImages ?? [];
   const projectInfo = detailsData.projectInfo ?? data.projectInfo ?? [];
-  const description = detailsData.description ?? data.description ?? {};
+  const articleContent = normalizeProjectContent(detailsData);
+  const articleHtml = renderPortfolioContent(articleContent);
 
   const swiperConfig = {
     loop: true,
@@ -737,9 +743,11 @@ function renderPortfolioDetailsData(data) {
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
+        <div class="row gy-4 portfolio-details-layout">
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
+            ${sliderImages.length
+              ? `
+            <div class="portfolio-details-slider swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
               <script type="application/json" class="swiper-config">${JSON.stringify(swiperConfig)}</script>
               <div class="swiper-wrapper align-items-center">
                 ${sliderImages.map((image) => `
@@ -749,11 +757,21 @@ function renderPortfolioDetailsData(data) {
                 `).join("")}
               </div>
               <div class="swiper-pagination"></div>
-            </div>
+            </div>`
+              : ""}
+            ${articleHtml
+              ? `
+            <article class="portfolio-article${sliderImages.length ? " portfolio-article--with-slider" : ""}" data-aos="fade-up" data-aos-delay="200">
+              ${articleHtml}
+              <p class="portfolio-article-back">
+                <a href="portfolio.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> Back to portfolio</a>
+              </p>
+            </article>`
+              : ""}
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-info portfolio-info--sidebar" data-aos="fade-up" data-aos-delay="200">
               <h3>${escapeHtml(detailsData.infoTitle ?? data.infoTitle ?? "Project information")}</h3>
               <ul>
                 ${projectInfo.map((item) => `
@@ -765,10 +783,6 @@ function renderPortfolioDetailsData(data) {
                   </li>
                 `).join("")}
               </ul>
-            </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>${escapeHtml(description.title ?? "")}</h2>
-              <p>${escapeHtml(description.body ?? "")}</p>
             </div>
           </div>
         </div>

@@ -2305,6 +2305,13 @@ body.resume-page .resume-layout .rl-work-client {
   box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
 }
 
+@media (min-width: 992px) {
+  .portfolio-details .portfolio-info--sidebar {
+    position: sticky;
+    top: 96px;
+  }
+}
+
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;
   font-weight: 700;
@@ -2336,6 +2343,121 @@ body.resume-page .resume-layout .rl-work-client {
 .portfolio-details .portfolio-description p {
   padding: 0;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.portfolio-details .portfolio-article-row {
+  margin-top: 40px;
+}
+
+.portfolio-details .portfolio-article {
+  width: 100%;
+}
+
+.portfolio-details .portfolio-article--with-slider {
+  margin-top: 32px;
+}
+
+.portfolio-details .portfolio-article-heading {
+  color: var(--heading-color);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.portfolio-details .portfolio-article-heading--h2 {
+  font-size: 28px;
+  margin: 36px 0 16px;
+}
+
+.portfolio-details .portfolio-article-heading--h2:first-child {
+  margin-top: 0;
+}
+
+.portfolio-details .portfolio-article-heading--h3 {
+  font-size: 22px;
+  margin: 28px 0 12px;
+}
+
+.portfolio-details .portfolio-article-paragraph {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+}
+
+.portfolio-details .portfolio-article-list {
+  margin: 0 0 20px;
+  padding-left: 1.4rem;
+  font-size: 16px;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+}
+
+.portfolio-details .portfolio-article-list li + li {
+  margin-top: 8px;
+}
+
+.portfolio-details .portfolio-article-figure {
+  margin: 28px 0;
+}
+
+.portfolio-details .portfolio-article-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-details .portfolio-article-caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+  text-align: center;
+}
+
+.portfolio-details .portfolio-article-quote {
+  margin: 28px 0;
+  padding: 20px 24px;
+  border-left: 4px solid var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 94%);
+  border-radius: 0 8px 8px 0;
+}
+
+.portfolio-details .portfolio-article-quote p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.portfolio-details .portfolio-article-quote-cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-style: normal;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.portfolio-details .portfolio-article-divider {
+  margin: 32px 0;
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.portfolio-details .portfolio-article-back {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.portfolio-details .portfolio-article-back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.portfolio-details .portfolio-article-back a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
 /*--------------------------------------------------------------
