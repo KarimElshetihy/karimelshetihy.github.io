@@ -11,8 +11,8 @@
         "subtitle": "Data engineering projects loaded from this page configuration.",
         "projects": [
           {
-            "id": "financial-analytics-solution",
-            "title": "Financial Analytics Solution",
+            "id": "e-finance-group-financial-performance-dashboard",
+            "title": "E-Finance Group Financial Performance Dashboard",
             "description": "",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
             "github": "",
@@ -57,7 +57,7 @@
             ]
           },
           {
-            "id": "ssas-version-control-ci-cd-pipeline",
+            "id": "unified-master-fees-calculation-model",
             "title": "Unified Master Fees Calculation Model",
             "description": "",
             "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",

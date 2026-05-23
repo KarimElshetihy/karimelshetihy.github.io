@@ -6,6 +6,10 @@ import {
   normalizeProjectContent,
   renderPortfolioContent
 } from "../portfolio/renderContent.js";
+import {
+  renderConfidentialNote,
+  renderProjectInfoItem
+} from "../portfolio/renderProjectInfo.js";
 
 function escapeHtml(text) {
   return String(text ?? "")
@@ -774,15 +778,9 @@ function renderPortfolioDetailsData(data) {
             <div class="portfolio-info portfolio-info--sidebar" data-aos="fade-up" data-aos-delay="200">
               <h3>${escapeHtml(detailsData.infoTitle ?? data.infoTitle ?? "Project information")}</h3>
               <ul>
-                ${projectInfo.map((item) => `
-                  <li>
-                    <strong>${escapeHtml(item.label ?? "")}</strong>:
-                    ${item.href
-                      ? `<a href="${escapeAttr(item.href)}" target="_blank" rel="noopener">${escapeHtml(item.value ?? item.href)}</a>`
-                      : escapeHtml(item.value ?? "")}
-                  </li>
-                `).join("")}
+                ${projectInfo.map((item) => renderProjectInfoItem(item)).join("")}
               </ul>
+              ${renderConfidentialNote(detailsData)}
             </div>
           </div>
         </div>

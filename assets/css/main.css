@@ -2330,6 +2330,68 @@ body.resume-page .resume-layout .rl-work-client {
   margin-top: 10px;
 }
 
+.portfolio-details .portfolio-info-item--tags {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portfolio-details .portfolio-info-item--tags .portfolio-info-label {
+  display: block;
+}
+
+.portfolio-details .portfolio-info-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.portfolio-details .portfolio-info-tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  background: color-mix(in srgb, var(--surface-color), transparent 10%);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.portfolio-details .portfolio-info-tag--category:hover,
+.portfolio-details .portfolio-info-tag--stack:hover {
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+.portfolio-details .portfolio-info-note {
+  margin-top: 20px;
+  padding: 14px 14px 14px 16px;
+  border-left: 3px solid var(--accent-color);
+  border-radius: 0 6px 6px 0;
+  background: color-mix(in srgb, var(--accent-color), var(--surface-color) 92%);
+}
+
+.portfolio-details .portfolio-info-note-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-info-note-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--default-color);
+}
+
 .portfolio-details .portfolio-description {
   padding-top: 30px;
 }
