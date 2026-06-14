@@ -3,6 +3,7 @@ import {
   getFilterClassNames,
   getProjectCategories
 } from "./portfolio/categories.js";
+import { buildPortfolioDetailsUrl } from "./portfolio/projectIdFromUrl.js";
 
 document.addEventListener(
   "site:ready",
@@ -26,15 +27,20 @@ function startPortfolio() {
       const portfolioSection = (pageData.sections || []).find(
         (section) => section.type === "portfolioDynamic"
       );
-      const projects = portfolioSection?.data?.projects || [];
+      const allProjects = portfolioSection?.data?.projects || [];
+      const projects = allProjects.filter(isProjectVisible);
       const detailsSection = (detailsPageData.sections || []).find(
         (section) => section.type === "portfolioDetailsData"
       );
       const detailProjects = detailsSection?.data?.projects || [];
       const detailProjectIds = buildDetailProjectIds(detailProjects);
 
-      if (!Array.isArray(projects) || projects.length === 0) {
+      if (!Array.isArray(allProjects) || allProjects.length === 0) {
         throw new Error("No projects found in portfolio page data.");
+      }
+
+      if (projects.length === 0) {
+        throw new Error("No visible projects in portfolio page data.");
       }
 
       const sortedProjects = [...projects].sort(
@@ -84,7 +90,7 @@ function renderProjectCard(project, detailProjectIds) {
   const hasMatchingDetails = detailProjectIds.has(projectId);
   const detailsUrl = hasCustomDetailsUrl
     ? project.details.trim()
-    : `portfolio-details.html?project=${encodeURIComponent(projectId)}`;
+    : buildPortfolioDetailsUrl(projectId);
   const detailsLink =
     hasCustomDetailsUrl || hasMatchingDetails
       ? `<a href="${detailsUrl}" title="See project details" class="portfolio-action-link"><i class="bi bi-arrow-up-right-circle-fill"></i></a>`
@@ -145,6 +151,14 @@ function buildProjectId(project) {
 
 function getFeaturedFlag(project) {
   return Number(project?.is_featured) === 1 ? 1 : 0;
+}
+
+function isProjectVisible(project) {
+  if (project?.is_visible === false) {
+    return false;
+  }
+
+  return Number(project?.is_visible) !== 0;
 }
 
 function refreshPortfolioPlugins(projectsContainer) {

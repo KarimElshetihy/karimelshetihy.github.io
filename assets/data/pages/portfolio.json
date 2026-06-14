@@ -11,14 +11,15 @@
         "subtitle": "Data engineering projects loaded from this page configuration.",
         "projects": [
           {
-            "id": "e-finance-group-financial-performance-dashboard",
-            "title": "E-Finance Group Financial Performance Dashboard",
+            "id": "financial-analytics-platform",
+            "title": "Financial Analytics Platform",
             "description": "",
-            "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+            "image": "assets/img/Coming Soon Dark.png",
             "github": "",
             "url": "",
             "demo": "",
             "is_featured": 1,
+            "is_visible": 1,
             "tools": [
               "Jython",
               "ODI",
@@ -31,18 +32,22 @@
               "APIs"
             ],
             "categories": [
-              "End-to-End"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality"
             ]
           },
           {
             "id": "ssas-version-control-ci-cd-pipeline",
             "title": "SSAS Version Control & CI/CD Pipeline",
             "description": "",
-            "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+            "image": "assets/img/Coming Soon.png",
             "github": "",
             "url": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 1,
             "tools": [
               "SSAS",
               "Power Shell",
@@ -53,18 +58,25 @@
               "Azure DevOps"
             ],
             "categories": [
-              "Version Control & CI/CD"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
             "id": "unified-master-fees-calculation-model",
             "title": "Unified Master Fees Calculation Model",
             "description": "",
-            "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+            "image": "assets/img/Coming Soon Dark.png",
             "github": "",
             "url": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 1,
             "tools": [
               "Data Warehouse",
               "Data Modeling",
@@ -74,7 +86,13 @@
               "APIs"
             ],
             "categories": [
-              "Data Modeling"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -86,6 +104,7 @@
             "url": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 0,
             "tools": [
               "Data Modeling",
               "Oracle Apex",
@@ -94,7 +113,13 @@
               "Data Quality"
             ],
             "categories": [
-              "End-to-End"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -106,6 +131,7 @@
             "url": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 0,
             "tools": [
               "SQL",
               "Data Modeling",
@@ -116,8 +142,13 @@
               "Data Architecture"
             ],
             "categories": [
-              "Data Modeling",
-              "End-to-End"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -128,6 +159,7 @@
             "github": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 0,
             "tools": [
               "SQL",
               "SSAS",
@@ -136,7 +168,13 @@
               "Oracle Apex"
             ],
             "categories": [
-              "Data Modeling"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -146,17 +184,25 @@
             "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
             "github": "",
             "demo": "",
-            "is_featured": 0,
+            "is_featured": 1,
+            "is_visible": 0,
             "tools": [
               "SQL",
               "SSAS",
               "Power BI",
               "Reporting",
               "Oracle Apex",
+              "Oracle Fusion",
               "APIs"
             ],
             "categories": [
-              "Data Modeling"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -167,6 +213,7 @@
             "github": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 0,
             "tools": [
               "SQL",
               "SSAS",
@@ -174,7 +221,13 @@
               "Reporting"
             ],
             "categories": [
-              "Data Modeling"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -185,6 +238,7 @@
             "github": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 0,
             "tools": [
               "SQL",
               "SSAS",
@@ -192,7 +246,13 @@
               "Machine Learning"
             ],
             "categories": [
-              "Machine Learning"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -203,6 +263,7 @@
             "github": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 0,
             "tools": [
               "SQL",
               "Data Warehouse",
@@ -213,7 +274,13 @@
               "Fabric"
             ],
             "categories": [
-              "Data Modeling"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -224,13 +291,20 @@
             "github": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 0,
             "tools": [
               "Python",
               "Web Scraping",
               "APIs"
             ],
             "categories": [
-              "Data Extraction"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -241,6 +315,7 @@
             "github": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 0,
             "tools": [
               "Python",
               "Pandas",
@@ -248,7 +323,13 @@
               "Bash"
             ],
             "categories": [
-              "Data Extraction"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -259,6 +340,7 @@
             "github": "",
             "demo": "",
             "is_featured": 0,
+            "is_visible": 0,
             "tools": [
               "Python",
               "Pandas",
@@ -267,7 +349,13 @@
               "Bash"
             ],
             "categories": [
-              "Data Extraction"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           },
           {
@@ -278,6 +366,7 @@
             "github": "",
             "demo": "",
             "is_featured": 1,
+            "is_visible": 0,
             "tools": [
               "Python",
               "FastAPI",
@@ -290,7 +379,13 @@
               "Data Warehouse"
             ],
             "categories": [
-              "Data Visualisation"
+              "Modeling & Warehousing",
+              "Analytics & Reporting",
+              "Integration & Pipelines",
+              "Governance & Quality",
+              "Performance & Optimization",
+              "DataOps & Observability",
+              "AI & Machine Learning"
             ]
           }
         ]

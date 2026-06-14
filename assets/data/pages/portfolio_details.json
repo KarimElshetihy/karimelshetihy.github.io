@@ -12,25 +12,25 @@
         "infoTitle": "Project information",
         "projects": [
           {
-            "id": "e-finance-group-financial-performance-dashboard",
-            "title": "E-Finance Group Financial Performance Dashboard",
-            "subtitle": "End-to-end financial data platform from ERP extraction to executive dashboards.",
+            "id": "financial-analytics-platform",
+            "title": "Financial Analytics Platform",
+            "subtitle": "End-to-end financial data analytics platform that provides a unified view of organizational financial performance",
             "isConfidential": true,
             "infoTitle": "Project information",
             "sliderImages": [
               {
-                "src": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
-                "alt": "Financial Analytics Solution overview"
+                "src": "",
+                "alt": ""
               }
             ],
             "projectInfo": [
               {
                 "label": "Category",
-                "value": "Data Modeling, Data Warehouse, ETL & Data Pipeline, Data Visualisation"
+                "value": "Data Modeling, ETL/ELT, Data Integration, Visualisation, Reporting, Data Ingestion, Governance, Forecasting"
               },
               {
                 "label": "Stack",
-                "value": "Jython, ODI, ERP, DWH, SSAS, Power BI, Oracle Apex, APIs"
+                "value": "SQL, Python/Jython, Oracle ODI, Power BI, DWH, SSAS, Oracle Fusion, ERP, Oracle Apex, APIs"
               },
               {
                 "label": "Repository",
@@ -51,7 +51,7 @@
               },
               {
                 "type": "paragraph",
-                "text": "This project delivered a complete financial analytics platform for a mid-size enterprise running Oracle ERP. Finance teams needed trusted numbers in one place — from ledger balances and budget variance to operational KPIs — without waiting days for manual spreadsheet consolidation."
+                "text": "This project delivered a complete financial analytics platform for a mid-size enterprise running Oracle ERP. Finance teams needed trusted numbers in one place, from ledger balances and budget variance to operational KPIs — without waiting days for manual spreadsheet consolidation."
               },
               {
                 "type": "paragraph",
@@ -78,7 +78,7 @@
               {
                 "type": "quote",
                 "text": "We do not need more reports — we need one version of the truth that finance and operations both trust.",
-                "cite": "Finance director, project kickoff"
+                "cite": "Finance director"
               },
               {
                 "type": "heading",
@@ -115,7 +115,7 @@
               },
               {
                 "type": "image",
-                "src": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+                "src": "assets/img/Coming Soon Dark.png",
                 "alt": "Financial dashboard mockup",
                 "caption": "Executive dashboard — P&L, variance, and drill-down by cost center."
               },
@@ -158,181 +158,35 @@
             ]
           },
           {
-            "id": "customer-analytics-warehouse",
-            "title": "Customer Analytics Warehouse",
-            "subtitle": "Dimensional modeling for BI-ready customer insights.",
+            "id": "ssas-version-control-ci-cd-pipeline",
+            "title": "SSAS Version Control & CI/CD Pipeline",
+            "subtitle": "Automated build, test, and deployment for SSAS tabular and multidimensional models.",
+            "isConfidential": true,
             "infoTitle": "Project information",
             "sliderImages": [
               {
-                "src": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
-                "alt": "Customer Analytics Warehouse preview"
+                "src": "assets/img/Coming Soon.png",
+                "alt": "SSAS Version Control and CI/CD Pipeline overview"
               }
             ],
             "projectInfo": [
               {
                 "label": "Category",
-                "value": "Warehouse"
+                "value": "DataOps & Observability, Analytics & Reporting, Integration & Pipelines"
               },
               {
                 "label": "Stack",
-                "value": "SQL, dbt, Snowflake, Power BI"
+                "value": "SSAS, PowerShell, Git, Jenkins, Ansible, Azure DevOps, CI/CD"
               },
               {
                 "label": "Repository",
-                "value": "View on GitHub",
-                "href": "https://github.com/yourusername/customer-warehouse"
-              }
-            ],
-            "content": [
-              {
-                "type": "heading",
-                "level": 2,
-                "text": "Reliable customer metrics with star-schema modeling"
+                "value": "Soon",
+                "href": ""
               },
               {
-                "type": "paragraph",
-                "text": "Built a dimensional warehouse model focused on behavior analytics and reusable metric definitions for dashboard consumers."
-              }
-            ]
-          },
-          {
-            "id": "data-quality-monitoring-system",
-            "title": "Data Quality Monitoring System",
-            "subtitle": "Automated validation checks across critical data assets.",
-            "infoTitle": "Project information",
-            "sliderImages": [
-              {
-                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
-                "alt": "Data Quality Monitoring System preview"
-              }
-            ],
-            "projectInfo": [
-              {
-                "label": "Category",
-                "value": "Data Quality"
-              },
-              {
-                "label": "Stack",
-                "value": "Python, SQL, Great Expectations, Airflow"
-              },
-              {
-                "label": "Repository",
-                "value": "View on GitHub",
-                "href": "https://github.com/yourusername/data-quality-monitoring"
-              }
-            ],
-            "content": [
-              {
-                "type": "heading",
-                "level": 2,
-                "text": "Early anomaly detection for dependable pipelines"
-              },
-              {
-                "type": "paragraph",
-                "text": "Implemented validation suites for freshness, uniqueness, and schema integrity to detect and alert on pipeline regressions quickly."
-              }
-            ]
-          },
-          {
-            "id": "data-modeling-accelerator",
-            "title": "Data Modeling Accelerator",
-            "subtitle": "Reusable data model templates and semantic conventions.",
-            "infoTitle": "Project information",
-            "sliderImages": [
-              {
-                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
-                "alt": "Data Modeling Accelerator preview"
-              }
-            ],
-            "projectInfo": [
-              {
-                "label": "Category",
-                "value": "Modeling"
-              },
-              {
-                "label": "Stack",
-                "value": "SQL, dbt, PostgreSQL"
-              },
-              {
-                "label": "Repository",
-                "value": "View on GitHub",
-                "href": "https://github.com/yourusername/data-modeling"
-              }
-            ],
-            "content": [
-              {
-                "type": "heading",
-                "level": 2,
-                "text": "Faster analytics delivery with consistent patterns"
-              },
-              {
-                "type": "paragraph",
-                "text": "Introduced standardized model layers and naming conventions to reduce duplicate effort and improve downstream metric consistency."
-              }
-            ]
-          },
-          {
-            "id": "etl-modeling-workflow",
-            "title": "ETL Modeling Workflow",
-            "subtitle": "Structured ETL orchestration and reusable transform patterns.",
-            "infoTitle": "Project information",
-            "sliderImages": [
-              {
-                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
-                "alt": "ETL Modeling Workflow preview"
-              }
-            ],
-            "projectInfo": [
-              {
-                "label": "Category",
-                "value": "ETL"
-              },
-              {
-                "label": "Stack",
-                "value": "SQL, dbt, PostgreSQL"
-              }
-            ],
-            "content": [
-              {
-                "type": "heading",
-                "level": 2,
-                "text": "Maintained ETL reliability across repeated workloads"
-              },
-              {
-                "type": "paragraph",
-                "text": "Packaged transformation logic and scheduling practices into a modular workflow that improves maintainability and deployment speed."
-              }
-            ]
-          },
-          {
-            "id": "template-project",
-            "title": "Financial Analytics Solution",
-            "subtitle": "End-to-end financial data platform from ERP extraction to executive dashboards.",
-            "infoTitle": "Project information",
-            "sliderImages": [
-              {
-                "src": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
-                "alt": "Financial Analytics Solution overview"
-              }
-            ],
-            "projectInfo": [
-              {
-                "label": "Category",
-                "value": "End-to-End, Data Modeling, Data Visualisation"
-              },
-              {
-                "label": "Stack",
-                "value": "Jython, ODI, ERP, DWH, SSAS, Power BI, Oracle Apex, APIs"
-              },
-              {
-                "label": "Repository",
-                "value": "View on GitHub",
-                "href": "https://github.com/yourusername/financial-analytics-solution"
-              },
-              {
-                "label": "Dashboard",
-                "value": "View Dashboard",
-                "href": "https://github.com/yourusername/financial-analytics-solution"
+                "label": "Pipeline",
+                "value": "Soon",
+                "href": ""
               }
             ],
             "content": [
@@ -343,11 +197,11 @@
               },
               {
                 "type": "paragraph",
-                "text": "This project delivered a complete financial analytics platform for a mid-size enterprise running Oracle ERP. Finance teams needed trusted numbers in one place — from ledger balances and budget variance to operational KPIs — without waiting days for manual spreadsheet consolidation."
+                "text": "Analytics teams relied on manual SSAS deployments — models changed in Visual Studio, published by hand, and tracked in email or shared folders. Releases were slow, hard to audit, and risky when multiple developers worked on the same semantic layer."
               },
               {
                 "type": "paragraph",
-                "text": "I owned the solution end to end: extraction from ERP, warehouse modeling, SSAS semantic layer, Power BI reporting, and lightweight Oracle Apex apps for data entry and approvals where the ERP UI was too rigid."
+                "text": "I designed and implemented a version-controlled CI/CD pipeline for SSAS: models in Git, automated builds and deployments through Jenkins and Azure DevOps, and PowerShell plus Ansible scripts to promote changes across dev, test, and production with consistent, repeatable steps."
               },
               {
                 "type": "divider"
@@ -361,16 +215,17 @@
                 "type": "list",
                 "style": "unordered",
                 "items": [
-                  "Financial data lived across ERP modules, spreadsheets, and legacy reports with no single source of truth.",
-                  "Month-end close took too long because reconciliations were manual and error-prone.",
-                  "Business users could not self-serve; every new metric required IT involvement.",
-                  "Existing batch jobs had no monitoring, so failures surfaced only when someone noticed missing numbers."
+                  "SSAS projects lived on individual machines with no single source of truth.",
+                  "Deployments required manual processing and were error-prone during month-end or release windows.",
+                  "There was no clear history of who changed what, or which model version was live in each environment.",
+                  "Rollback meant rebuilding from memory or old backups, not a controlled revert from Git.",
+                  "Dev, test, and prod drifted because promotion steps were not standardized."
                 ]
               },
               {
                 "type": "quote",
-                "text": "We do not need more reports — we need one version of the truth that finance and operations both trust.",
-                "cite": "Finance director, project kickoff"
+                "text": "We need SSAS releases to behave like application releases — versioned, tested, and deployable on demand.",
+                "cite": "BI platform lead"
               },
               {
                 "type": "heading",
@@ -380,45 +235,45 @@
               {
                 "type": "heading",
                 "level": 3,
-                "text": "1. Ingestion and orchestration"
+                "text": "1. Source control and model structure"
               },
               {
                 "type": "paragraph",
-                "text": "Oracle Data Integrator (ODI) packages pulled GL, AP, AR, and budget data from ERP on a nightly schedule. Jython scripts handled edge cases — custom validations, file-based supplements, and API callbacks — where pure ODI mappings were not enough."
+                "text": "SSAS projects were reorganized for Git: clear folder layout for tabular and multidimensional assets, environment-specific configuration kept outside the model where possible, and branching rules so feature work did not block production hotfixes."
               },
               {
                 "type": "heading",
                 "level": 3,
-                "text": "2. Warehouse and semantic layer"
+                "text": "2. CI/CD pipeline"
               },
               {
                 "type": "paragraph",
-                "text": "The data warehouse followed a Kimball-style star schema: conformed dimensions for account, cost center, period, and entity, with fact tables for transactions, balances, and budget snapshots. SSAS tabular models exposed reusable measures (YTD, variance %, rolling averages) so Power BI reports stayed consistent."
+                "text": "Jenkins and Azure DevOps pipelines triggered on pull requests and merges. Each run validated the model, ran automated processing where applicable, and packaged artifacts for deployment. PowerShell orchestrated SSAS processing, deployment targets, and logging; Ansible handled server-side steps and configuration on deployment hosts."
               },
               {
                 "type": "list",
                 "style": "ordered",
                 "items": [
-                  "Staging layer for raw ERP extracts and audit columns.",
-                  "Integration layer with business rules and slowly changing dimensions.",
-                  "Presentation layer aligned to finance terminology, not source system codes.",
-                  "SSAS as the governed metrics layer for all downstream consumers."
+                  "Commit and PR — developer changes tracked in Git with review before merge.",
+                  "Build — automated validation and SSAS processing in a controlled build agent.",
+                  "Deploy to test — promoted model deployed and smoke-checked before production.",
+                  "Deploy to prod — approved release with audit trail and optional rollback tag."
                 ]
               },
               {
                 "type": "image",
-                "src": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
-                "alt": "Financial dashboard mockup",
-                "caption": "Executive dashboard — P&L, variance, and drill-down by cost center."
+                "src": "assets/img/Coming Soon Dark.png",
+                "alt": "CI/CD pipeline diagram mockup",
+                "caption": "Pipeline flow — from Git commit to SSAS deployment across environments."
               },
               {
                 "type": "heading",
                 "level": 3,
-                "text": "3. Reporting and self-service"
+                "text": "3. Operations and governance"
               },
               {
                 "type": "paragraph",
-                "text": "Power BI became the primary consumption layer for leadership and FP&A. Oracle Apex filled gaps: adjustment workflows, one-off uploads, and admin screens for mapping tables that analysts could maintain without redeploying ETL."
+                "text": "Deployment logs, build numbers, and environment tags gave the team visibility into what was live. Runbooks documented failure handling and rollback using Git tags and saved artifacts, so releases were no longer dependent on one person’s local knowledge."
               },
               {
                 "type": "divider"
@@ -432,10 +287,11 @@
                 "type": "list",
                 "style": "unordered",
                 "items": [
-                  "Month-end reporting cycle shortened significantly by automating reconciliations.",
-                  "Finance and operations aligned on shared KPIs through the SSAS semantic model.",
-                  "New dashboard requests dropped because self-service Power BI covered most ad hoc needs.",
-                  "Pipeline failures became visible early through ODI logging and simple email alerts."
+                  "SSAS changes became traceable from commit to production deployment.",
+                  "Release cycles shortened with repeatable, automated promotion steps.",
+                  "Environment drift reduced through the same pipeline for dev, test, and prod.",
+                  "Rollback path improved using version control instead of ad hoc restores.",
+                  "Team could parallelize model work without overwriting each other’s deployments."
                 ]
               },
               {
@@ -445,7 +301,1659 @@
               },
               {
                 "type": "paragraph",
-                "text": "If I rebuilt this today, I would add explicit data quality checks at staging (row counts, balance tie-outs, referential integrity) and push more orchestration metadata into a small ops dashboard. The architecture held up well, but observability was the main area I would invest in earlier."
+                "text": "I would add automated regression checks on key measures and partition counts after each deploy, and integrate pipeline status into a single DataOps dashboard alongside ETL jobs. The foundation was solid; deeper test automation would catch model regressions even earlier."
+              }
+            ]
+          },
+          {
+            "id": "unified-master-fees-calculation-model",
+            "title": "Unified Master Fees Calculation Model",
+            "subtitle": "Single governed model for fee calculation across products and channels.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/Coming Soon.png",
+                "alt": "Unified Master Fees Calculation Model preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Data Warehouse, Data Modeling, SQL, Apex, Business Analysis, APIs"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Fee logic was spread across spreadsheets, legacy SQL, and departmental reports. Finance and operations calculated master fees differently, which slowed billing cycles and made audits painful."
+              },
+              {
+                "type": "paragraph",
+                "text": "I delivered a unified master fees calculation model in the warehouse with clear business rules, reusable dimensions, and Oracle Apex screens for analysts to maintain fee parameters safely."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Multiple fee formulas existed for the same product family with no documented owner.",
+                  "Manual adjustments bypassed controls and were hard to reconcile at month-end.",
+                  "Downstream reports showed conflicting fee totals depending on the source.",
+                  "Product teams needed a faster way to simulate fee changes before go-live."
+                ]
+              },
+              {
+                "type": "quote",
+                "text": "We need one fee model that billing, finance, and product management all trust.",
+                "cite": "Operations manager"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Dimensional fee model"
+              },
+              {
+                "type": "paragraph",
+                "text": "Designed conformed dimensions for product, channel, customer segment, and fee type, with a central fact table for calculated fees and audit-friendly adjustment rows."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Versioned fee rules with effective dates.",
+                  "Transparent calculation steps stored for audit.",
+                  "Reconciliation views comparing model output to legacy totals."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Integration and APIs"
+              },
+              {
+                "type": "paragraph",
+                "text": "Built SQL-based transformation pipelines and lightweight APIs so upstream systems could submit fee inputs and downstream apps could consume governed totals."
+              },
+              {
+                "type": "list",
+                "style": "ordered",
+                "items": [
+                  "Staging validations for missing rates and invalid combinations.",
+                  "Business rule layer applied before publishing to reporting.",
+                  "Published datasets consumed by dashboards and Apex workflows."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Analyst tooling"
+              },
+              {
+                "type": "paragraph",
+                "text": "Oracle Apex provided parameter maintenance, approval-friendly forms, and exception queues so business users could manage fees without direct database access."
+              },
+              {
+                "type": "image",
+                "src": "assets/img/Coming Soon Dark.png",
+                "alt": "Fee model diagram",
+                "caption": "Unified fee model — single calculation path from inputs to reporting."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Fee calculations consolidated into one governed warehouse model.",
+                  "Month-end reconciliation time reduced through standardized rules.",
+                  "Product teams gained a controlled way to test fee changes before production.",
+                  "Audit trail improved with versioned parameters and adjustment history."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would add automated regression tests that compare fee outputs across rule versions whenever parameters change, catching unintended side effects earlier."
+              }
+            ]
+          },
+          {
+            "id": "master-data-management-system",
+            "title": "Master Data Management System",
+            "subtitle": "Governed golden records with workflows for master data quality and stewardship.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Master Data Management System preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Data Modeling, Oracle Apex, Data Integration, Data Governance, Data Quality"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Critical master entities — customers, products, and suppliers — existed in multiple systems with inconsistent formats, duplicates, and no clear ownership."
+              },
+              {
+                "type": "paragraph",
+                "text": "I implemented a master data management approach combining modeled golden records, data quality rules, stewardship workflows in Oracle Apex, and integration hooks for downstream consumers."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Duplicate and conflicting records made reporting unreliable.",
+                  "No workflow existed for requesting, approving, or correcting master data changes.",
+                  "Data quality issues were discovered late, after bad data reached dashboards.",
+                  "Teams lacked a single place to see entity history and stewardship status."
+                ]
+              },
+              {
+                "type": "quote",
+                "text": "Fix the master data once, then stop re-cleaning the same problems in every report.",
+                "cite": "Data governance lead"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Golden record model"
+              },
+              {
+                "type": "paragraph",
+                "text": "Created hub-and-spoke style models for core entities with survivorship rules, source system lineage, and status flags for active, merged, or deprecated records."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Quality and governance rules"
+              },
+              {
+                "type": "paragraph",
+                "text": "Defined validation checks for completeness, format, referential integrity, and duplicate detection, with exception queues routed to data stewards."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Duplicate matching with configurable thresholds.",
+                  "Mandatory fields enforced before publish.",
+                  "Audit columns on every change."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Stewardship application"
+              },
+              {
+                "type": "paragraph",
+                "text": "Oracle Apex screens supported create/merge requests, approvals, and searchable entity history so business owners could manage master data without IT bottlenecks."
+              },
+              {
+                "type": "image",
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "MDM workflow",
+                "caption": "Stewardship workflow — request, validate, approve, publish."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Golden records became the trusted source for key entities.",
+                  "Duplicate rates dropped through matching and merge workflows.",
+                  "Stewards gained self-service tools instead of email-driven fixes.",
+                  "Downstream analytics consumed cleaner, more consistent dimensions."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would introduce a lightweight data quality scorecard per entity domain so leadership could see MDM health trends over time, not just exception counts."
+              }
+            ]
+          },
+          {
+            "id": "master-data-modeling",
+            "title": "Master Data Modeling",
+            "subtitle": "Enterprise master data models aligned to analytics and operational consumption.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Master Data Modeling preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, Data Modeling, Data Warehouse, Data Integration, Data Governance, Data Quality, Data Architecture"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "The organization needed consistent master data structures that could serve both operational applications and analytics, without rebuilding models for every new use case."
+              },
+              {
+                "type": "paragraph",
+                "text": "I designed master data models with clear entity relationships, naming standards, and extension patterns so new attributes and sources could be onboarded without breaking existing consumers."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Entity definitions varied by department and source system.",
+                  "Existing models were report-driven, not reusable across domains.",
+                  "Slowly changing attributes were handled inconsistently.",
+                  "No documented standards existed for hierarchy and reference data."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Entity architecture"
+              },
+              {
+                "type": "paragraph",
+                "text": "Modeled core entities, hierarchies, and reference tables with shared conformed keys and explicit cardinality rules usable across warehouse and application layers."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Standards and patterns"
+              },
+              {
+                "type": "paragraph",
+                "text": "Introduced naming conventions, SCD patterns, and source-to-target mapping templates so new master domains followed the same design language."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Reusable templates for party, product, and location domains.",
+                  "Documented grain and primary business keys.",
+                  "Extension tables for source-specific attributes."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Consumption-ready outputs"
+              },
+              {
+                "type": "paragraph",
+                "text": "Published master views optimized for both SQL reporting and integration APIs, reducing duplicate modeling work in downstream projects."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Master entities became reusable building blocks for new analytics use cases.",
+                  "Modeling effort dropped for subsequent warehouse and MDM work.",
+                  "Hierarchy and reference data became easier to govern and explain.",
+                  "Cross-team alignment improved through shared definitions and keys."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would pair each master entity with a short data contract describing grain, refresh cadence, and approved consumers to reduce misuse over time."
+              }
+            ]
+          },
+          {
+            "id": "rls-and-data-access-control-system",
+            "title": "RLS & Data Access Control System",
+            "subtitle": "Row-level security and role-based access across SSAS, Power BI, and Apex.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "RLS & Data Access Control System preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, SSAS, Power BI, Reporting, Oracle Apex"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Different business units needed access to the same dashboards and models, but each user group should only see data for their region, entity, or cost center. Static report copies were not scalable."
+              },
+              {
+                "type": "paragraph",
+                "text": "I implemented a row-level security and data access control system spanning SSAS roles, Power BI RLS, SQL views, and Oracle Apex authorization rules tied to a central access matrix."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Report copies multiplied whenever a new access rule was needed.",
+                  "Security logic was embedded in reports inconsistently.",
+                  "Role changes required manual updates in multiple systems.",
+                  "Auditors needed proof of who could see which data slices."
+                ]
+              },
+              {
+                "type": "quote",
+                "text": "One dashboard for everyone — but each person sees only what they should.",
+                "cite": "Security stakeholder"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Access matrix design"
+              },
+              {
+                "type": "paragraph",
+                "text": "Defined a central mapping of users, roles, entities, and data scopes used as the source of truth for all downstream security implementations."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Semantic and reporting layer"
+              },
+              {
+                "type": "paragraph",
+                "text": "Configured SSAS roles and Power BI RLS filters driven from the same scope definitions, with SQL views enforcing restrictions at the warehouse layer where needed."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Dynamic filters by region, entity, and department.",
+                  "Service accounts separated from interactive user access.",
+                  "Test cases for allowed and denied scenarios."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Application controls"
+              },
+              {
+                "type": "paragraph",
+                "text": "Oracle Apex authorization schemes mirrored the same role model so self-service screens respected the same boundaries as enterprise dashboards."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Report proliferation reduced by replacing copies with dynamic security.",
+                  "Role updates centralized instead of scattered across tools.",
+                  "Audit readiness improved with documented access mappings.",
+                  "Users kept a consistent UX while data exposure stayed controlled."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would automate periodic access review reports that compare active directory groups to the access matrix and flag orphaned permissions."
+              }
+            ]
+          },
+          {
+            "id": "erp-analytics-warehouse",
+            "title": "ERP Analytics Warehouse",
+            "subtitle": "Analytics-ready warehouse built on Oracle Fusion ERP operational data.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "ERP Analytics Warehouse preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, SSAS, Power BI, Reporting, Oracle Apex, Oracle Fusion, APIs"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "ERP held the operational truth for finance and supply chain, but analytics teams struggled to query it directly. Reports were slow, logic was duplicated, and historical trends were hard to preserve."
+              },
+              {
+                "type": "paragraph",
+                "text": "I built an ERP analytics warehouse with staged Fusion extracts, dimensional models, SSAS semantic layers, and Power BI dashboards tuned for finance and operations KPIs."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Direct ERP reporting overloaded operational systems and lacked history.",
+                  "Metrics were calculated differently in every departmental report.",
+                  "Data model complexity in Fusion made self-service analytics difficult.",
+                  "Integrations with Apex apps and APIs needed a stable analytics foundation."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. ERP extraction and staging"
+              },
+              {
+                "type": "paragraph",
+                "text": "Scheduled pipelines extracted GL, procurement, inventory, and master data from Fusion into staging with audit columns and incremental load patterns."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Warehouse modeling"
+              },
+              {
+                "type": "paragraph",
+                "text": "Implemented star schemas for finance and operations with conformed dimensions, snapshot facts where needed, and clear mapping from Fusion codes to business terms."
+              },
+              {
+                "type": "list",
+                "style": "ordered",
+                "items": [
+                  "Staging for raw ERP payloads.",
+                  "Integration for business rules and SCD handling.",
+                  "Presentation models aligned to dashboard consumers."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Analytics delivery"
+              },
+              {
+                "type": "paragraph",
+                "text": "SSAS and Power BI exposed governed measures; Oracle Apex and APIs consumed curated datasets for operational workflows and integrations."
+              },
+              {
+                "type": "image",
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "ERP warehouse architecture",
+                "caption": "ERP analytics path — Fusion to warehouse to SSAS and Power BI."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Analytics workloads moved off the operational ERP database.",
+                  "Historical trends preserved in the warehouse for finance and ops.",
+                  "Shared KPIs reduced conflicting numbers across teams.",
+                  "Apex and API consumers gained stable, curated datasets."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would add near-real-time CDC for high-priority finance facts if the business needed intraday visibility beyond nightly batches."
+              }
+            ]
+          },
+          {
+            "id": "fuel-consumption-analytics",
+            "title": "Fuel Consumption Analytics",
+            "subtitle": "Fleet fuel consumption monitoring, benchmarking, and variance analysis.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Fuel Consumption Analytics preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, SSAS, Power BI, Reporting"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Operations teams tracked fleet fuel usage through manual summaries and inconsistent spreadsheets. They needed reliable consumption metrics, trend analysis, and benchmarks by route, vehicle, and driver."
+              },
+              {
+                "type": "paragraph",
+                "text": "I built a fuel consumption analytics solution with warehouse models, SSAS measures, and Power BI dashboards highlighting usage patterns, outliers, and cost drivers."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Source data arrived from multiple fleet systems with different formats.",
+                  "No standard KPIs existed for consumption per distance or route.",
+                  "Outliers were spotted late, after costs had already accumulated.",
+                  "Operations lacked drill-down from summary to vehicle level."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Data integration"
+              },
+              {
+                "type": "paragraph",
+                "text": "Combined fleet telematics, fuel purchase records, and master vehicle data into a unified model with validated joins and unit normalization."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Analytics model"
+              },
+              {
+                "type": "paragraph",
+                "text": "Created SSAS measures for consumption rates, variance vs benchmark, and period-over-period trends, exposed through Power BI with intuitive drill paths."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Consumption per km and per route.",
+                  "Vehicle and driver benchmarking.",
+                  "Monthly variance and exception flags."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Operational reporting"
+              },
+              {
+                "type": "paragraph",
+                "text": "Delivered dashboards for fleet managers with filters by depot, vehicle type, and time period, replacing manual Excel consolidation."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Fuel KPIs standardized across operations and finance.",
+                  "Managers identified high-consumption vehicles and routes faster.",
+                  "Reporting cycle moved from manual spreadsheets to automated dashboards.",
+                  "Benchmarking enabled more objective performance conversations."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would enrich the model with maintenance and route metadata earlier to explain consumption spikes with more context, not just flag them."
+              }
+            ]
+          },
+          {
+            "id": "fuel-consumption-fraud-detection",
+            "title": "Fuel Consumption Fraud Detection",
+            "subtitle": "Anomaly detection on fuel transactions to flag potential misuse or fraud.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Fuel Consumption Fraud Detection preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, SSAS, Power BI, Machine Learning"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Alongside consumption analytics, the business needed to detect suspicious fuel transactions — unusual volumes, off-hours fills, mismatched locations, and patterns that manual review could not scale to."
+              },
+              {
+                "type": "paragraph",
+                "text": "I extended the fuel analytics platform with rule-based and machine-learning-assisted anomaly detection, surfaced through SSAS/Power BI alerts and review workflows."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Fraud patterns were subtle and varied by depot and vehicle type.",
+                  "Manual review could not cover every transaction each month.",
+                  "False positives risked overwhelming investigators if rules were too broad.",
+                  "Investigators needed context, not just alert flags."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Feature and rule layer"
+              },
+              {
+                "type": "paragraph",
+                "text": "Engineered SQL features for transaction timing, volume vs tank capacity, location mismatch, and frequency outliers, combined with tunable business rules."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Detection models"
+              },
+              {
+                "type": "paragraph",
+                "text": "Applied machine learning scoring on top of governed warehouse data, with thresholds calibrated to balance alert volume and precision."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Rule-based flags for hard violations.",
+                  "ML scores for subtle pattern anomalies.",
+                  "Analyst review queue with transaction context."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Investigation dashboards"
+              },
+              {
+                "type": "paragraph",
+                "text": "Power BI views grouped alerts by severity, depot, and repeat offenders, giving investigators drill-down to transaction history and vehicle metadata."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Suspicious transactions surfaced automatically instead of by chance.",
+                  "Investigation time reduced through contextual alert dashboards.",
+                  "Repeat anomaly patterns became visible across depots and vendors.",
+                  "Finance and operations shared one fraud monitoring view."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would add feedback loops so investigator outcomes retrain thresholds and reduce false positives over time."
+              }
+            ]
+          },
+          {
+            "id": "retail-management-analysis",
+            "title": "Retail Management Analysis",
+            "subtitle": "Retail performance analytics for Fractal Investors — sales, margin, and inventory insights.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Retail Management Analysis preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, Data Warehouse, Power BI, DAX, Git, GitHub, Fabric"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Fractal Investors needed a clear view of retail performance across stores and product lines — sales trends, margin drivers, inventory health, and comparisons that supported investment and operational decisions."
+              },
+              {
+                "type": "paragraph",
+                "text": "I built a retail management analysis solution on a governed warehouse and Power BI semantic model, with Git-backed development and Microsoft Fabric-ready patterns for scalable refresh and collaboration."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Retail metrics were defined differently across reports and spreadsheets.",
+                  "Inventory and sales data came from multiple extracts with timing mismatches.",
+                  "Investors needed trustworthy KPIs without waiting for manual consolidation.",
+                  "The solution had to be maintainable as new stores and SKUs were added."
+                ]
+              },
+              {
+                "type": "quote",
+                "text": "We need retail KPIs we can defend in a meeting, not rebuild in Excel every week.",
+                "cite": "Client stakeholder"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Retail data model"
+              },
+              {
+                "type": "paragraph",
+                "text": "Designed dimensional models for store, product, calendar, and promotions with facts for sales, margin, and inventory snapshots suitable for investor reporting."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Power BI and DAX metrics"
+              },
+              {
+                "type": "paragraph",
+                "text": "Implemented reusable DAX measures for growth, mix, margin, and stock cover, with drill-through from portfolio summary to store and SKU detail."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Same-store and new-store comparisons.",
+                  "Category mix and margin bridge views.",
+                  "Inventory aging and cover metrics."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Delivery workflow"
+              },
+              {
+                "type": "paragraph",
+                "text": "Used Git for report and model versioning and structured refresh patterns compatible with Fabric, so the client could evolve the solution without losing governance."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Retail KPIs standardized for investor and management reviews.",
+                  "Manual Excel consolidation replaced by refreshed dashboards.",
+                  "Drill-down enabled faster answers during operational meetings.",
+                  "Version control improved confidence when publishing model changes."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would add explicit data freshness indicators on each dashboard page so users always know the as-of date for sales and inventory snapshots."
+              }
+            ]
+          },
+          {
+            "id": "currencies-conversion-rate-scraping",
+            "title": "Currencies Conversion Rate Scraping",
+            "subtitle": "Automated daily FX rate collection for downstream financial calculations.",
+            "isConfidential": false,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Currencies Conversion Rate Scraping preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, Web Scraping, APIs"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Finance processes needed reliable daily currency conversion rates, but manual downloads from public sources were inconsistent and easy to forget."
+              },
+              {
+                "type": "paragraph",
+                "text": "I built a Python scraping and API ingestion job that collected rates on schedule, normalized currencies, and published clean outputs for warehouse and reporting consumers."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Rates were copied manually from websites with no audit trail.",
+                  "Missing days caused downstream calculation failures.",
+                  "Multiple currency pairs required consistent formatting and storage.",
+                  "Source layout changes broke informal copy-paste workflows."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Collection pipeline"
+              },
+              {
+                "type": "paragraph",
+                "text": "Python scripts scraped and/or called public rate sources, with retries, logging, and validation for missing pairs or abnormal movements."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Scheduled daily execution.",
+                  "Normalized currency codes and decimal precision.",
+                  "Alerting on failed runs or stale data."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Published outputs"
+              },
+              {
+                "type": "paragraph",
+                "text": "Stored results in files or tables ready for warehouse ingestion, with historical retention for backdated financial recalculations."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Daily FX rates collected automatically with history retained.",
+                  "Downstream jobs stopped failing due to missing conversion data.",
+                  "Manual download effort removed from the finance support routine.",
+                  "Source changes isolated to the scraper instead of breaking spreadsheets."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would add multi-source fallback and variance checks when two providers diverge beyond a tolerance."
+              }
+            ]
+          },
+          {
+            "id": "stock-market-streak-analysis",
+            "title": "Stock Market Streak Analysis",
+            "subtitle": "Python analysis of winning and losing streaks in market price series.",
+            "isConfidential": false,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Stock Market Streak Analysis preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, Pandas, APIs, Bash"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "This personal analytics project explored streak behavior in stock price movements — consecutive up/down days, streak length distributions, and conditional follow-on performance using public market data."
+              },
+              {
+                "type": "paragraph",
+                "text": "I used Python, Pandas, and API-sourced prices to build a reproducible notebook-style pipeline with exported summaries suitable for further statistical exploration."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Raw API responses needed cleaning and alignment to trading calendars.",
+                  "Streak definitions had to be explicit and comparable across symbols.",
+                  "Large symbol lists required efficient batch processing.",
+                  "Results needed clear outputs, not ad hoc notebook state only."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Data ingestion"
+              },
+              {
+                "type": "paragraph",
+                "text": "Pulled historical prices via APIs, normalized timestamps, handled missing sessions, and stored tidy datasets for analysis."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Streak engine"
+              },
+              {
+                "type": "paragraph",
+                "text": "Implemented streak detection for up/down/neutral sequences with summary stats by symbol, sector, and time window."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Streak length distribution.",
+                  "Post-streak return windows.",
+                  "Batch processing with Pandas."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Automation shell"
+              },
+              {
+                "type": "paragraph",
+                "text": "Wrapped execution in Bash for repeatable runs and parameterised symbol lists, making experiments easy to rerun."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Reproducible pipeline for streak analysis across many symbols.",
+                  "Clear summaries replaced one-off manual charting.",
+                  "Framework reusable for other time-series pattern studies.",
+                  "Good foundation for deeper statistical or ML follow-ups."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would package the streak engine as a small CLI tool with saved configs per experiment to compare runs over time."
+              }
+            ]
+          },
+          {
+            "id": "atm-data-parsing-solution",
+            "title": "ATM Data Parsing Solution",
+            "subtitle": "Parsing messy ATM log files into structured warehouse-ready datasets.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "ATM Data Parsing Solution preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, Pandas, Regex, DWH, Bash"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "ATM transaction logs arrived as semi-structured text files with inconsistent delimiters, embedded codes, and occasional malformed rows. Loading them manually into the warehouse was slow and error-prone."
+              },
+              {
+                "type": "paragraph",
+                "text": "I built a Python parsing pipeline using Pandas and regex to extract fields, validate records, quarantine bad rows, and output clean tables for downstream DWH loads."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "File formats varied by source device and export job.",
+                  "Regex-only scripts were brittle when new codes appeared.",
+                  "Bad rows could silently corrupt aggregates if not quarantined.",
+                  "Operations needed daily loads with minimal manual intervention."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Parser framework"
+              },
+              {
+                "type": "paragraph",
+                "text": "Created modular parsers per file variant with shared validation, logging, and output schemas so new formats could be added without rewriting the whole job."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Regex and delimiter-based field extraction.",
+                  "Row-level validation and error codes.",
+                  "Quarantine files for malformed records."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Warehouse handoff"
+              },
+              {
+                "type": "paragraph",
+                "text": "Published structured CSV or table outputs aligned to staging schemas, orchestrated via Bash for nightly execution alongside existing DWH jobs."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "ATM logs loaded reliably into structured staging tables.",
+                  "Malformed records isolated instead of breaking pipelines.",
+                  "Manual parsing effort reduced to exception handling only.",
+                  "New file variants onboarded by adding parser modules, not new projects."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would add schema versioning metadata on each output batch so downstream models can trace which parser version produced a given load."
+              }
+            ]
+          },
+          {
+            "id": "retail-financial-analytics-dashboard",
+            "title": "Retail Financial Analytics Dashboard",
+            "subtitle": "Full-stack retail financial dashboard with API, database, and modern frontend.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Retail Financial Analytics Dashboard preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, FastAPI, PostgreSQL, Docker, Git, GitHub, Typescript, Data Governance, Data Warehouse"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Retail finance stakeholders needed more than static reports — they wanted an interactive dashboard backed by a proper API, governed database, and deployable architecture they could evolve."
+              },
+              {
+                "type": "paragraph",
+                "text": "I delivered a retail financial analytics dashboard using Python/FastAPI, PostgreSQL, TypeScript frontend, Docker packaging, and GitHub-based CI workflows, with warehouse-aligned metrics and data governance considerations built in."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "The challenge"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Existing reporting was spreadsheet-heavy and hard to secure.",
+                  "Metrics needed a backend API, not just embedded report logic.",
+                  "Deployment and environment consistency mattered for handover.",
+                  "Data governance rules had to apply to self-service views."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I built"
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "1. Data and API layer"
+              },
+              {
+                "type": "paragraph",
+                "text": "Modeled retail financial metrics in PostgreSQL with FastAPI endpoints exposing filtered aggregates, detail drill-downs, and health checks for monitoring."
+              },
+              {
+                "type": "list",
+                "style": "ordered",
+                "items": [
+                  "Curated metric tables from warehouse exports.",
+                  "REST endpoints with role-aware filters.",
+                  "Validation and error handling on query params."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "2. Dashboard application"
+              },
+              {
+                "type": "paragraph",
+                "text": "Built a TypeScript frontend consuming the API with responsive views for P&L-style summaries, trends, and store-level comparisons."
+              },
+              {
+                "type": "heading",
+                "level": 3,
+                "text": "3. Delivery and ops"
+              },
+              {
+                "type": "paragraph",
+                "text": "Containerized the stack with Docker, documented environment setup, and used Git/GitHub for version control and repeatable deployments."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Docker compose for local and demo environments.",
+                  "Governed metric definitions documented alongside schema.",
+                  "Foundation ready for CI/CD extension."
+                ]
+              },
+              {
+                "type": "image",
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Retail financial dashboard",
+                "caption": "Retail financial dashboard — API-backed metrics with interactive views."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Results"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Interactive dashboard replaced static spreadsheet distribution.",
+                  "API layer enabled future integrations without rebuilding metrics.",
+                  "Docker packaging simplified demo and deployment consistency.",
+                  "Governed metrics reduced conflicting retail finance numbers."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What I would do differently"
+              },
+              {
+                "type": "paragraph",
+                "text": "I would add automated API contract tests and seed data fixtures earlier so frontend and backend teams could iterate in parallel more safely."
               }
             ]
           }

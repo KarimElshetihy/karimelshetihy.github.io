@@ -10,6 +10,7 @@ import {
   renderConfidentialNote,
   renderProjectInfoItem
 } from "../portfolio/renderProjectInfo.js";
+import { findProjectById, getRequestedProjectId } from "../portfolio/projectIdFromUrl.js";
 
 function escapeHtml(text) {
   return String(text ?? "")
@@ -718,11 +719,9 @@ function renderStarterData(data) {
 }
 
 function renderPortfolioDetailsData(data) {
-  const requestedProjectId = new URLSearchParams(window.location.search).get("project");
+  const requestedProjectId = getRequestedProjectId();
   const projectVariants = Array.isArray(data.projects) ? data.projects : [];
-  const matchedProject = requestedProjectId
-    ? projectVariants.find((item) => item.id === requestedProjectId)
-    : null;
+  const matchedProject = findProjectById(projectVariants, requestedProjectId);
   const selectedProject = matchedProject ?? projectVariants[0];
   const detailsData = selectedProject ?? data;
 
