@@ -1,0 +1,124 @@
+# Short Business Description for Non-Technical Readers
+
+## Overview
+
+This project delivered a centralized Analytics Model for different payment systems and transaction channels.
+
+The organization had many systems handling transactions, including online payment channels, POS, reservations, cheques, CPS, partners, ATMs, and other services. Each system had its own structure, which made reporting and reconciliation difficult.
+
+The goal was to create one unified model that combined all transaction data in a single place. This model was used by the settlement team for settlement and reconciliation, and by top management and operational teams to monitor performance, operational KPIs, and forecasts.
+
+The platform processed around 0.5 million to 2 million transactions per day, with transaction values of approximately 9 billion to 14 billion.
+
+## The challenge
+
+Transaction data was spread across many systems and channels.
+
+Each payment channel had a different structure, including online payments through portals and mobile applications, POS direct purchases, bill payments, reservations, cheques, CPS, partners, ATMs, and other channels.
+
+Because of this, settlement and reconciliation were difficult. Teams had to compare data from multiple systems, and management did not have one clear view of total transaction performance.
+
+Operational teams also needed to monitor KPIs by channel, service provider, partner, biller, and service, but the data was not available in one unified structure.
+
+Another challenge was the large daily transaction volume. The solution had to process millions of transactions efficiently while still supporting fast reporting and analysis.
+
+The business needed one trusted model for settlement, reconciliation, operational monitoring, management reporting, and forecasting.
+
+## What I built
+
+### 1. Centralized transaction model
+
+I built a centralized data model that collected transaction data from all major payment systems and channels.
+
+The model included data from:
+
+* Billing System.
+* Settlement and Reconciliation System.
+* POS systems.
+* ATM-related transactions.
+* Payment Gateway for online transactions.
+* Reservation systems for tickets, hospitals, and similar services.
+* Cheques.
+* CPS.
+* Partners and other channels.
+
+This created one unified view of transactions across the organization.
+
+### 2. Daily data integration
+
+I built daily data loading processes using ODI to collect transactions from the different systems and centralize them in the data warehouse.
+
+The platform handled around 0.5 million to 2 million transactions per day, with large daily transaction values.
+
+To support this volume, the main transaction table was designed for performance using partitioning and indexing.
+
+### 3. Business dimensions and classifications
+
+The model included around 23 lookup tables to organize transactions by the required business dimensions.
+
+These included:
+
+* Service providers.
+* Billers.
+* Channels.
+* Delivery channels.
+* Fulfillment entities.
+* Partners.
+* Services.
+* Governmental transaction details.
+* Accounting units.
+* IT hierarchy.
+* Economic or budgetary type.
+* Budget categories.
+* Institutional sector.
+* Functional sector.
+
+This allowed users to analyze transaction performance from different business angles.
+
+### 4. Reporting and dashboards
+
+I built the reporting model using SSAS and created the required measures and KPIs.
+
+Power BI dashboards were then built to help users monitor transaction performance, settlement and reconciliation status, channel activity, provider performance, service performance, and operational KPIs.
+
+The dashboards were used by settlement teams, operational teams, and top management.
+
+The reports also supported forecasting to help the business understand expected transaction trends.
+
+### 5. Governance and access control
+
+Row-Level Security was applied to control access for different operational teams.
+
+Each team could see only the channels, services, or transaction data relevant to its responsibility, while management could access broader consolidated views.
+
+This allowed the organization to use one shared analytics platform while protecting sensitive transaction data.
+
+## Results
+
+The project created one centralized view of transaction activity across multiple payment systems and channels.
+
+The settlement team gained a reliable model to support settlement and reconciliation.
+
+Operational teams gained dashboards to monitor transaction volumes, transaction amounts, service performance, channel performance, success rates, failures, and other KPIs.
+
+Top management gained a consolidated view of payment performance across the organization.
+
+The platform supported high daily transaction volumes, processing around 0.5 million to 2 million transactions per day.
+
+The performance-optimized model allowed users to analyze large transaction volumes more efficiently.
+
+The forecasting layer helped management and operations teams understand expected future transaction trends.
+
+Row-Level Security improved governance by ensuring users only accessed the data relevant to their roles.
+
+## What I would do differently
+
+If I rebuilt this project today, I would add stronger automated checks and monitoring from the beginning.
+
+This would include checks for missing transactions, duplicate transactions, source-to-target totals, unusual transaction drops, abnormal spikes, and settlement mismatches.
+
+I would also create a monitoring dashboard to track daily data loads, failed jobs, missing channels, and data readiness.
+
+For reconciliation, I would add a clearer exception-management workflow so teams could track and resolve settlement differences more easily.
+
+The model achieved its main goal by unifying payment data and supporting settlement, reconciliation, operations, management reporting, and forecasting. Stronger monitoring and automated controls would make it even easier to support and scale.

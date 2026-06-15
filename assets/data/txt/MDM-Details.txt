@@ -1,0 +1,222 @@
+# Detailed Project Description
+
+## Overview
+
+This project delivered a centralized Analytics Model for multiple payment systems, transaction channels, and service platforms. The organization had transactions coming from many different systems, including Payment Gateway channels, POS channels, reservation platforms, cheques, CPS, partners, and other transaction sources.
+
+The purpose of the project was to unify all these different payment and transaction structures into one centralized data model in the data warehouse. This model was used by the settlement and reconciliation team to support daily settlement, reconciliation, and transaction validation. It was also used by top management and operational teams to monitor performance, operational KPIs, transaction volumes, transaction values, channel performance, service-provider performance, and forecasting.
+
+The model consolidated transactions from several source systems, including the Billing System, Settlement and Reconciliation System, POS Switch Database, ATM-related data, Payment Gateway system, and Reservation system. The reservation data covered ticketing, hospital reservations, and similar booking or service-reservation transactions.
+
+The platform handled daily transaction ingestion of approximately 0.5 million to 2 million transactions, with transaction values ranging between around 9 billion and 14 billion. Because of this volume, performance optimization was a key part of the design. The main transaction table was partitioned, indexed, and organized to support reporting, settlement analysis, and operational monitoring efficiently.
+
+The full analytics solution covered ETL development using ODI, centralized data modeling in the data warehouse, SSAS reporting model design, DAX measures and KPIs, Power BI dashboards, and Row-Level Security to control access for different operational teams.
+
+## The challenge
+
+The organization had many payment systems and transaction channels, each with its own structure, data format, transaction lifecycle, business rules, and reporting needs.
+
+Channels such as Payment Gateway, POS, reservations, cheques, CPS, partners, and other services were operating across separate platforms. This made it difficult to create one consistent view of transaction activity, settlement status, reconciliation results, and operational performance.
+
+The Payment Gateway covered online channels such as portals and mobile applications. POS channels included direct purchase and bill payment. The reservation platforms handled ticketing, hospital reservations, and similar service-booking transactions. Additional systems such as cheques, CPS, partners, billing, switch databases, and settlement systems added more complexity.
+
+The settlement team needed a reliable model to support settlement and reconciliation across all channels, while top management and operational teams needed a unified view to monitor performance and KPIs.
+
+The source systems were not designed around one shared reporting structure. Each system had different transaction identifiers, service definitions, provider structures, channel logic, settlement rules, and operational attributes.
+
+Another major challenge was transaction volume. The model needed to process around 0.5 million to 2 million transactions per day, with large daily transaction amounts. This required strong table design, partitioning, indexing, and optimized data loading.
+
+Access governance was also important. Different operational teams needed access to their own relevant transactions, channels, and KPIs without exposing unrelated or sensitive data from other areas.
+
+The core challenge was to build one unified, scalable, and governed analytics model that could serve settlement, reconciliation, operational monitoring, management reporting, and forecasting.
+
+## What I built
+
+### 1. Centralized transaction ingestion layer
+
+I built ETL jobs using Oracle Data Integrator to pull transaction data from the different payment and operational systems into the data warehouse.
+
+The ingestion layer collected data from multiple source systems, including:
+
+* Billing System.
+* Settlement and Reconciliation System.
+* POS Switch Database for commercial and governmental POS transactions.
+* ATM-related transaction data.
+* Payment Gateway system for online transactions.
+* Reservation system for tickets, hospital reservations, and similar services.
+* Cheques.
+* CPS.
+* Partners and other channels.
+
+The ETL layer standardized transaction data from different structures and prepared it for the centralized analytics model.
+
+The model ingested daily transaction volumes ranging from around 0.5 million to 2 million transactions, with transaction values of approximately 9 billion to 14 billion. Because of this scale, the ingestion process had to be reliable, repeatable, and optimized for daily refresh.
+
+Key activities included:
+
+* Extracting transaction data from multiple payment systems.
+* Standardizing different source structures into one unified model.
+* Mapping service providers, billers, channels, partners, services, and fulfillment entities.
+* Preparing data for settlement and reconciliation use cases.
+* Supporting operational KPI reporting and management dashboards.
+* Handling high daily transaction volumes.
+* Optimizing data loading and transformation logic.
+
+### 2. Unified payment analytics data model in the data warehouse
+
+I built a centralized analytics model in the data warehouse to unify transaction data across all payment systems and channels.
+
+The model was designed to support multiple business use cases from the same foundation: settlement, reconciliation, operational performance monitoring, top-management reporting, and forecasting.
+
+The main transaction table was designed as the core fact table of the model. It stored transaction-level data from all integrated systems and was structured to support analysis by channel, service, provider, partner, fulfillment entity, transaction type, transaction status, settlement status, date, amount, and other operational attributes.
+
+To support performance and reporting flexibility, the main transaction table was partitioned and indexed. This was important because the platform processed millions of daily transactions and large transaction amounts.
+
+Around 23 lookup and dimension tables were created to cover the required reporting dimensions and business classifications.
+
+The model included dimensions and lookup structures for:
+
+* Service providers.
+* Billers.
+* Channels.
+* Delivery channels.
+* Fulfillment entities.
+* Partners.
+* Services.
+* Transaction types.
+* Transaction statuses.
+* Settlement and reconciliation attributes.
+* POS and Payment Gateway classifications.
+* Reservation and ticketing attributes.
+* Governmental transaction attributes.
+* Accounting units.
+* IT hierarchy.
+* Economic or budgetary transaction type.
+* Budget categories.
+* Institutional sector.
+* Functional sector.
+
+This structure allowed different business users to analyze transactions consistently across systems that previously had different definitions and formats.
+
+### 3. Settlement and reconciliation support
+
+One of the main purposes of the model was to support settlement and reconciliation activities.
+
+The settlement team used the model to validate transaction activity across channels, compare data from different systems, monitor settlement status, and identify mismatches or exceptions.
+
+Because the model centralized transaction data from billing, settlement, POS, Payment Gateway, reservation, CPS, cheque, and partner systems, the team could work from one trusted dataset instead of switching between multiple source reports.
+
+The model helped support:
+
+* Daily settlement analysis.
+* Transaction reconciliation.
+* Channel-level settlement tracking.
+* Provider and partner reconciliation.
+* Identification of unmatched or missing transactions.
+* Monitoring of transaction status and settlement status.
+* Analysis of transaction amounts and counts by service, provider, and channel.
+
+This improved the settlement team’s ability to review large transaction volumes and focus on exceptions rather than manual data collection.
+
+### 4. Reporting semantic model using SSAS
+
+After centralizing the transaction data in the data warehouse, I built the reporting model using SSAS.
+
+The SSAS model acted as the semantic layer for reporting and analytics. It provided a governed business layer between the data warehouse and Power BI, allowing users to consume consistent measures and KPIs.
+
+I created the required DAX measures and KPIs to support settlement, reconciliation, operational monitoring, and management reporting.
+
+The measures covered areas such as:
+
+* Transaction count.
+* Transaction amount.
+* Successful and failed transactions.
+* Transaction performance by channel.
+* Transaction performance by service provider.
+* Transaction performance by biller.
+* Settlement and reconciliation KPIs.
+* Partner and fulfillment performance.
+* POS, ATM, and Payment Gateway performance.
+* Reservation and ticketing performance.
+* Governmental transaction analysis.
+* Forecasting-related metrics.
+
+The SSAS layer helped ensure that KPIs were calculated consistently across reports and teams.
+
+### 5. Power BI dashboards and operational reporting
+
+Power BI was used as the main visualization and reporting layer.
+
+The dashboards were designed for different user groups, including settlement teams, operational teams, top management, and channel owners.
+
+The reports allowed users to monitor performance across all payment systems and channels. They provided views for transaction volume, transaction amount, success rates, failed transactions, service-provider performance, channel performance, partner performance, settlement status, reconciliation indicators, and operational KPIs.
+
+The dashboards also supported forecasting, helping management and operational teams understand expected future transaction behavior based on historical trends.
+
+The Power BI reports enabled:
+
+* Daily monitoring of payment channels.
+* Settlement and reconciliation reporting.
+* Transaction performance analysis.
+* Operational KPI tracking.
+* Management-level performance summaries.
+* Forecasting of transaction volumes and amounts.
+* Drill-down analysis by channel, provider, service, partner, and transaction category.
+* Comparison across different payment systems from one unified view.
+
+### 6. Governance and Row-Level Security
+
+Row-Level Security was implemented to control access for different operational teams.
+
+Because the platform centralized data from many systems and channels, not every user needed access to all transaction data. RLS allowed each operational team to access only the transactions, channels, services, or business areas relevant to their role.
+
+This governance model protected sensitive transaction information while still allowing the organization to use one shared analytics platform.
+
+The access model supported:
+
+* Controlled access by operational team.
+* Channel-specific visibility.
+* Service-provider or partner-based access where required.
+* Management-level access to consolidated views.
+* Secure sharing of dashboards across different business users.
+* Consistent governance across Power BI reporting.
+
+This ensured that teams could work from the same centralized model without compromising data security or confidentiality.
+
+## Results
+
+The project created one centralized analytics model for payment systems and transaction channels that were previously spread across multiple platforms.
+
+The settlement and reconciliation team gained a unified source of transaction data to support daily settlement, reconciliation, exception analysis, and transaction validation.
+
+Top management gained a consolidated view of transaction performance across Payment Gateway, POS, ATM, reservation, cheques, CPS, partners, and other channels.
+
+Operational teams gained dashboards to monitor channel performance, service-provider performance, transaction volumes, transaction values, success rates, failures, and operational KPIs.
+
+The model successfully handled high daily transaction volumes of approximately 0.5 million to 2 million transactions, with transaction values ranging between around 9 billion and 14 billion.
+
+The partitioned and indexed transaction table improved performance and allowed large-scale transaction analysis to be served efficiently.
+
+The 23 lookup and dimension tables created a flexible structure for analyzing transactions by provider, biller, channel, service, partner, fulfillment entity, governmental classifications, accounting units, sectors, and budget categories.
+
+The SSAS semantic model improved consistency by centralizing DAX measures, KPIs, and reporting logic.
+
+Power BI dashboards made it easier for settlement, operations, and management users to track performance and investigate issues from one place.
+
+Row-Level Security improved governance by ensuring that each operational team could access only the data relevant to its responsibility.
+
+The forecasting layer gave management and operational teams a forward-looking view of transaction trends and expected performance.
+
+## What I would do differently
+
+If I rebuilt this project today, I would invest earlier in stronger data quality, reconciliation automation, and operational observability.
+
+I would add more automated validation checks between source systems and the centralized model, including transaction count checks, amount reconciliation, duplicate detection, missing transaction checks, source-to-target balancing, and settlement-status validation.
+
+I would also build a dedicated monitoring dashboard for ETL health, daily transaction load status, delayed source files, failed jobs, missing channels, abnormal transaction drops, and unusual spikes in transaction amounts.
+
+For settlement and reconciliation, I would add more exception-management workflows to help users track, assign, comment on, and resolve reconciliation differences directly from the platform.
+
+I would also document the transaction lifecycle, KPI definitions, source-system mappings, RLS rules, and business ownership of each dimension more formally in a data dictionary.
+
+The model successfully unified complex payment systems and supported settlement, reconciliation, operations, management reporting, and forecasting. However, stronger observability, automated reconciliation controls, and better documentation from the beginning would have made the platform easier to operate, audit, and scale.

@@ -1,0 +1,180 @@
+# Detailed Project Description
+
+## Overview
+
+This project delivered a centralized Financial Analytics Platform for an organization operating across five subsidiaries. The organization had financial data distributed across two different ERP systems: one on-premises ERP hosted on the company’s own servers, and Oracle Fusion ERP as a cloud-based system.
+
+The purpose of the platform was to consolidate financial data from both ERP environments into one governed data model, enabling top management to monitor the full financial position and performance of the group across subsidiaries.
+
+I worked on the full analytics solution, starting from the ETL and integration layer, through the data warehouse and semantic model, and finally to the Power BI dashboards. The platform also included an Oracle Apex application to support manual data ingestion for financial modules that were either not available in the ERP systems or required finance-team calculations before being reported.
+
+The platform was designed to support both standalone subsidiary reporting and consolidated investment group reporting. Each subsidiary could access its own financial data independently, while the investment group had access to a consolidated view across all five subsidiaries using Row-Level Security and governance rules.
+
+The solution automated weekly and monthly reporting across key financial areas including Income Statement, Balance Sheet, Cash Flow, Budget, Eliminations, Invoice Analysis, Accounts Payable, Accounts Receivable, and Current Cash Position.
+
+## The challenge
+
+The organization had five subsidiaries, but financial data was not available in one centralized and consistent reporting layer.
+
+Some subsidiaries were using an on-premises ERP system, while others relied on Oracle Fusion ERP in the cloud. This created a major integration challenge because the two systems had different structures, access methods, and reporting logic.
+
+The on-premises ERP could be accessed directly through SQL and ODI, but Oracle Fusion ERP was more restricted and treated as a black box. Direct ETL extraction was not possible, so integration had to be handled through APIs built in cooperation with the business integration team.
+
+Finance teams also had reporting requirements for modules that were not fully covered by the ERP systems. Some numbers had to be entered manually, adjusted, or calculated by the finance team before being included in management reports.
+
+Weekly and monthly reporting was time-consuming because data had to be collected, validated, consolidated, and prepared manually from different sources.
+
+Another key challenge was governance. Each subsidiary needed to see its own financial position and performance, while the investment group needed a consolidated view across all subsidiaries. This required a controlled security model to ensure sensitive financial information was only visible to authorized users.
+
+Top management needed a unified view of financial position and performance, but the existing process made it difficult to compare subsidiaries, track KPIs consistently, and connect ERP financial numbers with operational performance.
+
+The core challenge was not only to build dashboards, but to create a complete financial analytics foundation that could support trusted, automated, secure, and scalable management reporting.
+
+## What I built
+
+### 1. ETL and integration layer
+
+I built the ETL jobs required to load data from the on-premises ERP system into the data warehouse. This involved using SQL and Oracle Data Integrator to extract, transform, and load the required financial data.
+
+For the Oracle Fusion ERP system, direct database extraction was not available. I worked with the business integration team, who developed the required APIs to expose the needed data from Oracle Fusion. These APIs were then integrated into the overall data loading process so that both ERP systems could feed the centralized platform.
+
+The integration layer handled data extraction, transformation, mapping, and preparation for downstream financial modeling. It also supported the consolidation of data from multiple subsidiaries and multiple financial modules.
+
+Key activities included:
+
+* Extracting financial data from the on-premises ERP using SQL and ODI.
+* Integrating Oracle Fusion ERP data through APIs.
+* Aligning data structures from two different ERP systems.
+* Preparing data for group-level financial reporting.
+* Supporting weekly and monthly refresh cycles.
+* Handling source-system differences across subsidiaries.
+* Creating repeatable ETL processes to reduce manual reporting effort.
+
+### 2. Financial analytics data model in the data warehouse
+
+After integrating the ERP data, I helped build the centralized Financial Analysis Data Model in the data warehouse.
+
+This model was designed to support both detailed financial analysis and high-level management reporting. It consolidated financial information across subsidiaries and organized it into business-ready reporting areas.
+
+The main financial modules included:
+
+* Income Statement.
+* Balance Sheet.
+* Cash Flow.
+* Budget.
+* Eliminations.
+* Invoice Analysis.
+* Accounts Payable.
+* Accounts Receivable.
+* Current Cash Position.
+
+The model provided a consistent structure for financial reporting across the group. It allowed the organization to analyze performance by subsidiary, account, period, financial statement line, business unit, and other relevant dimensions.
+
+A dedicated layer was also added to compare ERP financial data with operational performance, allowing management to connect financial outcomes with business activity.
+
+### 3. Oracle Apex application for manual data ingestion
+
+Not all required financial data was available directly from the ERP systems. Some modules required manual input, finance-team adjustments, or calculated values based on ERP data.
+
+To support this, an Oracle Apex application was built as part of the platform. The application allowed finance users to enter, maintain, and manage data that was not available through automated ERP extraction.
+
+This helped reduce dependency on scattered Excel files and provided a controlled way to collect supplementary financial inputs.
+
+The Apex application supported:
+
+* Manual data entry for non-ERP modules.
+* Finance-team adjustments and calculated inputs.
+* Controlled data ingestion into the reporting model.
+* Improved governance compared with offline spreadsheet handling.
+* Better integration between manual finance inputs and automated ERP data.
+
+### 4. Reporting semantic model using SSAS
+
+Once the financial data model was prepared in the data warehouse, I built the reporting model using a star schema approach in SSAS.
+
+The SSAS model acted as the governed semantic layer between the warehouse and Power BI. It provided reusable measures, KPIs, and calculations so that reporting logic remained consistent across dashboards.
+
+I created the required DAX measures and KPIs for financial analysis, including calculations related to financial statements, budget comparison, subsidiary-level performance, invoice analysis, payables, receivables, cash position, and operational comparisons.
+
+The semantic model helped ensure that users were not calculating KPIs differently in different reports. Instead, Power BI consumed a centralized and governed reporting model.
+
+Key elements included:
+
+* Star schema reporting model.
+* Fact tables for financial transactions, balances, budgets, invoices, AP, AR, and cash position.
+* Dimensions for company, subsidiary, account, period, statement line, and other reporting attributes.
+* DAX measures for financial KPIs.
+* Consistent business definitions across dashboards.
+* A governed reporting layer for Power BI consumption.
+
+### 5. Governance, subsidiary views, and consolidated group reporting
+
+The reporting model was designed with governance and controlled access from the beginning. It provided two reporting experiences from the same centralized model: a standalone view for each subsidiary company and a consolidated view for the investment group.
+
+Each subsidiary could access its own financial position, performance, KPIs, and detailed module analysis independently. At the same time, the investment group had access to a consolidated view across all five subsidiaries, including group-level financial statements, eliminations, budget performance, cash position, and cross-company comparisons.
+
+Row-Level Security was implemented to control data access and ensure that users only saw the data relevant to their company or role. Subsidiary users could view only their own company’s data, while authorized group-level users could access the consolidated investment group view.
+
+This governance layer protected sensitive financial data while still enabling the organization to use one shared reporting platform across all subsidiaries.
+
+### 6. Power BI dashboards and financial reporting
+
+I built Power BI reports organized into dedicated pages for each major financial area. The dashboards were designed to give top management a clear view of the group’s financial position and performance, while also allowing finance users to drill down into detailed KPIs.
+
+The report pages covered the main financial statements and analytical modules, including Income Statement, Balance Sheet, Cash Flow, Budget, Eliminations, Invoice Analysis, Accounts Payable, Accounts Receivable, and Current Cash Position.
+
+The dashboards provided interactive filtering and drill-down analysis across subsidiaries, periods, accounts, and business areas.
+
+A forecasting model was also created to forecast revenue for the coming months, giving management a forward-looking view in addition to historical reporting.
+
+The Power BI layer enabled:
+
+* Automated weekly and monthly financial reporting.
+* Consolidated group-level reporting across five subsidiaries.
+* Standalone reporting views for each subsidiary.
+* Controlled access using Row-Level Security.
+* Detailed financial statement analysis.
+* KPI tracking by module.
+* Revenue forecasting for upcoming months.
+* Comparison between ERP financial data and operational performance.
+* Faster access to management insights.
+
+## Results
+
+The platform automated a large part of the weekly and monthly financial reporting process.
+
+Top management gained a centralized view of the organization’s financial position and performance across five subsidiaries.
+
+Each subsidiary gained a dedicated standalone view of its own financial position, performance, KPIs, and detailed module analysis.
+
+The investment group gained a consolidated view across all five subsidiaries, including group-level financial statements, eliminations, budget performance, cash position, and cross-company comparisons.
+
+Row-Level Security improved data governance by ensuring that subsidiary users accessed only their own company’s data, while authorized group-level users could view consolidated performance across all companies.
+
+Finance teams could rely on one consolidated data model instead of manually collecting and reconciling data from multiple ERP systems and spreadsheets.
+
+The integration of on-premises ERP data and Oracle Fusion ERP data created a unified reporting foundation despite the different source-system architectures.
+
+Power BI dashboards gave management and finance users interactive access to Income Statement, Balance Sheet, Cash Flow, Budget, Eliminations, Invoice Analysis, AP, AR, and Current Cash Position.
+
+The SSAS semantic model improved KPI consistency by centralizing business logic, DAX measures, and financial calculations.
+
+The Oracle Apex application improved the handling of manual financial inputs by replacing scattered manual processes with a controlled data-entry layer.
+
+The revenue forecasting model added forward-looking insight and helped management understand expected performance for the next few months.
+
+The additional comparison layer between ERP data and operational performance helped connect financial results with business activity, giving decision-makers a more complete view of performance.
+
+## What I would do differently
+
+If I rebuilt this project today, I would invest earlier in data quality, observability, and governance documentation.
+
+I would add automated data quality checks at each major layer, including source-to-target reconciliation, row-count validation, balance tie-outs, duplicate detection, missing mapping checks, and financial statement consistency checks.
+
+I would also build an operational monitoring dashboard to track ETL status, API load results, failed jobs, delayed refreshes, data completeness, and reconciliation exceptions.
+
+For the Oracle Fusion integration, I would define stronger API monitoring from the beginning, including logging for API response times, failed requests, missing records, and schema changes.
+
+I would also document KPI definitions, financial calculation rules, RLS rules, and access-control logic more formally in a data dictionary so that finance users, BI developers, system owners, and management all share the same understanding of each metric and security rule.
+
+The overall architecture successfully solved the business problem, but stronger monitoring, data quality controls, and governance documentation from the start would have made the platform easier to operate, support, audit, and scale.

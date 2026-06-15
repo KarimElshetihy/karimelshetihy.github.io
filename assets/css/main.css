@@ -2320,6 +2320,12 @@ body.resume-page .resume-layout .rl-work-client {
   border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
+.portfolio-details .portfolio-info h3:has(+ .portfolio-article-nav--embedded) {
+  margin-bottom: 16px;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
 .portfolio-details .portfolio-info ul {
   list-style: none;
   padding: 0;
@@ -2432,6 +2438,147 @@ body.resume-page .resume-layout .rl-work-client {
 
 .portfolio-details .portfolio-article-heading--h2:first-child {
   margin-top: 0;
+}
+
+.portfolio-details .portfolio-article-heading[id],
+.portfolio-details .portfolio-article-heading--h3[id] {
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 1199px) {
+  .portfolio-details .portfolio-article-heading[id],
+  .portfolio-details .portfolio-article-heading--h3[id] {
+    scroll-margin-top: 66px;
+  }
+}
+
+.portfolio-details .portfolio-article-nav--embedded {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.portfolio-details .portfolio-article-nav--embedded[data-expanded="false"] {
+  padding-bottom: 16px;
+}
+
+.portfolio-details .portfolio-article-nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  color: var(--default-color);
+  font: inherit;
+}
+
+.portfolio-details .portfolio-article-nav-toggle .portfolio-info-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--default-color);
+}
+
+.portfolio-details .portfolio-article-nav-toggle:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent-color), transparent 35%);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.portfolio-details .portfolio-article-nav-chevron {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.portfolio-details .portfolio-article-nav[data-expanded="true"] .portfolio-article-nav-chevron {
+  transform: rotate(180deg);
+  color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-article-nav-panel {
+  margin-top: 12px;
+}
+
+.portfolio-details .portfolio-article-nav--sidebar {
+  background-color: var(--surface-color);
+  padding: 22px 24px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+}
+
+.portfolio-details .portfolio-article-nav--embedded .portfolio-info-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--default-color);
+}
+
+.portfolio-details .portfolio-article-nav-title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--default-color);
+}
+
+.portfolio-details .portfolio-article-nav:not([data-article-nav]) .portfolio-article-nav-title {
+  margin-bottom: 10px;
+}
+
+.portfolio-details .portfolio-article-nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portfolio-details .portfolio-article-nav-item + .portfolio-article-nav-item {
+  margin-top: 6px;
+}
+
+.portfolio-details .portfolio-article-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  transition: color 0.2s ease;
+}
+
+.portfolio-details .portfolio-article-nav-link::before {
+  content: "\F285";
+  font-family: bootstrap-icons;
+  font-size: 11px;
+  color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.portfolio-details .portfolio-article-nav-link:hover,
+.portfolio-details .portfolio-article-nav-link:focus-visible {
+  color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-article-nav-link:hover::before,
+.portfolio-details .portfolio-article-nav-link:focus-visible::before {
+  color: var(--accent-color);
+  transform: translateX(2px);
+}
+
+.portfolio-details .portfolio-article-nav-link--h3 {
+  padding-left: 12px;
+  font-size: 13px;
+}
+
+@media (max-width: 991px) {
+  .portfolio-details .portfolio-article-nav--embedded,
+  .portfolio-details .portfolio-article-nav--sidebar {
+    display: none;
+  }
 }
 
 .portfolio-details .portfolio-article-heading--h3 {

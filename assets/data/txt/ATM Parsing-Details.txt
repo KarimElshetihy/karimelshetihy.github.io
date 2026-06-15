@@ -1,0 +1,205 @@
+# Detailed Project Description
+
+## Overview
+
+This project delivered an ATM switch file parsing solution to extract, structure, and store ATM transaction data from raw text files.
+
+In the ATM switch environment, every ATM transaction was recorded inside text files. These files contained different transaction types such as cash deposits, cash withdrawals, card-based transactions, cardless transactions using mobile numbers, e-wallet transactions, currency conversion transactions, captured cards, cancelled transactions, failed transactions, refunded transactions, ATM errors, and machine malfunctions.
+
+The business needed a reliable way to parse these raw switch files and convert them into structured database records that could be used for reporting, reconciliation, transaction history, operational monitoring, and ATM issue analysis.
+
+I built a Python-based parser that read the ATM text files, detected the start and end of each transaction, identified the transaction type, extracted the relevant transaction details using Regex, and inserted the structured output into the database.
+
+The process was integrated with SFTP as the source location for ATM files, and ODI was used to orchestrate and initialize the full process.
+
+## The challenge
+
+ATM switch files were generated in raw text format, which made them difficult to analyze directly.
+
+Each file contained multiple transactions, but the format was not simple tabular data. The parser first had to identify where each transaction started and ended before any details could be extracted.
+
+Another challenge was that each transaction type had a different structure. A cash withdrawal was not formatted the same way as a deposit, a cardless transaction, a currency conversion transaction, or a captured-card event.
+
+This meant a single generic extraction rule was not enough. The solution needed to recognize the transaction type first, then apply the correct parsing logic for that type.
+
+The required information included both business and technical details, such as:
+
+* Transaction date and time.
+* Transaction amount.
+* Account number.
+* PAN or card number details.
+* Mobile number for cardless transactions.
+* Transaction currency.
+* ATM number or terminal ID.
+* Transaction type.
+* Success, failure, or cancellation status.
+* Refund status.
+* Captured-card details.
+* Reason for card capture.
+* ATM errors and malfunctions.
+* Other technical transaction attributes.
+
+The data was needed for several purposes: reconciliation, reporting, historical tracking, transaction investigation, and operational monitoring.
+
+The core challenge was to convert unstructured ATM switch text files into a structured, reliable, and queryable database model.
+
+## What I built
+
+### 1. ATM switch file ingestion process
+
+I built a process to read ATM switch files from an SFTP source location.
+
+The files were received as raw text files containing ATM activity and transaction logs. The solution read these files and prepared them for parsing as part of the daily processing workflow.
+
+ODI was used to orchestrate and initialize the overall process, while Python handled the file parsing and extraction logic.
+
+The ingestion process supported:
+
+* Reading ATM switch text files from SFTP.
+* Initializing the parsing process through ODI.
+* Processing raw text files transaction by transaction.
+* Preparing extracted data for database insertion.
+* Supporting repeatable daily processing.
+
+### 2. Python transaction parser
+
+I developed a Python script to parse the ATM text files.
+
+The script scanned each file and detected the start and end of every transaction. After isolating each transaction block, it identified the transaction type and routed the transaction to the correct extraction logic.
+
+This was important because different transaction types had different formats and required different parsing rules.
+
+The parser handled transaction categories such as:
+
+* Cash-in transactions.
+* Deposits.
+* Cash-out transactions.
+* Withdrawals.
+* Card-based transactions.
+* Cardless transactions using mobile numbers.
+* E-wallet transactions.
+* Currency conversion transactions.
+* Captured-card events.
+* Cancelled transactions.
+* Failed transactions.
+* Refunded transactions.
+* ATM errors.
+* ATM malfunctions.
+
+The Python script transformed the raw switch log content into structured data that could be inserted into the database and used by downstream reporting and reconciliation processes.
+
+### 3. Regex-based extraction logic
+
+I used Regex to customize the extraction logic for each transaction type.
+
+Because each transaction type had its own structure, Regex patterns were created to identify and extract the correct values from each transaction block.
+
+The Regex extraction logic was used to capture fields such as:
+
+* Transaction date.
+* Transaction time.
+* Transaction amount.
+* PAN or masked card number.
+* Mobile number.
+* Account number.
+* Currency.
+* Transaction type.
+* Terminal or ATM number.
+* Success, failure, or cancellation status.
+* Refund indicator.
+* Captured-card reason.
+* Error codes.
+* Malfunction details.
+* Other technical attributes.
+
+This approach made the parser flexible because new extraction rules could be added or adjusted when a new transaction format or switch message type appeared.
+
+### 4. Transaction classification and business logic
+
+The parser did more than just extract text values. It also classified each transaction based on its type and status.
+
+For example, the script identified whether a transaction was a withdrawal, deposit, cardless transaction, currency conversion transaction, captured-card event, or technical ATM error.
+
+It also identified whether the transaction succeeded, failed, was cancelled, or was refunded.
+
+This classification was important for reporting and reconciliation because users needed to analyze transaction activity by type, status, channel behavior, terminal, and exception reason.
+
+The classification logic helped support:
+
+* Transaction-level reporting.
+* ATM terminal performance analysis.
+* Reconciliation between switch files and financial systems.
+* Failed and cancelled transaction monitoring.
+* Refund tracking.
+* Captured-card analysis.
+* ATM error and malfunction monitoring.
+* Historical transaction investigation.
+
+### 5. Database loading and structured history
+
+After extracting and classifying the transactions, the Python script inserted the structured output into the database.
+
+This created a historical transaction repository that could be queried for reporting, reconciliation, auditing, and investigation.
+
+The database layer allowed users to analyze ATM activity without manually reading raw text files.
+
+The stored data supported:
+
+* Transaction history.
+* Reconciliation reports.
+* Operational dashboards.
+* ATM error analysis.
+* Captured-card tracking.
+* Refund and failed-transaction analysis.
+* Terminal-level performance monitoring.
+* Investigation of customer or operational issues.
+
+### 6. ODI orchestration
+
+ODI was used to orchestrate and initialize the overall process.
+
+While Python handled the parsing and extraction logic, ODI helped manage the process flow, trigger file processing, and integrate the parsing step into the wider data workflow.
+
+This allowed the ATM file parsing process to become part of a controlled and repeatable data pipeline.
+
+The orchestration layer helped with:
+
+* Starting the parsing process.
+* Managing process flow.
+* Integrating Python execution into the data pipeline.
+* Supporting scheduled or repeatable processing.
+* Preparing the data for reporting and reconciliation use cases.
+
+## Results
+
+The project converted raw ATM switch text files into structured database records.
+
+The solution made ATM transaction data easier to use for reporting, reconciliation, history tracking, and operational analysis.
+
+The parser successfully handled multiple ATM transaction types, including deposits, withdrawals, card-based transactions, cardless transactions, e-wallet transactions, currency conversion transactions, captured cards, failed transactions, cancelled transactions, and refunded transactions.
+
+Regex-based extraction allowed the solution to handle different message formats and apply transaction-specific parsing rules.
+
+The database repository provided a historical record of ATM transactions that could be used for future analysis and investigation.
+
+Reconciliation became easier because transaction details were available in a structured format instead of raw text files.
+
+Operational teams gained visibility into ATM errors, malfunctions, captured cards, failed transactions, and cancelled transactions.
+
+The process reduced manual effort and improved the reliability of ATM transaction analysis.
+
+Using Python, Regex, SFTP, and ODI created a flexible and automated pipeline for parsing ATM switch files and loading the results into the database.
+
+## What I would do differently
+
+If I rebuilt this project today, I would add a stronger parsing framework with configurable transaction templates for each transaction type.
+
+Instead of keeping all extraction rules inside code, I would externalize Regex patterns and mapping rules into configuration tables or files. This would make it easier to maintain the parser when new transaction formats appear.
+
+I would also add automated validation checks, such as checking parsed transaction counts against file totals, identifying unparsed transaction blocks, detecting missing mandatory fields, and flagging unknown transaction types.
+
+I would create a monitoring dashboard to track processed files, failed files, parsing errors, rejected records, ATM error trends, and transaction extraction completeness.
+
+I would also add a replay mechanism so failed files or specific transaction blocks could be reprocessed after fixing parsing rules.
+
+The solution solved the core business problem by transforming raw ATM switch files into structured and usable data. Stronger configuration management, validation, monitoring, and replay capability would make the process easier to maintain and scale.

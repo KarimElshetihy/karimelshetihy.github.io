@@ -39,22 +39,33 @@ export function normalizeProjectContent(project) {
   return blocks;
 }
 
-export function renderPortfolioContent(content) {
+export function renderPortfolioContent(content, options = {}) {
   if (!Array.isArray(content) || content.length === 0) {
     return "";
   }
 
-  return content.map(renderContentBlock).filter(Boolean).join("");
+  const anchors = Array.isArray(options.anchors) ? options.anchors : [];
+  const anchorLevels = new Set(
+    Array.isArray(options.anchorLevels) && options.anchorLevels.length
+      ? options.anchorLevels.map((level) => (level === 3 ? 3 : 2))
+      : [2]
+  );
+  const anchorIndexRef = { value: 0 };
+
+  return content
+    .map((block) => renderContentBlock(block, { anchors, anchorLevels, anchorIndexRef }))
+    .filter(Boolean)
+    .join("");
 }
 
-function renderContentBlock(block) {
+function renderContentBlock(block, context = {}) {
   if (!block || typeof block !== "object") {
     return "";
   }
 
   switch (block.type) {
     case "heading":
-      return renderHeading(block);
+      return renderHeading(block, context);
     case "paragraph":
       return renderParagraph(block);
     case "list":
@@ -70,7 +81,7 @@ function renderContentBlock(block) {
   }
 }
 
-function renderHeading(block) {
+function renderHeading(block, context = {}) {
   const text = typeof block.text === "string" ? block.text.trim() : "";
   if (!text) {
     return "";
@@ -78,7 +89,18 @@ function renderHeading(block) {
 
   const level = block.level === 3 ? 3 : 2;
   const tag = level === 3 ? "h3" : "h2";
-  return `<${tag} class="portfolio-article-heading portfolio-article-heading--h${level}">${escapeHtml(text)}</${tag}>`;
+  const { anchors = [], anchorLevels = new Set([2]), anchorIndexRef } = context;
+  let idAttr = "";
+
+  if (anchorLevels.has(level) && anchors.length > 0 && anchorIndexRef) {
+    const anchor = anchors[anchorIndexRef.value];
+    anchorIndexRef.value += 1;
+    if (anchor?.id) {
+      idAttr = ` id="${escapeAttr(anchor.id)}"`;
+    }
+  }
+
+  return `<${tag} class="portfolio-article-heading portfolio-article-heading--h${level}"${idAttr}>${escapeHtml(text)}</${tag}>`;
 }
 
 function renderParagraph(block) {

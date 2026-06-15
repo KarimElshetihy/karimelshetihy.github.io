@@ -7,6 +7,13 @@ import {
   renderPortfolioContent
 } from "../portfolio/renderContent.js";
 import {
+  collectHeadingAnchors,
+  initArticleNav,
+  renderArticleNav,
+  resolveArticleNavConfig,
+  slugifyHeading
+} from "../portfolio/articleNav.js";
+import {
   renderConfidentialNote,
   renderProjectInfoItem
 } from "../portfolio/renderProjectInfo.js";
@@ -728,7 +735,23 @@ function renderPortfolioDetailsData(data) {
   const sliderImages = detailsData.sliderImages ?? data.sliderImages ?? [];
   const projectInfo = detailsData.projectInfo ?? data.projectInfo ?? [];
   const articleContent = normalizeProjectContent(detailsData);
-  const articleHtml = renderPortfolioContent(articleContent);
+  const articleNavConfig = resolveArticleNavConfig(detailsData, data);
+  const articleAnchors = articleNavConfig.enabled
+    ? collectHeadingAnchors(articleContent, { levels: articleNavConfig.levels })
+    : [];
+  const articleHtml = renderPortfolioContent(articleContent, {
+    anchors: articleAnchors,
+    anchorLevels: articleNavConfig.levels
+  });
+  const articleNavHtml = articleNavConfig.enabled
+    ? renderArticleNav(articleAnchors, {
+        title: articleNavConfig.title,
+        minItems: articleNavConfig.minItems,
+        placement: "embedded",
+        defaultExpanded: articleNavConfig.defaultExpanded,
+        panelId: `article-nav-${slugifyHeading(detailsData.id ?? requestedProjectId ?? "project")}`
+      })
+    : "";
 
   const swiperConfig = {
     loop: true,
@@ -776,6 +799,7 @@ function renderPortfolioDetailsData(data) {
           <div class="col-lg-4">
             <div class="portfolio-info portfolio-info--sidebar" data-aos="fade-up" data-aos-delay="200">
               <h3>${escapeHtml(detailsData.infoTitle ?? data.infoTitle ?? "Project information")}</h3>
+              ${articleNavHtml}
               <ul>
                 ${projectInfo.map((item) => renderProjectInfoItem(item)).join("")}
               </ul>
@@ -822,6 +846,7 @@ export function renderPage(pageData) {
   root.innerHTML = html;
   initAboutSkillsToggle(root);
   initPrintSelection(root);
+  initArticleNav(root);
 }
 
 function initAboutSkillsToggle(root) {

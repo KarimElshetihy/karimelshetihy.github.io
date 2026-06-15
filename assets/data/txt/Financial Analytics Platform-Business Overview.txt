@@ -1,0 +1,115 @@
+# Short Business Description for Non-Technical Readers
+
+## Overview
+
+This project delivered a centralized Financial Analytics Platform for an organization with five subsidiaries.
+
+The organization had financial data coming from two different ERP systems: one hosted internally on company servers and another cloud-based Oracle Fusion ERP system. The goal was to bring all financial information into one trusted platform for management reporting.
+
+The platform automated weekly and monthly financial reporting and gave top management a clear view of the company’s financial position and performance across all subsidiaries.
+
+It also supported two levels of reporting: each subsidiary had its own standalone view, while the investment group had a consolidated view across all five subsidiaries.
+
+The platform covered key financial areas such as Income Statement, Balance Sheet, Cash Flow, Budget, Eliminations, Invoice Analysis, Accounts Payable, Accounts Receivable, and Current Cash Position.
+
+## The challenge
+
+Financial data was spread across different ERP systems, subsidiaries, and manual files.
+
+Because the organization used both an internal ERP system and Oracle Fusion ERP, reporting was difficult and time-consuming. Each system stored data differently, and some information was not directly available for reporting.
+
+Finance teams also needed to manually enter or adjust some data that was not available in the ERP systems.
+
+As a result, weekly and monthly reporting required significant manual effort. It was difficult for top management to quickly get one consolidated view of performance across the whole organization.
+
+Another important challenge was data access and governance. Each subsidiary needed to view only its own financial data, while the investment group needed a consolidated view across all subsidiaries.
+
+The business needed one reliable version of the financial numbers, with proper access control so that sensitive financial information was only available to authorized users.
+
+## What I built
+
+### 1. Centralized financial data platform
+
+I helped build a platform that collected financial data from both ERP systems and consolidated it into one central reporting model.
+
+The on-premises ERP data was loaded directly, while the Oracle Fusion ERP data was integrated through APIs in cooperation with the business integration team.
+
+This allowed the organization to combine financial data from different systems and subsidiaries into one consistent view.
+
+### 2. Financial reporting model
+
+I built a financial analytics model covering the main reporting areas required by finance and management.
+
+The model included:
+
+* Income Statement.
+* Balance Sheet.
+* Cash Flow.
+* Budget.
+* Eliminations.
+* Invoice Analysis.
+* Accounts Payable.
+* Accounts Receivable.
+* Current Cash Position.
+
+This gave finance and management a structured way to analyze performance across subsidiaries and reporting periods.
+
+### 3. Manual data-entry application
+
+Some financial data was not available directly from the ERP systems. To solve this, an Oracle Apex application was added so finance users could enter and manage required manual inputs in a controlled way.
+
+This reduced the dependency on separate Excel files and helped keep all reporting data inside the same platform.
+
+### 4. Subsidiary and group-level reporting
+
+The platform supported both company-level and group-level reporting.
+
+Each subsidiary had its own standalone reporting view, allowing its teams to review only their company’s financial performance and KPIs.
+
+At the same time, the investment group had access to a consolidated view across all five subsidiaries, giving top management a full picture of group performance.
+
+Access was controlled using Row-Level Security, so users could only see the financial data they were authorized to view. This ensured proper governance while still allowing the organization to use one shared reporting platform.
+
+### 5. Power BI dashboards
+
+I built Power BI dashboards to present the financial information in a clear and interactive way.
+
+The reports were organized into pages for each major financial area, allowing management to review high-level results and finance teams to drill into more detailed KPIs.
+
+A revenue forecasting model was also added to help estimate expected revenue for the coming months.
+
+The dashboards also included a comparison between financial ERP data and operational performance, helping management understand not only the numbers, but also the business activity behind them.
+
+## Results
+
+Weekly and monthly financial reporting became more automated and less dependent on manual consolidation.
+
+Top management gained one centralized view of financial position and performance across the five subsidiaries.
+
+Each subsidiary gained a dedicated view of its own financial performance.
+
+The investment group gained a consolidated view across all five subsidiaries.
+
+Data access became more controlled and governed using Row-Level Security, ensuring that sensitive financial information was only visible to authorized users.
+
+Finance teams had more consistent numbers because the platform used one shared reporting model.
+
+Manual financial inputs became more controlled through the Oracle Apex application.
+
+Power BI dashboards made it easier to analyze financial statements, KPIs, cash position, invoices, payables, receivables, and budget performance.
+
+The revenue forecast gave management a forward-looking view of expected performance.
+
+The comparison between financial and operational data helped the business better understand what was driving the financial results.
+
+## What I would do differently
+
+If I rebuilt this project today, I would add stronger monitoring, data quality checks, and governance documentation from the beginning.
+
+This would include automatic checks to confirm that data was loaded correctly, financial balances matched source systems, and any missing or incorrect data was flagged early.
+
+I would also create a simple monitoring dashboard for the finance and BI teams to track data refreshes, system issues, and reporting readiness.
+
+In addition, I would document access rules, KPI definitions, and financial calculation logic more clearly so that the platform would be easier to manage, audit, and scale.
+
+The platform achieved its main goal, but stronger monitoring, data quality controls, and governance documentation would make it even easier to support in the long term.

@@ -1,0 +1,90 @@
+# Short Business Description for Non-Technical Readers
+
+## Overview
+
+This project delivered an automated solution to read ATM switch files and convert them into structured transaction data.
+
+Every ATM transaction was recorded in raw text files. These files included withdrawals, deposits, card transactions, cardless transactions using mobile numbers, e-wallet transactions, currency conversion transactions, captured cards, failed transactions, cancelled transactions, refunds, ATM errors, and machine malfunctions.
+
+The goal was to extract the important details from these files and store them in a database so the business could use the data for reporting, reconciliation, transaction history, and operational monitoring.
+
+## The challenge
+
+ATM switch files were difficult to use because they were stored as raw text, not structured tables.
+
+Each file contained many transactions, and each transaction type had a different format. For example, a withdrawal transaction was different from a deposit, cardless transaction, currency conversion, or captured-card event.
+
+The business needed important information from each transaction, such as the date and time, amount, account number, card details, mobile number, currency, ATM number, transaction type, success or failure status, refund status, and technical error details.
+
+Without automation, reviewing these files manually was time-consuming and not practical for reporting or reconciliation.
+
+The business needed a reliable way to turn these raw ATM files into structured data.
+
+## What I built
+
+### 1. Automated file reading process
+
+I built a process to read ATM switch files from an SFTP source.
+
+The files were picked up and processed automatically as part of the data workflow.
+
+ODI was used to initialize and orchestrate the process, while Python was used to parse the file contents.
+
+### 2. Python parsing script
+
+I developed a Python script that read each text file and identified the start and end of every ATM transaction.
+
+The script then recognized the transaction type and applied the correct extraction logic for that type.
+
+The parser handled different transaction categories, including:
+
+* Cash deposits.
+* Cash withdrawals.
+* Card transactions.
+* Cardless transactions using mobile numbers.
+* E-wallet transactions.
+* Currency conversion transactions.
+* Captured cards.
+* Failed or cancelled transactions.
+* Refunded transactions.
+* ATM errors and malfunctions.
+
+### 3. Regex-based extraction
+
+I used Regex to extract the required details from each transaction.
+
+This allowed the script to capture important fields such as transaction date, time, amount, card number, mobile number, account number, currency, ATM terminal number, status, refund details, and error information.
+
+Using Regex made the solution flexible because each transaction type could have its own extraction rules.
+
+### 4. Database loading
+
+After extracting the transaction details, the script inserted the structured data into the database.
+
+This created a historical ATM transaction repository that could be used for reporting, reconciliation, investigation, and operational analysis.
+
+## Results
+
+Raw ATM switch files were converted into structured database records.
+
+The business could use ATM transaction data for reporting, reconciliation, and history tracking.
+
+Manual review of ATM text files was reduced.
+
+Operational teams gained better visibility into failed transactions, cancelled transactions, refunds, captured cards, ATM errors, and malfunctions.
+
+The database made it easier to search, analyze, and investigate ATM transactions.
+
+The process became more automated by using Python, Regex, SFTP, and ODI together.
+
+## What I would do differently
+
+If I rebuilt this project today, I would make the parsing rules more configurable.
+
+Instead of keeping all Regex rules inside the code, I would store them in configuration tables or files so they could be updated more easily when new transaction formats appear.
+
+I would also add stronger validation checks to detect missing fields, unknown transaction types, failed files, and unparsed transactions.
+
+Finally, I would create a monitoring dashboard to show processed files, parsing errors, rejected records, ATM issues, and processing status.
+
+The project achieved its goal by turning raw ATM files into useful structured data, but better monitoring and configurable parsing rules would make it easier to maintain and scale.

@@ -1,0 +1,199 @@
+# Detailed Project Description
+
+## Overview
+
+This project delivered a version control and CI/CD solution for SSAS Tabular Semantic Model projects developed in Visual Studio.
+
+Before this initiative, the team managed SSAS solutions manually. Developers used to copy solution folders as backups and edit local versions directly. This created several problems: there was no clear source of truth, different team members could have different versions of the same model, changes were difficult to track, and deployments depended heavily on manual steps.
+
+The objective was to introduce a structured development and deployment process for SSAS semantic models. The solution covered version control, documentation, team enablement, automated deployment preparation, environment-specific configuration handling, credential management, CI/CD integration, deployment notifications, and Production deployment approval.
+
+Because the organization worked fully on-premises and was not allowed to use public cloud services, GitHub, or similar external platforms, the DevOps team provided an on-premises Azure DevOps environment for source control. I worked closely with the DevOps team to design and implement the CI/CD process for SSAS model deployment.
+
+My role focused on the SSAS solution side: understanding the Visual Studio project structure, preparing the models for deployment, writing PowerShell deployment scripts, handling environment-specific configuration, and supporting the DevOps team in integrating the scripts into their CI/CD workflow using tools such as Jenkins, Azure DevOps on-premises, Ansible, and other internal DevOps platforms.
+
+The solution helped move SSAS model development from an unorganized manual process to a controlled, secure, versioned, and repeatable deployment lifecycle.
+
+## The challenge
+
+The existing SSAS development process was manual and difficult to control.
+
+SSAS Tabular Model solutions were developed in Visual Studio, but they were not properly version controlled. Developers often copied solution folders as backups before making changes. This created confusion because there was no single approved version of the model.
+
+Different developers could end up working on different local copies of the same solution. This increased the risk of overwriting changes, losing work, deploying outdated versions, or making unauthorized local modifications.
+
+Deployments were also manual. Moving a semantic model from development to UAT or Production required several environment-specific changes. These changes were risky because they could easily be missed or applied incorrectly.
+
+The deployment process had to handle several important differences between environments, including:
+
+* Data source connection strings for Development, UAT, and Production.
+* Data source credentials such as usernames and passwords.
+* Whether the model was being deployed for the first time or updating an existing deployed model.
+* Whether an initial data load was required after deployment.
+* Whether only metadata changes were being deployed without requiring a full reload.
+
+Another challenge was security. Credentials could not be stored directly inside scripts or passed manually during the deployment process. The solution needed a secure way to manage credentials while still allowing automated deployment.
+
+The organization’s restrictions also made the project more complex. The solution had to be fully on-premises, without relying on GitHub, cloud-hosted Azure DevOps, or any external cloud provider.
+
+Production deployment governance was also important. The team needed an approval step before deploying to Production to reduce the risk of accidental or unauthorized changes reaching live semantic models.
+
+The core challenge was to transform a manual, inconsistent, and risky SSAS development process into a controlled, secure, approved, repeatable, and automated deployment workflow.
+
+## What I built
+
+### 1. Version control process for SSAS Tabular Model solutions
+
+The first part of the project focused on introducing proper version control for SSAS Tabular Model solutions developed in Visual Studio.
+
+The DevOps team provided an on-premises Azure DevOps environment that could be used within the organization’s internal infrastructure. This allowed the team to store SSAS solutions in a central repository instead of relying on local folders and copied backups.
+
+I helped define and document the version control process for the data team, including how to work with SSAS Visual Studio projects in source control, how to organize branches, how to commit changes properly, and how to avoid overwriting other developers’ work.
+
+I also created a documentation layer that explained the required steps, best practices, and team workflow. In addition, I delivered enablement sessions for the team to help them adopt the new process.
+
+This helped the team move from unmanaged local solution copies to a more controlled development lifecycle.
+
+Key activities included:
+
+* Introducing source control for SSAS Tabular Model projects.
+* Organizing Visual Studio solution handling inside Azure DevOps on-premises.
+* Documenting best practices for commits, branching, and solution updates.
+* Providing team sessions to explain the new workflow.
+* Reducing dependency on local backups and manual folder copies.
+* Creating a clearer source of truth for semantic model development.
+
+### 2. CI/CD process design with the DevOps team
+
+After version control was established, the next phase was to build a CI/CD process for SSAS model deployment.
+
+This required close cooperation between the data team and the DevOps team. I worked with them to understand their standard CI/CD workflow, the tools they were using, their deployment standards, and any previous work they had done for automated deployment.
+
+The goal was to create a deployment process that could take a version-controlled SSAS solution, prepare it for a target environment, apply the required configuration changes, deploy it, and trigger data loading where needed.
+
+The CI/CD workflow needed to support multiple environments such as Development, UAT, and Production. It also needed to handle both new deployments and updates to existing deployed models.
+
+A key design requirement was adding a controlled approval step before Production deployment. This ensured that deployments to live semantic models were reviewed and approved before execution.
+
+My responsibility was to design and write the scripts that could read the SSAS solution, prepare it for deployment, and execute the required deployment steps. These scripts were then used by the DevOps team and integrated into their CI/CD tools.
+
+### 3. PowerShell deployment automation
+
+I developed PowerShell scripts to automate the SSAS deployment preparation and deployment process.
+
+The scripts were responsible for reading the SSAS Tabular Model solution and preparing it based on the selected target environment.
+
+The automation handled key deployment requirements, including:
+
+* Reading the SSAS solution structure.
+* Preparing the model for deployment.
+* Updating data source connection strings based on the target environment.
+* Applying the correct data source credentials.
+* Checking whether the model was already deployed.
+* Identifying whether the deployment was a new deployment or an update.
+* Deciding whether an initial data load was required.
+* Deploying metadata changes when no full reload was needed.
+* Triggering data processing or loading when required.
+
+This reduced manual deployment effort and lowered the risk of human error when deploying SSAS models across environments.
+
+The PowerShell scripts became the technical bridge between the SSAS model development process and the DevOps CI/CD workflow.
+
+### 4. Environment-specific configuration handling
+
+One of the most important parts of the solution was handling environment-specific configuration.
+
+SSAS semantic models needed different data sources depending on the target environment. For example, the same model could connect to Development, UAT, or Production databases, each with different connection strings and credentials.
+
+The deployment process had to update these settings automatically without requiring developers to manually edit the solution before deployment.
+
+The scripts handled:
+
+* Development data sources.
+* UAT data sources.
+* Production data sources.
+* Environment-specific connection strings.
+* Environment-specific usernames and passwords.
+* Deployment behavior based on the target environment.
+* Initial-load logic for new deployments.
+* Metadata-only deployment logic for existing models.
+
+This made the deployment process more reliable and repeatable across environments.
+
+### 5. Secure credential management using Ansible
+
+To avoid storing credentials directly in scripts or passing sensitive data manually during deployment, Ansible was used to store and encrypt data source credentials.
+
+This allowed the CI/CD process to retrieve the required credentials securely during deployment.
+
+Using Ansible improved both security and efficiency. It prevented hardcoded passwords, reduced manual credential handling, and made the deployment process faster and safer.
+
+The credential-management layer helped support:
+
+* Secure storage of data source usernames and passwords.
+* Encrypted credential handling.
+* Avoidance of static credentials inside scripts.
+* Reduced manual input during deployment.
+* More secure automated deployment across environments.
+
+### 6. Integration with DevOps tools, notifications, and Production approval
+
+The final deployment process was designed to integrate with the DevOps team’s toolchain, including Azure DevOps on-premises, Jenkins, Ansible, and other internal DevOps applications.
+
+I developed the SSAS-specific deployment scripts and logic, while the DevOps team integrated them into their broader CI/CD workflow.
+
+This allowed deployments to become more controlled, repeatable, and traceable. The process also provided notifications showing whether the deployment completed successfully or failed.
+
+In addition to deployment notifications, an approval step was added before deployment to the Production environment. This ensured that Production deployments were reviewed and approved before execution, reducing the risk of unauthorized or accidental changes reaching live semantic models.
+
+The integrated workflow supported:
+
+* Version-controlled SSAS solutions.
+* Automated deployment preparation.
+* Environment-specific deployment.
+* Secure credential retrieval.
+* Deployment status notifications.
+* Approval step before Production deployment.
+* Reduced manual deployment steps.
+* Better control over Production changes.
+* More traceable and governed semantic model releases.
+
+## Results
+
+The project introduced proper version control for SSAS Tabular Model solutions.
+
+The team moved away from copying solution folders manually as backups and started using a centralized source-control process.
+
+The solution reduced confusion caused by different developers having different local versions of the same SSAS model.
+
+It improved organization, traceability, and control over semantic model changes.
+
+Unauthorized or untracked local changes became easier to prevent because the official model version was stored and managed through source control.
+
+The CI/CD process reduced manual deployment effort and made deployments more repeatable across Development, UAT, and Production environments.
+
+PowerShell scripts automated key deployment steps, including reading the solution, preparing it for deployment, updating data sources, applying credentials, checking existing deployments, and triggering data loads when required.
+
+Ansible improved security by storing and encrypting data source credentials instead of hardcoding them in scripts or passing them manually.
+
+The integration with DevOps tools such as Jenkins and Azure DevOps on-premises allowed the deployment process to become part of a standard workflow.
+
+Deployment notifications improved visibility by showing whether deployments completed successfully or failed.
+
+Production deployments became more controlled by adding an approval step before release, ensuring that changes were reviewed before reaching live semantic models.
+
+Overall, the project helped the data team adopt a more professional semantic model development lifecycle, with better control, security, automation, collaboration, and Production governance.
+
+## What I would do differently
+
+If I rebuilt this project today, I would invest earlier in defining a formal release-management framework for semantic models.
+
+I would document branching strategies, approval gates, deployment roles, rollback procedures, and environment-promotion rules from the beginning.
+
+I would also add automated validation checks before deployment, such as verifying model metadata, checking broken data source references, validating environment configuration, and confirming that required credentials exist before the deployment starts.
+
+I would create a deployment dashboard to monitor deployment history, success and failure rates, active model versions, target environments, approval status, and processing status.
+
+I would also add automated backup or restore points before Production deployments, making rollback easier if a deployment introduced an issue.
+
+The project successfully solved the core problems of version control and deployment automation, but stronger release governance, validation checks, deployment observability, and rollback automation would make the CI/CD process even more robust and scalable.
