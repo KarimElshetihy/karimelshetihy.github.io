@@ -32,6 +32,18 @@ function escapeAttr(text) {
   return escapeHtml(text).replace(/`/g, "&#96;");
 }
 
+function renderLatestWorkMeta(work) {
+  const client = String(work?.client ?? "").trim();
+  const subtitle = String(work?.subtitle ?? "").trim();
+  if (client) {
+    return `<p class="rl-work-client mb-0">Client: ${escapeHtml(client)}</p>`;
+  }
+  if (subtitle) {
+    return `<p class="rl-work-client mb-0">${escapeHtml(subtitle)}</p>`;
+  }
+  return "";
+}
+
 function isResumeSocialIconAsset(icon) {
   const value = String(icon ?? "").trim();
   if (!value) return false;
@@ -104,8 +116,76 @@ function levelDots(level, size = 5) {
   return dots.join("");
 }
 
+function renderProfileHero(data) {
+  const sectionId = String(data.sectionId ?? "about");
+  const intro = data.intro ?? {};
+  const contacts = data.contacts ?? {};
+  const socialLinks = data.socialLinks ?? [];
+  const quickLinks = data.quickLinks ?? [];
+  const cvDownloads = data.cvDownloads ?? [];
+  const statusBadge = intro.statusBadge ?? {};
+  const showStatusBadge = statusBadge.visible !== false && String(statusBadge.label ?? "").trim();
+  const headlinePrefix = String(intro.headlinePrefix ?? intro.role ?? "").trim();
+  const headlineHighlight = String(intro.headlineHighlight ?? "").trim();
+  const location = String(intro.location ?? "").trim();
+  const primaryCta = contacts.primaryCta ?? contacts.contactButton ?? {};
+  const primaryCtaHref = String(primaryCta.href ?? "").trim();
+  const primaryCtaIcon = String(primaryCta.icon ?? "bi-calendar-check").trim();
+  const iconLinks = [...socialLinks, ...quickLinks];
+
+  const headlineHtml =
+    headlinePrefix || headlineHighlight
+      ? `<h1 class="rl-profile-hero-title">
+          ${headlinePrefix ? `<span class="rl-profile-hero-title-prefix">${escapeHtml(headlinePrefix)}</span>` : ""}
+          ${headlineHighlight ? `<span class="rl-text-gradient">${escapeHtml(headlineHighlight)}</span>` : ""}
+        </h1>`
+      : intro.name
+        ? `<h1 class="rl-profile-hero-title">${escapeHtml(intro.name)}</h1>`
+        : "";
+
+  return `
+    <section id="${escapeAttr(sectionId)}" class="resume resume-layout section rl-profile-hero-section">
+      <div class="container">
+        <div class="row align-items-center gy-4 gx-md-5 rl-profile-hero">
+          <div class="col-12 col-md-auto text-center text-md-start" data-aos="fade-up">
+            <div class="rl-profile-hero-photo-wrap">
+              <img src="${escapeAttr(intro.photo ?? "")}" class="rl-profile-hero-photo" width="180" height="180" alt="${escapeAttr(intro.photoAlt ?? intro.name ?? "")}">
+            </div>
+          </div>
+          <div class="col-12 col-md" data-aos="fade-up" data-aos-delay="100">
+            <div class="rl-profile-hero-content">
+              ${showStatusBadge ? `<span class="rl-status-badge"><span class="rl-status-badge-dot" aria-hidden="true"></span>${escapeHtml(statusBadge.label)}</span>` : ""}
+              ${headlineHtml}
+              ${intro.bio ? `<p class="rl-profile-hero-bio">${escapeHtml(intro.bio)}</p>` : ""}
+              ${location ? `<p class="rl-profile-hero-location"><i class="bi bi-geo-alt" aria-hidden="true"></i><span>${escapeHtml(location)}</span></p>` : ""}
+              <div class="rl-profile-hero-actions">
+                ${primaryCtaHref ? `<a href="${escapeAttr(primaryCtaHref)}" class="rl-btn-primary">${primaryCtaIcon ? `<i class="bi ${escapeAttr(primaryCtaIcon)}" aria-hidden="true"></i>` : ""}<span>${escapeHtml(primaryCta.label ?? "Contact")}</span></a>` : ""}
+                ${cvDownloads.map((item) => {
+                  const href = String(item.href ?? "").trim();
+                  if (!href) return "";
+                  const icon = String(item.icon ?? "bi-download").trim();
+                  return `<a href="${escapeAttr(href)}" class="rl-btn-outline"${item.download ? " download" : ""}>${icon ? `<i class="bi ${escapeAttr(icon)}" aria-hidden="true"></i>` : ""}<span>${escapeHtml(item.label ?? "CV")}</span></a>`;
+                }).join("")}
+              </div>
+              ${iconLinks.length ? `<div class="rl-profile-hero-social" role="list">${iconLinks.map((item) => {
+                  const label = String(item.label ?? "").trim();
+                  return `<a href="${escapeAttr(item.href ?? "#")}" class="rl-profile-hero-social-link" aria-label="${escapeAttr(label)}" title="${escapeAttr(label)}" data-bs-toggle="tooltip" data-bs-placement="top"${/^https?:\/\//i.test(String(item.href ?? "")) ? ' target="_blank" rel="noopener"' : ""} role="listitem">${resumeSocialIconInner(item.icon)}</a>`;
+                }).join("")}</div>` : ""}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
 function renderResumeData(data) {
   const heroOnly = data.heroOnly === true;
+  const heroLayout = String(data.heroLayout ?? (heroOnly ? "profile" : "classic")).trim().toLowerCase();
+
+  if (heroOnly && heroLayout === "profile") {
+    return renderProfileHero(data);
+  }
+
   const sectionId = String(data.sectionId ?? (heroOnly ? "about" : "resume"));
   const intro = data.intro ?? {};
   const contacts = data.contacts ?? {};
@@ -296,7 +376,7 @@ function renderResumeData(data) {
                     <h4 class="rl-work-title">${escapeHtml(work.title ?? "")}</h4>
                     <span class="rl-work-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
                   </div>
-                  <p class="rl-work-client mb-0">Client: ${escapeHtml(work.client ?? "")}</p>
+                  ${renderLatestWorkMeta(work)}
                 </a>
               </div>
             `).join("")}
@@ -372,6 +452,192 @@ function renderPortfolioDynamic(data) {
     </section>`;
 }
 
+function renderAboutSkillsSplitSection(data) {
+  const aboutMe = data.aboutMe ?? {};
+  const skillCategories = data.skillCategories ?? [];
+  const expertiseTitle = String(data.expertiseTitle ?? "Technical Expertise").trim();
+  const aboutTitle = String(aboutMe.title ?? "About Me").trim();
+  const paragraphs = Array.isArray(aboutMe.paragraphs) ? aboutMe.paragraphs : [];
+  const quote = String(aboutMe.quote ?? "").trim();
+  const highlights = aboutMe.highlights ?? [];
+  const languages = aboutMe.languages ?? [];
+  const cta = aboutMe.cta ?? {};
+  const ctaHref = String(cta.href ?? "contact.html").trim();
+  const ctaIcon = String(cta.icon ?? "bi-calendar-check").trim();
+
+  const highlightsHtml = highlights.length
+    ? `<div class="row g-4 rl-about-highlights">${highlights.map((item) => `
+        <div class="col-sm-6">
+          <div class="rl-about-highlight">
+            ${item.icon ? `<div class="rl-about-highlight-icon" aria-hidden="true"><i class="bi ${escapeAttr(item.icon)}"></i></div>` : ""}
+            <div class="rl-about-highlight-body">
+              <h4 class="rl-about-highlight-title">${escapeHtml(item.title ?? "")}</h4>
+              <p class="rl-about-highlight-text mb-0">${escapeHtml(item.description ?? "")}</p>
+            </div>
+          </div>
+        </div>`).join("")}
+      </div>`
+    : "";
+
+  const languagesHtml = languages.length
+    ? `<div class="rl-about-languages">
+        <h4 class="rl-about-languages-title">Languages</h4>
+        <ul class="rl-about-languages-list mb-0">
+          ${languages.map((lang) => `
+            <li class="rl-about-language">
+              <span class="rl-about-language-dot ${escapeAttr(lang.dotClass ?? "rl-about-language-dot--primary")}" aria-hidden="true"></span>
+              <span class="rl-about-language-name">${escapeHtml(lang.name ?? "")}</span>
+              <span class="rl-about-language-level">${escapeHtml(lang.level ?? "")}</span>
+            </li>`).join("")}
+        </ul>
+      </div>`
+    : "";
+
+  const categoriesHtml = skillCategories.map((category) => `
+    <div class="rl-expertise-group">
+      <h4 class="rl-expertise-group-title">${escapeHtml(category.name ?? "")}</h4>
+      <div class="rl-expertise-tags">
+        ${(category.skills ?? []).map((skill) => {
+          const label = typeof skill === "string" ? skill : skill?.name ?? "";
+          return label ? `<span class="rl-expertise-tag">${escapeHtml(label)}</span>` : "";
+        }).join("")}
+      </div>
+    </div>`).join("");
+
+  return `
+    <section id="skills" class="about-skills-split section">
+      <div class="container">
+        <div class="row gy-5 gx-lg-5 align-items-start">
+          <div class="col-lg-7" data-aos="fade-up">
+            <div class="rl-about-me-panel">
+              <h2 class="rl-about-me-title">${escapeHtml(aboutTitle)}</h2>
+              ${paragraphs.map((paragraph) => `<p class="rl-about-me-text">${escapeHtml(paragraph)}</p>`).join("")}
+              ${quote ? `<blockquote class="rl-about-me-quote">${escapeHtml(quote)}</blockquote>` : ""}
+              ${highlightsHtml}
+              ${languagesHtml}
+              ${ctaHref && cta.label ? `<a href="${escapeAttr(ctaHref)}" class="rl-about-me-cta">${ctaIcon ? `<i class="bi ${escapeAttr(ctaIcon)}" aria-hidden="true"></i>` : ""}<span>${escapeHtml(cta.label)}</span></a>` : ""}
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <aside class="rl-expertise-card">
+              <h3 class="rl-expertise-card-title">${escapeHtml(expertiseTitle)}</h3>
+              ${categoriesHtml}
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
+function renderCareerSection(career) {
+  if (!career || typeof career !== "object") return "";
+
+  const experience = career.experience ?? [];
+  const education = career.education ?? [];
+  const awards = career.awards ?? [];
+  if (!experience.length && !education.length && !awards.length) return "";
+
+  const experienceTitle = escapeHtml(career.experienceTitle ?? "Experience");
+  const educationTitle = escapeHtml(career.educationTitle ?? "Education");
+  const awardsTitle = escapeHtml(career.awardsTitle ?? "Awards & Recognition");
+  const defaultExpandedIndex = Math.max(
+    0,
+    experience.findIndex((item) => item.expanded === true)
+  );
+
+  const experienceHtml = experience.length
+    ? `
+      <div class="rl-career-panel rl-career-panel--experience" data-aos="fade-up">
+        <h3 class="rl-career-heading">${experienceTitle}</h3>
+        <div class="rl-career-timeline" data-career-timeline>
+          <div class="rl-career-timeline-line" aria-hidden="true"></div>
+          ${experience.map((item, index) => {
+            const isExpanded = index === defaultExpandedIndex;
+            const highlights = item.highlights ?? [];
+            return `
+            <article class="rl-career-exp-item${isExpanded ? " is-expanded" : ""}" data-career-exp-item>
+              <div class="rl-career-exp-rail" aria-hidden="true">
+                <span class="rl-career-exp-dot"></span>
+              </div>
+              <div class="rl-career-exp-content">
+                <button type="button" class="rl-career-exp-toggle" aria-expanded="${isExpanded ? "true" : "false"}">
+                  <span class="rl-career-exp-head">
+                    ${item.dates ? `<span class="rl-career-exp-dates">${escapeHtml(item.dates)}</span>` : ""}
+                    <span class="rl-career-exp-title">${escapeHtml(item.title ?? "")}</span>
+                    ${item.subtitle ? `<span class="rl-career-exp-subtitle">${escapeHtml(item.subtitle)}</span>` : ""}
+                  </span>
+                  <i class="bi bi-chevron-down rl-career-exp-chevron" aria-hidden="true"></i>
+                </button>
+                ${highlights.length ? `
+                  <div class="rl-career-exp-body">
+                    <div class="rl-career-exp-body-inner">
+                      <ul class="rl-career-exp-list mb-0">
+                        ${highlights.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
+                      </ul>
+                    </div>
+                  </div>` : ""}
+              </div>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>`
+    : "";
+
+  const educationHtml = education.length
+    ? `
+      <div class="rl-career-panel rl-career-panel--education" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="rl-career-heading">${educationTitle}</h3>
+        <div class="rl-career-edu-list">
+          ${education.map((item) => `
+            <article class="rl-career-edu-card">
+              <div class="rl-career-edu-card-head">
+                <h4 class="rl-career-edu-degree mb-0">${escapeHtml(item.degree ?? "")}</h4>
+                ${item.period ? `<span class="rl-career-edu-period">${escapeHtml(item.period)}</span>` : ""}
+              </div>
+              ${item.school ? `<p class="rl-career-edu-school mb-0">${escapeHtml(item.school)}</p>` : ""}
+              ${item.description || item.note ? `<p class="rl-career-edu-description mb-0">${escapeHtml(item.description ?? item.note ?? "")}</p>` : ""}
+            </article>
+          `).join("")}
+        </div>
+      </div>`
+    : "";
+
+  const awardsHtml = awards.length
+    ? `
+      <div class="rl-career-panel rl-career-panel--awards" data-aos="fade-up" data-aos-delay="150">
+        <h3 class="rl-career-heading">${awardsTitle}</h3>
+        <div class="row g-3 rl-career-awards-grid">
+          ${awards.map((item) => `
+            <div class="col-sm-6">
+              <article class="rl-career-award">
+                ${item.icon ? `<span class="rl-career-award-icon" aria-hidden="true"><i class="bi ${escapeAttr(item.icon)}"></i></span>` : ""}
+                <div class="rl-career-award-body">
+                  <h4 class="rl-career-award-title mb-0">${escapeHtml(item.title ?? "")}</h4>
+                  ${item.description ? `<p class="rl-career-award-text mb-0">${escapeHtml(item.description)}</p>` : ""}
+                </div>
+              </article>
+            </div>
+          `).join("")}
+        </div>
+      </div>`
+    : "";
+
+  return `
+    <section id="career" class="career-section section">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-start">
+          ${experienceHtml ? `<div class="col-lg-7">${experienceHtml}</div>` : ""}
+          ${educationHtml || awardsHtml
+            ? `<div class="col-lg-5">
+                ${educationHtml}
+                ${awardsHtml}
+              </div>`
+            : ""}
+        </div>
+      </div>
+    </section>`;
+}
+
 function renderAboutData(data) {
   const about = data.about ?? {};
   const skills = data.skills ?? {};
@@ -400,6 +666,7 @@ function renderAboutData(data) {
       1200: { slidesPerView: 2.35 }
     }
   };
+  const careerSectionHtml = renderCareerSection(data.career);
   const latestWorksSectionHtml = latestWorks.length
     ? `
     <section id="latest-works" class="resume resume-layout section">
@@ -421,7 +688,7 @@ function renderAboutData(data) {
                     <h4 class="rl-work-title">${escapeHtml(work.title ?? "")}</h4>
                     <span class="rl-work-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
                   </div>
-                  <p class="rl-work-client mb-0">Client: ${escapeHtml(work.client ?? "")}</p>
+                  ${renderLatestWorkMeta(work)}
                 </a>
               </div>
             `).join("")}
@@ -460,13 +727,56 @@ function renderAboutData(data) {
     : "";
   const omitAboutSection = data.omitAboutSection === true;
 
-  const swiperConfig = {
-    loop: true,
+  const testimonialItems = testimonials.items ?? [];
+  const feedbackButton = testimonials.feedbackButton ?? {};
+  const feedbackHref = String(feedbackButton.href ?? "contact.html").trim();
+  const feedbackIcon = String(feedbackButton.icon ?? "bi-arrow-right").trim();
+  const testimonialsSwiperConfig = {
+    loop: testimonialItems.length > 3,
     speed: 600,
-    autoplay: { delay: 5000 },
-    slidesPerView: "auto",
-    pagination: { el: ".swiper-pagination", type: "bullets", clickable: true }
+    spaceBetween: 20,
+    slidesPerView: 1.08,
+    pagination: { el: ".swiper-pagination", type: "bullets", clickable: true },
+    breakpoints: {
+      576: { slidesPerView: 1.2, spaceBetween: 20 },
+      768: { slidesPerView: 2, spaceBetween: 22 },
+      1200: { slidesPerView: 3, spaceBetween: 24 }
+    }
   };
+
+  const testimonialsSectionHtml = `
+    <section id="testimonials" class="testimonials testimonials-cards section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>${escapeHtml(testimonials.title ?? "Testimonials")}</h2>
+        ${testimonials.subtitle ? `<p>${escapeHtml(testimonials.subtitle)}</p>` : ""}
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper testimonials-slider">
+          <script type="application/json" class="swiper-config">${JSON.stringify(testimonialsSwiperConfig)}</script>
+          <div class="swiper-wrapper">
+            ${testimonialItems.map((item) => `
+              <div class="swiper-slide">
+                <article class="testimonial-card">
+                  <blockquote class="testimonial-card-quote">&ldquo;${escapeHtml(item.quote ?? "")}&rdquo;</blockquote>
+                  <footer class="testimonial-card-author">
+                    <strong class="testimonial-card-name">${escapeHtml(item.name ?? "")}</strong>
+                    ${item.role ? `<span class="testimonial-card-role">${escapeHtml(item.role)}</span>` : ""}
+                  </footer>
+                </article>
+              </div>
+            `).join("")}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        ${feedbackHref && feedbackButton.label ? `
+          <div class="testimonials-feedback-wrap text-center">
+            <a href="${escapeAttr(feedbackHref)}" class="testimonials-feedback-btn">
+              <span>${escapeHtml(feedbackButton.label)}</span>
+              ${feedbackIcon ? `<i class="bi ${escapeAttr(feedbackIcon)}" aria-hidden="true"></i>` : ""}
+            </a>
+          </div>` : ""}
+      </div>
+    </section>`;
 
   const aboutSectionHtml = omitAboutSection
     ? ""
@@ -522,7 +832,9 @@ function renderAboutData(data) {
       </div>
     </section>
 
-    ${isCvSkillsFormat
+    ${data.skillsLayout === "split"
+      ? renderAboutSkillsSplitSection(data)
+      : isCvSkillsFormat
       ? `<section id="skills" class="resume resume-layout section">
           <div class="container section-title" data-aos="fade-up">
             <h2>${skillsTitle}</h2>
@@ -595,35 +907,9 @@ function renderAboutData(data) {
 
     ${latestWorksSectionHtml}
 
-    <section id="testimonials" class="testimonials section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>${escapeHtml(testimonials.title ?? "Testimonials")}</h2>
-        <p>${escapeHtml(testimonials.subtitle ?? "")}</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">${JSON.stringify(swiperConfig)}</script>
-          <div class="swiper-wrapper">
-            ${(testimonials.items ?? []).map((item) => `
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="${escapeAttr(item.image ?? "")}" class="testimonial-img" alt="${escapeAttr(item.name ?? "")}">
-                  <h3>${escapeHtml(item.name ?? "")}</h3>
-                  <h4>${escapeHtml(item.role ?? "")}</h4>
-                  <div class="stars">${"<i class=\"bi bi-star-fill\"></i>".repeat(Math.max(0, Math.min(5, Number(item.stars) || 0)))}</div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>${escapeHtml(item.quote ?? "")}</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            `).join("")}
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
+    ${careerSectionHtml}
+
+    ${testimonialsSectionHtml}
 
     ${hireMeSectionHtml}`;
 }
@@ -845,8 +1131,50 @@ export function renderPage(pageData) {
   const html = (pageData?.sections ?? []).map(renderSection).join("");
   root.innerHTML = html;
   initAboutSkillsToggle(root);
+  initProfileHeroTooltips(root);
+  initCareerTimeline(root);
   initPrintSelection(root);
   initArticleNav(root);
+}
+
+function initCareerTimeline(root) {
+  const timelines = Array.from(root.querySelectorAll("[data-career-timeline]"));
+  timelines.forEach((timeline) => {
+    if (timeline.dataset.bound === "true") return;
+    timeline.dataset.bound = "true";
+
+    const items = Array.from(timeline.querySelectorAll("[data-career-exp-item]"));
+    items.forEach((item) => {
+      const toggle = item.querySelector(".rl-career-exp-toggle");
+      const body = item.querySelector(".rl-career-exp-body");
+      if (!toggle || !body) return;
+
+      toggle.addEventListener("click", () => {
+        const isExpanded = item.classList.contains("is-expanded");
+
+        items.forEach((other) => {
+          other.classList.remove("is-expanded");
+          const otherToggle = other.querySelector(".rl-career-exp-toggle");
+          if (otherToggle) otherToggle.setAttribute("aria-expanded", "false");
+        });
+
+        if (!isExpanded) {
+          item.classList.add("is-expanded");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  });
+}
+
+function initProfileHeroTooltips(root) {
+  if (typeof window.bootstrap?.Tooltip !== "function") return;
+
+  root.querySelectorAll('.rl-profile-hero-social-link[data-bs-toggle="tooltip"]').forEach((el) => {
+    if (el.dataset.tooltipBound === "true") return;
+    el.dataset.tooltipBound = "true";
+    new window.bootstrap.Tooltip(el);
+  });
 }
 
 function initAboutSkillsToggle(root) {

@@ -1,10 +1,7 @@
 {
-  "copyright": {
-    "prefix": "©",
-    "label": "Copyright",
-    "icon": "assets/img/icons/k-alphabet-round-circle-icon.svg",
-    "brand": "Karim. ",
-    "suffix": "All rights reserved."
+  "brand": {
+    "tagline": "Data Engineer & Data Management Engineer",
+    "location": ""
   },
   "social": [
     {
@@ -23,7 +20,17 @@
       "label": "LinkedIn",
       "href": "https://www.linkedin.com/in/karim-elshetihy",
       "icon": "bi-linkedin"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/karimelshetihy",
+      "icon": "bi-github"
     }
   ],
-  "creditsHtml": "Built with curiosity and a lot of coffee ☕"
+  "copyright": {
+    "prefix": "©",
+    "year": 2026,
+    "brand": "Karim",
+    "suffix": "All rights reserved."
+  }
 }

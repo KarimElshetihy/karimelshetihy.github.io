@@ -7,6 +7,7 @@
 import { loadJson } from "./loadJson.js";
 import { renderSiteChrome } from "./renderSiteChrome.js";
 import { renderPage } from "./renderPage.js";
+import { getLatestWorksFromPortfolioPage } from "../portfolio/projectUtils.js";
 
 const PAGE_TO_NAV = {
   index: "home",
@@ -61,6 +62,31 @@ function showFatal(message) {
   }
 }
 
+async function enrichLatestWorksFromPortfolio(pageData) {
+  const sections = pageData?.sections;
+  if (!Array.isArray(sections)) {
+    return pageData;
+  }
+
+  const needsPortfolio = sections.some(
+    (section) => section.type === "aboutData" && section.data?.latestWorksSource === "portfolio"
+  );
+  if (!needsPortfolio) {
+    return pageData;
+  }
+
+  const portfolioPage = await loadJson("assets/data/pages/portfolio.json");
+  const latestWorks = getLatestWorksFromPortfolioPage(portfolioPage);
+
+  sections.forEach((section) => {
+    if (section.type === "aboutData" && section.data?.latestWorksSource === "portfolio") {
+      section.data.latestWorks = latestWorks;
+    }
+  });
+
+  return pageData;
+}
+
 async function bootstrap() {
   const pageKey = document.body.dataset.page || "index";
 
@@ -87,6 +113,13 @@ async function bootstrap() {
     pageData = await loadJson(`assets/data/pages/${pageKey}.json`);
   } catch (error) {
     showFatal(error.message || "Could not load page data.");
+    return;
+  }
+
+  try {
+    pageData = await enrichLatestWorksFromPortfolio(pageData);
+  } catch (error) {
+    showFatal(error.message || "Could not load portfolio projects.");
     return;
   }
 

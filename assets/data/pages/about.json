@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "About - Karim",
+    "title": "Karim — Home",
     "description": ""
   },
   "sections": [
@@ -8,26 +8,39 @@
       "type": "resumeData",
       "data": {
         "heroOnly": true,
+        "heroLayout": "profile",
         "sectionId": "about",
-        "sectionTitle": "About me",
         "intro": {
-          "name": "I am Karim",
-          "role": "Data Engineer | Data Management Engineer",
+          "statusBadge": {
+            "label": "Available for Work",
+            "visible": true
+          },
+          "headlinePrefix": "Data Engineer &",
+          "headlineHighlight": "Data Management Engineer",
           "bio": "Data Engineer focused on building scalable data platforms, APIs, and analytics solutions. Experienced in ETL, data modeling, and BI to deliver reliable data systems and actionable insights.",
+          "location": "",
           "photo": "assets/img/profile-img.jpg",
           "photoAlt": "Karim"
         },
         "contacts": {
-          "phone": "+00 000 000 0000",
-          "phoneHref": "+0000000000",
-          "showPhone": false,
-          "showEmail": false,
-          "contactButton": {
-            "label": "Contact Me",
+          "primaryCta": {
+            "label": "Book a Call",
             "href": "contact.html",
-            "icon": "bi-envelope-fill"
+            "icon": "bi-calendar-check"
           }
         },
+        "quickLinks": [
+          {
+            "label": "Portfolio",
+            "icon": "bi-graph-up-arrow",
+            "href": "portfolio.html"
+          },
+          {
+            "label": "Resume",
+            "icon": "bi-mortarboard",
+            "href": "resume.html"
+          }
+        ],
         "socialLinks": [
           {
             "label": "LinkedIn",
@@ -36,7 +49,7 @@
           },
           {
             "label": "Upwork",
-            "icon": "assets/img/icons/Brand-Upwork--Streamline-White.svg",
+            "icon": "assets/img/icons/Brand-Upwork--Streamline-Theme.svg",
             "href": "https://www.upwork.com/freelancers/karimelshetihy"
           },
           {
@@ -56,62 +69,75 @@
       "type": "aboutData",
       "data": {
         "omitAboutSection": true,
-        "skillsTitle": "Skills",
-        "skillsSubtitle": "Data engineering and analytics delivery: reliable pipelines, clear models, and insights your teams can trust.",
-        "skills": [
+        "skillsLayout": "split",
+        "aboutMe": {
+          "title": "About Me",
+          "paragraphs": [
+            "I transform complex, multi-source datasets into reliable data platforms, clean models, and analytics that stakeholders understand and trust.",
+            "My approach combines strong data engineering fundamentals with practical BI delivery — from ETL and APIs to dashboards and governance — so teams can move faster with confidence in their numbers."
+          ],
+          "quote": "Great data work is not just about pipelines — it is about making insights accessible, repeatable, and trusted across the business.",
+          "highlights": [
+            {
+              "icon": "bi-diagram-3-fill",
+              "title": "Scalable Data Platforms",
+              "description": "Centralized models and pipelines that unify data across systems."
+            },
+            {
+              "icon": "bi-bar-chart-fill",
+              "title": "BI & Dashboards",
+              "description": "Power BI reporting that turns metrics into clear decisions."
+            },
+            {
+              "icon": "bi-database-fill",
+              "title": "ETL & Pipelines",
+              "description": "Automated ingestion and transformation for reliable workflows."
+            },
+            {
+              "icon": "bi-cpu-fill",
+              "title": "APIs & Integration",
+              "description": "FastAPI services and connectors across diverse data sources."
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "level": "Professional",
+              "dotClass": "rl-about-language-dot--primary"
+            },
+            {
+              "name": "Arabic",
+              "level": "Native",
+              "dotClass": "rl-about-language-dot--secondary"
+            }
+          ],
+          "cta": {
+            "label": "Book a Call",
+            "href": "contact.html",
+            "icon": "bi-calendar-check"
+          }
+        },
+        "expertiseTitle": "Technical Expertise",
+        "skillCategories": [
           {
-            "name": "Data Modeling",
-            "iconType": "bootstrap",
-            "icon": "bi-diagram-3-fill",
-            "level": 5
+            "name": "Data Analytics & BI",
+            "skills": ["Power BI", "DAX", "SSAS", "Data Visualization", "Reporting", "Jaspersoft"]
           },
           {
-            "name": "Data Cleaning",
-            "iconType": "bootstrap",
-            "icon": "bi-funnel-fill",
-            "level": 5
+            "name": "Data Engineering",
+            "skills": ["ETL", "Data Pipelines", "Data Modeling", "Data Cleaning", "SQL", "MongoDB"]
           },
           {
-            "name": "Python",
-            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/python.svg",
-            "level": 5
+            "name": "Programming & APIs",
+            "skills": ["Python", "FastAPI", "REST APIs", "Pandas", "Automation"]
           },
           {
-            "name": "APIs",
-            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/fastapi.svg",
-            "level": 4
+            "name": "Cloud & Infrastructure",
+            "skills": ["Google Cloud", "SQL Server", "PostgreSQL", "Oracle", "MySQL"]
           },
           {
-            "name": "ETL & Data Pipelines",
-            "iconType": "bootstrap",
-            "icon": "bi-database-fill",
-            "level": 5
-          },
-          {
-            "name": "Data Visualization & Reporting",
-            "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Power_bi_logo_black.svg",
-            "level": 5
-          },
-          {
-            "name": "Cloud Computing",
-            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlecloud.svg",
-            "level": 4
-          },
-          {
-            "name": "AI & Machine Learning",
-            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pytorch.svg",
-            "level": 4
-          },
-          {
-            "name": "Workflow Automation",
-            "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/n8n.svg",
-            "level": 4
-          },
-          {
-            "name": "Data Governance & Security",
-            "iconType": "bootstrap",
-            "icon": "bi bi-shield-fill-check",
-            "level": 4
+            "name": "AI & Automation",
+            "skills": ["Machine Learning", "PyTorch", "n8n", "Data Governance", "Security"]
           }
         ],
         "stats": {
@@ -139,61 +165,115 @@
             }
           ]
         },
-        "latestWorksTitle": "Latest Works",
-        "latestWorks": [
-          {
-            "title": "Mug Sticker Designing",
-            "client": "John Honnai",
-            "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
-            "alt": "Mug sticker designing",
-            "href": "portfolio-details.html"
-          },
-          {
-            "title": "Mobile App Design",
-            "client": "John Honnai",
-            "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
-            "alt": "Mobile app design",
-            "href": "portfolio-details.html"
-          },
-          {
-            "title": "Fashion Website Template",
-            "client": "John Honnai",
-            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
-            "alt": "Fashion website template",
-            "href": "portfolio-details.html"
-          },
-          {
-            "title": "Book Cover Design",
-            "client": "John Honnai",
-            "image": "assets/img/masonry-portfolio/masonry-portfolio-4.jpg",
-            "alt": "Book cover design",
-            "href": "portfolio-details.html"
-          }
-        ],
+        "latestWorksTitle": "Portfolio Projects",
+        "latestWorksSource": "portfolio",
+        "career": {
+          "experienceTitle": "Experience",
+          "educationTitle": "Education",
+          "awardsTitle": "Awards & Recognition",
+          "experience": [
+            {
+              "dates": "MAR 2025 – PRESENT",
+              "title": "Backend & Data Platform Developer",
+              "subtitle": "Fractal Investors",
+              "expanded": true,
+              "highlights": [
+                "Developed a scalable backend application using FastAPI, building RESTful APIs and integrating with PostgreSQL for robust data storage and querying.",
+                "Containerized the backend with Docker and deployed it on Azure Cloud to ensure consistent environments and reliable deployment.",
+                "Used Git for version control across application code and dbt models, enabling collaborative development and managed data transformation workflows."
+              ]
+            },
+            {
+              "dates": "OCT 2023 – MAR 2025",
+              "title": "Power BI Developer",
+              "subtitle": "Fractal Investors",
+              "highlights": [
+                "Developed financial reporting dashboards using Power BI connected to PostgreSQL, delivering interactive insights for business and financial analysis.",
+                "Implemented Row-Level Security (RLS) and managed workspace access to ensure secure, role-based data visibility for different stakeholders.",
+                "Built custom visuals and deployed reports through Microsoft Fabric for scalable distribution."
+              ]
+            },
+            {
+              "dates": "SEP 2022 – PRESENT",
+              "title": "Senior Data Management Engineer",
+              "subtitle": "E-Finance",
+              "highlights": [
+                "Designed centralized data models to unify data across the E-Finance Investment group, enhancing the Fees Profile model and improving consistency of enterprise data.",
+                "Integrated data from multiple ERP systems using APIs and ETL pipelines, with a strong focus on automation and reliable data workflows.",
+                "Implemented version control for SSAS solutions and improved monitoring to reduce infrastructure costs and optimize performance."
+              ]
+            },
+            {
+              "dates": "SEP 2022 – PRESENT",
+              "title": "Data Management Engineer",
+              "subtitle": "E-Finance",
+              "highlights": [
+                "Developed and maintained analytical reports and dashboards using Power BI, Power BI Report Server, and Jaspersoft.",
+                "Built and optimized data models and queries across SQL Server, Oracle, PostgreSQL, MySQL, and MongoDB using SSAS and DAX.",
+                "Used Python to build ETL pipelines, perform data parsing, and develop machine learning models to support data-driven decision-making."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "degree": "Master of Business Administration (MBA)",
+              "period": "2025 – Present",
+              "school": "ESLSCA University",
+              "description": "Part-time MBA focused on business strategy, leadership, and applying data-driven decision-making in enterprise contexts."
+            },
+            {
+              "degree": "Bachelor of Technology — Biomedical Engineering",
+              "period": "2022",
+              "school": "Menoufia University — Faculty of Applied Medical Sciences",
+              "description": "Engineering foundation in systems thinking, analytics, and technical problem-solving that shaped my path into data engineering."
+            }
+          ],
+          "awards": [
+            {
+              "icon": "bi-bar-chart-line",
+              "title": "BI Delivery Excellence",
+              "description": "Recognized for scalable Power BI reporting and secure, stakeholder-ready analytics delivery."
+            },
+            {
+              "icon": "bi-lightbulb",
+              "title": "Platform Innovation",
+              "description": "Led backend and data platform work combining FastAPI, PostgreSQL, and cloud deployment practices."
+            },
+            {
+              "icon": "bi-diagram-3",
+              "title": "Data Modeling Impact",
+              "description": "Centralized enterprise data models that improved consistency and accessibility across investment systems."
+            },
+            {
+              "icon": "bi-people",
+              "title": "Cross-Team Collaboration",
+              "description": "Bridged engineering, finance, and business teams through reliable pipelines and clear documentation."
+            }
+          ]
+        },
         "testimonials": {
           "title": "Testimonials",
           "subtitle": "Feedback from collaborations.",
+          "feedbackButton": {
+            "label": "Share your feedback",
+            "href": "contact.html",
+            "icon": "bi-arrow-right"
+          },
           "items": [
             {
               "name": "Product Manager",
               "role": "FinTech",
-              "stars": 5,
-              "image": "assets/img/testimonials/testimonials-1.jpg",
-              "quote": "Karim consistently turned fragmented sources into trustworthy analytics."
+              "quote": "Karim consistently turned fragmented sources into trustworthy analytics. Dashboards were clear, stakeholders finally trusted the numbers, and delivery stayed predictable throughout the project."
             },
             {
               "name": "BI Lead",
               "role": "Investment Group",
-              "stars": 5,
-              "image": "assets/img/testimonials/testimonials-2.jpg",
-              "quote": "Strong execution from data modeling to dashboard delivery."
+              "quote": "Strong execution from data modeling to dashboard delivery. He bridged engineering and business teams well and left us with models we could maintain after handoff."
             },
             {
               "name": "Engineering Manager",
               "role": "Startup",
-              "stars": 5,
-              "image": "assets/img/testimonials/testimonials-3.jpg",
-              "quote": "Reliable backend + data platform work with clear ownership."
+              "quote": "Reliable backend and data platform work with clear ownership. Pipelines were well documented, issues were handled proactively, and the team could move faster with confidence."
             }
           ]
         },

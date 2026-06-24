@@ -155,31 +155,47 @@ export function renderSiteChrome(site, activeNavId) {
   }
 
   const footer = site?.footer ?? {};
+  const footerBrand = footer.brand ?? {};
+  const footerTagline = String(footerBrand.tagline ?? "").trim();
+  const footerLocation = String(footerBrand.location ?? "").trim();
+  const footerMetaParts = [footerTagline, footerLocation].filter(Boolean);
+  const footerMetaLine = footerMetaParts.join(" · ");
+  const footerSocial = footer.social ?? [];
   const copyright = footer.copyright ?? {};
   const copyrightPrefix = copyright.prefix ?? "©";
-  const copyrightLabel = copyright.label ?? "Copyright";
-  const copyrightBrand =
-    copyright.brand ?? footer.copyrightBrand ?? brand.name ?? "";
-  const copyrightSuffix = copyright.suffix ?? "All Rights Reserved";
-  const footerBrandIcon = copyright.icon ?? footer.copyrightIcon ?? "";
-  const footerBrandIconHtml = footerBrandIcon
-    ? `<span class="footer-brand-icon" aria-hidden="true">${socialIconMarkup(
-        footerBrandIcon,
-        "footer-brand-icon-img"
-      )}</span>`
-    : "";
+  const copyrightYear = copyright.year ?? new Date().getFullYear();
+  const copyrightBrand = copyright.brand ?? brand.name ?? "";
+  const copyrightSuffix = copyright.suffix ?? "All rights reserved.";
 
   if (footerInner) {
-    footerInner.innerHTML = `
-      <div class="copyright text-center ">
-        <p>${escapeHtml(copyrightPrefix)} <span>${escapeHtml(copyrightLabel)}</span> <strong class="px-1 sitename">${footerBrandIconHtml}${escapeHtml(
-          copyrightBrand
-        )}</strong> <span>${escapeHtml(copyrightSuffix)}<br></span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        ${footerSocialHtml(footer.social)}
-      </div>
-      <div class="credits">${footer.creditsHtml ?? ""}</div>
-    `;
+    if (footerSocial.length || footerMetaLine) {
+      footerInner.innerHTML = `
+        <div class="rl-footer-bar">
+          ${footerMetaLine ? `<div class="rl-footer-brand"><p class="rl-footer-brand-meta mb-0">${escapeHtml(footerMetaLine)}</p></div>` : '<div class="rl-footer-brand"></div>'}
+          ${footerSocial.length ? `<div class="rl-footer-social social-links d-flex align-items-center justify-content-center">${footerSocialHtml(footerSocial)}</div>` : ""}
+          <p class="rl-footer-copy mb-0">${escapeHtml(copyrightPrefix)} ${escapeHtml(String(copyrightYear))} ${escapeHtml(copyrightBrand)}. ${escapeHtml(copyrightSuffix)}</p>
+        </div>`;
+    } else {
+      const copyrightLabel = copyright.label ?? "Copyright";
+      const footerBrandIcon = copyright.icon ?? footer.copyrightIcon ?? "";
+      const footerBrandIconHtml = footerBrandIcon
+        ? `<span class="footer-brand-icon" aria-hidden="true">${socialIconMarkup(
+            footerBrandIcon,
+            "footer-brand-icon-img"
+          )}</span>`
+        : "";
+
+      footerInner.innerHTML = `
+        <div class="copyright text-center ">
+          <p>${escapeHtml(copyrightPrefix)} <span>${escapeHtml(copyrightLabel)}</span> <strong class="px-1 sitename">${footerBrandIconHtml}${escapeHtml(
+            copyrightBrand
+          )}</strong> <span>${escapeHtml(copyrightSuffix)}<br></span></p>
+        </div>
+        <div class="social-links d-flex justify-content-center">
+          ${footerSocialHtml(footer.social)}
+        </div>
+        <div class="credits">${footer.creditsHtml ?? ""}</div>
+      `;
+    }
   }
 }

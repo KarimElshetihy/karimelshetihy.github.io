@@ -3,6 +3,12 @@ import {
   getFilterClassNames,
   getProjectCategories
 } from "./portfolio/categories.js";
+import {
+  buildProjectId,
+  getFeaturedFlag,
+  isProjectVisible,
+  sortProjectsForDisplay
+} from "./portfolio/projectUtils.js";
 import { buildPortfolioDetailsUrl } from "./portfolio/projectIdFromUrl.js";
 
 document.addEventListener(
@@ -43,10 +49,7 @@ function startPortfolio() {
         throw new Error("No visible projects in portfolio page data.");
       }
 
-      const sortedProjects = [...projects].sort(
-        (firstProject, secondProject) =>
-          getFeaturedFlag(secondProject) - getFeaturedFlag(firstProject)
-      );
+      const sortedProjects = sortProjectsForDisplay(projects);
 
       renderFilterButtons(filtersContainer, collectCategoryFilters(sortedProjects));
       projectsContainer.innerHTML = sortedProjects
@@ -132,33 +135,6 @@ function loadJsonFile(url, label) {
     }
     return response.json();
   });
-}
-
-function buildProjectId(project) {
-  if (typeof project.id === "string" && project.id.trim()) {
-    return project.id.trim();
-  }
-
-  const fallbackTitle = typeof project.title === "string" ? project.title : "project";
-  return (
-    fallbackTitle
-      .toLowerCase()
-      .trim()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "") || "project"
-  );
-}
-
-function getFeaturedFlag(project) {
-  return Number(project?.is_featured) === 1 ? 1 : 0;
-}
-
-function isProjectVisible(project) {
-  if (project?.is_visible === false) {
-    return false;
-  }
-
-  return Number(project?.is_visible) !== 0;
 }
 
 function refreshPortfolioPlugins(projectsContainer) {

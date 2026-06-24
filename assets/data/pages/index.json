@@ -5,13 +5,286 @@
   },
   "sections": [
     {
-      "type": "hero",
+      "type": "resumeData",
       "data": {
-        "backgroundImage": "assets/img/hero-bg.jpg",
-        "heading": "Karim",
-        "subheading": "I'm a Data Engineer focused on scalable data platforms, analytics, and reliable delivery.",
-        "ctaLabel": "About Me",
-        "ctaHref": "about.html"
+        "heroOnly": true,
+        "heroLayout": "profile",
+        "sectionId": "about",
+        "intro": {
+          "statusBadge": {
+            "label": "Available for Work",
+            "visible": true
+          },
+          "headlinePrefix": "Data Engineer &",
+          "headlineHighlight": "Data Management Engineer",
+          "bio": "Data Engineer focused on building scalable data platforms, APIs, and analytics solutions. Experienced in ETL, data modeling, and BI to deliver reliable data systems and actionable insights.",
+          "location": "",
+          "photo": "assets/img/profile-img.jpg",
+          "photoAlt": "Karim"
+        },
+        "contacts": {
+          "primaryCta": {
+            "label": "Book a Call",
+            "href": "contact.html",
+            "icon": "bi-calendar-check"
+          }
+        },
+        "quickLinks": [
+          {
+            "label": "Portfolio",
+            "icon": "bi-graph-up-arrow",
+            "href": "portfolio.html"
+          },
+          {
+            "label": "Resume",
+            "icon": "bi-mortarboard",
+            "href": "resume.html"
+          }
+        ],
+        "socialLinks": [
+          {
+            "label": "LinkedIn",
+            "icon": "bi-linkedin",
+            "href": "https://www.linkedin.com/in/karim-elshetihy"
+          },
+          {
+            "label": "Upwork",
+            "icon": "assets/img/icons/Brand-Upwork--Streamline-Theme.svg",
+            "href": "https://www.upwork.com/freelancers/karimelshetihy"
+          },
+          {
+            "label": "مستقل",
+            "icon": "bi-stop-circle-fill",
+            "href": "https://mostaqel.sa/en/freelancer/karim-elshetihy"
+          },
+          {
+            "label": "GitHub",
+            "icon": "bi-github",
+            "href": "https://github.com/karimelshetihy"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aboutData",
+      "data": {
+        "omitAboutSection": true,
+        "skillsLayout": "split",
+        "aboutMe": {
+          "title": "About Me",
+          "paragraphs": [
+            "I transform complex, multi-source datasets into reliable data platforms, clean models, and analytics that stakeholders understand and trust.",
+            "My approach combines strong data engineering fundamentals with practical BI delivery — from ETL and APIs to dashboards and governance — so teams can move faster with confidence in their numbers."
+          ],
+          "quote": "Great data work is not just about pipelines — it is about making insights accessible, repeatable, and trusted across the business.",
+          "highlights": [
+            {
+              "icon": "bi-diagram-3-fill",
+              "title": "Scalable Data Platforms",
+              "description": "Centralized models and pipelines that unify data across systems."
+            },
+            {
+              "icon": "bi-bar-chart-fill",
+              "title": "BI & Dashboards",
+              "description": "Power BI reporting that turns metrics into clear decisions."
+            },
+            {
+              "icon": "bi-database-fill",
+              "title": "ETL & Pipelines",
+              "description": "Automated ingestion and transformation for reliable workflows."
+            },
+            {
+              "icon": "bi-cpu-fill",
+              "title": "APIs & Integration",
+              "description": "FastAPI services and connectors across diverse data sources."
+            }
+          ],
+          "languages": [
+            {
+              "name": "English",
+              "level": "Professional",
+              "dotClass": "rl-about-language-dot--primary"
+            },
+            {
+              "name": "Arabic",
+              "level": "Native",
+              "dotClass": "rl-about-language-dot--secondary"
+            }
+          ],
+          "cta": {
+            "label": "Book a Call",
+            "href": "contact.html",
+            "icon": "bi-calendar-check"
+          }
+        },
+        "expertiseTitle": "Technical Expertise",
+        "skillCategories": [
+          {
+            "name": "Data Analytics & BI",
+            "skills": ["Power BI", "DAX", "SSAS", "Data Visualization", "Reporting", "Jaspersoft"]
+          },
+          {
+            "name": "Data Engineering",
+            "skills": ["ETL", "Data Pipelines", "Data Modeling", "Data Cleaning", "SQL", "MongoDB"]
+          },
+          {
+            "name": "Programming & APIs",
+            "skills": ["Python", "FastAPI", "REST APIs", "Pandas", "Automation"]
+          },
+          {
+            "name": "Cloud & Infrastructure",
+            "skills": ["Google Cloud", "SQL Server", "PostgreSQL", "Oracle", "MySQL"]
+          },
+          {
+            "name": "AI & Automation",
+            "skills": ["Machine Learning", "PyTorch", "n8n", "Data Governance", "Security"]
+          }
+        ],
+        "stats": {
+          "items": [
+            {
+              "label": "Years of Experience",
+              "value": 4,
+              "suffix": "+"
+            },
+            {
+              "label": "Projects",
+              "value": 40
+            },
+            {
+              "label": "Dashboards",
+              "value": 60
+            },
+            {
+              "label": "Pipelines",
+              "value": 35
+            },
+            {
+              "label": "Data Sources Integrated",
+              "value": 20
+            }
+          ]
+        },
+        "latestWorksTitle": "Portfolio Projects",
+        "latestWorksSource": "portfolio",
+        "career": {
+          "experienceTitle": "Experience",
+          "educationTitle": "Education",
+          "awardsTitle": "Awards & Recognition",
+          "experience": [
+            {
+              "dates": "MAR 2025 – PRESENT",
+              "title": "Backend & Data Platform Developer",
+              "subtitle": "Fractal Investors",
+              "expanded": true,
+              "highlights": [
+                "Developed a scalable backend application using FastAPI, building RESTful APIs and integrating with PostgreSQL for robust data storage and querying.",
+                "Containerized the backend with Docker and deployed it on Azure Cloud to ensure consistent environments and reliable deployment.",
+                "Used Git for version control across application code and dbt models, enabling collaborative development and managed data transformation workflows."
+              ]
+            },
+            {
+              "dates": "OCT 2023 – MAR 2025",
+              "title": "Power BI Developer",
+              "subtitle": "Fractal Investors",
+              "highlights": [
+                "Developed financial reporting dashboards using Power BI connected to PostgreSQL, delivering interactive insights for business and financial analysis.",
+                "Implemented Row-Level Security (RLS) and managed workspace access to ensure secure, role-based data visibility for different stakeholders.",
+                "Built custom visuals and deployed reports through Microsoft Fabric for scalable distribution."
+              ]
+            },
+            {
+              "dates": "SEP 2022 – PRESENT",
+              "title": "Senior Data Management Engineer",
+              "subtitle": "E-Finance",
+              "highlights": [
+                "Designed centralized data models to unify data across the E-Finance Investment group, enhancing the Fees Profile model and improving consistency of enterprise data.",
+                "Integrated data from multiple ERP systems using APIs and ETL pipelines, with a strong focus on automation and reliable data workflows.",
+                "Implemented version control for SSAS solutions and improved monitoring to reduce infrastructure costs and optimize performance."
+              ]
+            },
+            {
+              "dates": "SEP 2022 – PRESENT",
+              "title": "Data Management Engineer",
+              "subtitle": "E-Finance",
+              "highlights": [
+                "Developed and maintained analytical reports and dashboards using Power BI, Power BI Report Server, and Jaspersoft.",
+                "Built and optimized data models and queries across SQL Server, Oracle, PostgreSQL, MySQL, and MongoDB using SSAS and DAX.",
+                "Used Python to build ETL pipelines, perform data parsing, and develop machine learning models to support data-driven decision-making."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "degree": "Master of Business Administration (MBA)",
+              "period": "2025 – Present",
+              "school": "ESLSCA University",
+              "description": "Part-time MBA focused on business strategy, leadership, and applying data-driven decision-making in enterprise contexts."
+            },
+            {
+              "degree": "Bachelor of Technology — Biomedical Engineering",
+              "period": "2022",
+              "school": "Menoufia University — Faculty of Applied Medical Sciences",
+              "description": "Engineering foundation in systems thinking, analytics, and technical problem-solving that shaped my path into data engineering."
+            }
+          ],
+          "awards": [
+            {
+              "icon": "bi-bar-chart-line",
+              "title": "BI Delivery Excellence",
+              "description": "Recognized for scalable Power BI reporting and secure, stakeholder-ready analytics delivery."
+            },
+            {
+              "icon": "bi-lightbulb",
+              "title": "Platform Innovation",
+              "description": "Led backend and data platform work combining FastAPI, PostgreSQL, and cloud deployment practices."
+            },
+            {
+              "icon": "bi-diagram-3",
+              "title": "Data Modeling Impact",
+              "description": "Centralized enterprise data models that improved consistency and accessibility across investment systems."
+            },
+            {
+              "icon": "bi-people",
+              "title": "Cross-Team Collaboration",
+              "description": "Bridged engineering, finance, and business teams through reliable pipelines and clear documentation."
+            }
+          ]
+        },
+        "testimonials": {
+          "title": "Testimonials",
+          "subtitle": "Feedback from collaborations.",
+          "feedbackButton": {
+            "label": "Share your feedback",
+            "href": "contact.html",
+            "icon": "bi-arrow-right"
+          },
+          "items": [
+            {
+              "name": "Product Manager",
+              "role": "FinTech",
+              "quote": "Karim consistently turned fragmented sources into trustworthy analytics. Dashboards were clear, stakeholders finally trusted the numbers, and delivery stayed predictable throughout the project."
+            },
+            {
+              "name": "BI Lead",
+              "role": "Investment Group",
+              "quote": "Strong execution from data modeling to dashboard delivery. He bridged engineering and business teams well and left us with models we could maintain after handoff."
+            },
+            {
+              "name": "Engineering Manager",
+              "role": "Startup",
+              "quote": "Reliable backend and data platform work with clear ownership. Pipelines were well documented, issues were handled proactively, and the team could move faster with confidence."
+            }
+          ]
+        },
+        "hireMe": {
+          "heading": "Let’s Work Together",
+          "highlight": "Work",
+          "subtitle": "If you need a data engineer to build reliable pipelines, clean data models, and practical analytics solutions, let's work together.",
+          "buttonLabel": "Hire Me",
+          "buttonHref": "mailto:karim.elshetihy@gmail.com",
+          "backgroundImage": "assets/img/hero-bg.jpg"
+        }
       }
     }
   ]
