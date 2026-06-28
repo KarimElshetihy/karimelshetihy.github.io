@@ -9,12 +9,14 @@
       "href": "https://www.upwork.com/freelancers/karimelshetihy",
       "icon": "assets/img/icons/Brand-Upwork--Streamline-Black.svg",
       "iconFooter": "assets/img/icons/Brand-Upwork--Streamline-Gray.svg",
-      "iconHover": "assets/img/icons/Brand-Upwork--Streamline-Theme.svg"
+      "iconHover": "assets/img/icons/Brand-Upwork--Streamline-Theme.svg",
+      "is_visible": false
     },
     {
       "label": "Mostaqel",
       "href": "https://mostaqel.sa/en/freelancer/karim-elshetihy",
-      "icon": "bi-stop-circle-fill"
+      "icon": "bi-stop-circle-fill",
+      "is_visible": false
     },
     {
       "label": "LinkedIn",
@@ -25,7 +27,17 @@
       "label": "GitHub",
       "href": "https://github.com/karimelshetihy",
       "icon": "bi-github"
-    }
+    },
+    {
+      "label": "Portfolio",
+      "href": "portfolio.html",
+      "icon": "bi-bar-chart-fill"
+    },
+    {
+      "label": "Contact",
+      "href": "contact.html",
+      "icon": "bi-envelope-fill"
+    }    
   ],
   "copyright": {
     "prefix": "©",

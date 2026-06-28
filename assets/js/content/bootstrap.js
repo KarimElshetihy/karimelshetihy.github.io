@@ -76,7 +76,8 @@ async function enrichLatestWorksFromPortfolio(pageData) {
   }
 
   const portfolioPage = await loadJson("assets/data/pages/portfolio.json");
-  const latestWorks = getLatestWorksFromPortfolioPage(portfolioPage);
+  const detailsPage = await loadJson("assets/data/pages/portfolio_details.json");
+  const latestWorks = getLatestWorksFromPortfolioPage(portfolioPage, detailsPage);
 
   sections.forEach((section) => {
     if (section.type === "aboutData" && section.data?.latestWorksSource === "portfolio") {

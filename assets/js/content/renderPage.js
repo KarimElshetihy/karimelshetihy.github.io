@@ -18,6 +18,7 @@ import {
   renderProjectInfoItem
 } from "../portfolio/renderProjectInfo.js";
 import { findProjectById, getRequestedProjectId } from "../portfolio/projectIdFromUrl.js";
+import { filterVisibleItems } from "./itemVisibility.js";
 
 function escapeHtml(text) {
   return String(text ?? "")
@@ -42,6 +43,30 @@ function renderLatestWorkMeta(work) {
     return `<p class="rl-work-client mb-0">${escapeHtml(subtitle)}</p>`;
   }
   return "";
+}
+
+function renderLatestWorkCard(work) {
+  const href = String(work?.href ?? "").trim();
+  const tag = href ? "a" : "div";
+  const attrs = href
+    ? ` href="${escapeAttr(href)}"`
+    : ` aria-disabled="true" tabindex="-1"`;
+  const cardClass = href ? "rl-work-card" : "rl-work-card rl-work-card--static";
+  const arrowHtml = href
+    ? `<span class="rl-work-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>`
+    : "";
+
+  return `
+    <${tag}${attrs} class="${cardClass}">
+      <div class="rl-work-thumb">
+        <img src="${escapeAttr(work.image ?? "")}" class="rl-work-img" width="800" height="600" alt="${escapeAttr(work.alt ?? work.title ?? "")}">
+      </div>
+      <div class="rl-work-head">
+        <h4 class="rl-work-title">${escapeHtml(work.title ?? "")}</h4>
+        ${arrowHtml}
+      </div>
+      ${renderLatestWorkMeta(work)}
+    </${tag}>`;
 }
 
 function isResumeSocialIconAsset(icon) {
@@ -120,8 +145,8 @@ function renderProfileHero(data) {
   const sectionId = String(data.sectionId ?? "about");
   const intro = data.intro ?? {};
   const contacts = data.contacts ?? {};
-  const socialLinks = data.socialLinks ?? [];
-  const quickLinks = data.quickLinks ?? [];
+  const socialLinks = filterVisibleItems(data.socialLinks);
+  const quickLinks = filterVisibleItems(data.quickLinks);
   const cvDownloads = data.cvDownloads ?? [];
   const statusBadge = intro.statusBadge ?? {};
   const showStatusBadge = statusBadge.visible !== false && String(statusBadge.label ?? "").trim();
@@ -189,7 +214,7 @@ function renderResumeData(data) {
   const sectionId = String(data.sectionId ?? (heroOnly ? "about" : "resume"));
   const intro = data.intro ?? {};
   const contacts = data.contacts ?? {};
-  const socialLinks = data.socialLinks ?? [];
+  const socialLinks = filterVisibleItems(data.socialLinks);
   const experiences = data.experience ?? [];
   const education = data.education ?? [];
   const skills = data.skills ?? [];
@@ -368,16 +393,7 @@ function renderResumeData(data) {
             ${latestWorks.map((work, index) => `
               <div class="col-12 col-md-6 rl-print-selectable" data-print-id="work-${toPrintKey(work.title, String(index + 1))}">
                 ${renderPrintToggle(`work-${toPrintKey(work.title, String(index + 1))}`, work.title ?? "Work", printSelectionEnabled)}
-                <a href="${escapeAttr(work.href ?? "portfolio-details.html")}" class="rl-work-card">
-                  <div class="rl-work-thumb">
-                    <img src="${escapeAttr(work.image ?? "")}" class="rl-work-img" width="800" height="600" alt="${escapeAttr(work.alt ?? work.title ?? "")}">
-                  </div>
-                  <div class="rl-work-head">
-                    <h4 class="rl-work-title">${escapeHtml(work.title ?? "")}</h4>
-                    <span class="rl-work-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
-                  </div>
-                  ${renderLatestWorkMeta(work)}
-                </a>
+                ${renderLatestWorkCard(work)}
               </div>
             `).join("")}
           </div>
@@ -680,16 +696,7 @@ function renderAboutData(data) {
             <div class="swiper-wrapper">
             ${latestWorks.map((work) => `
               <div class="swiper-slide">
-                <a href="${escapeAttr(work.href ?? "portfolio-details.html")}" class="rl-work-card">
-                  <div class="rl-work-thumb">
-                    <img src="${escapeAttr(work.image ?? "")}" class="rl-work-img" width="800" height="600" alt="${escapeAttr(work.alt ?? work.title ?? "")}">
-                  </div>
-                  <div class="rl-work-head">
-                    <h4 class="rl-work-title">${escapeHtml(work.title ?? "")}</h4>
-                    <span class="rl-work-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
-                  </div>
-                  ${renderLatestWorkMeta(work)}
-                </a>
+                ${renderLatestWorkCard(work)}
               </div>
             `).join("")}
             </div>

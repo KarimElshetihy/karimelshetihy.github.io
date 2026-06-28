@@ -34,9 +34,11 @@ export function sortProjectsForDisplay(projects) {
   );
 }
 
-export function mapProjectToLatestWork(project) {
+export function mapProjectToLatestWork(project, detailProjectIds = new Set()) {
   const projectId = buildProjectId(project);
   const description = String(project.description ?? "").trim();
+  const hasCustomDetailsUrl = typeof project.details === "string" && project.details.trim();
+  const hasMatchingDetails = detailProjectIds.has(projectId);
   let client = "";
   let subtitle = "";
 
@@ -54,7 +56,11 @@ export function mapProjectToLatestWork(project) {
     subtitle,
     image: project.image ?? "",
     alt: project.title ?? "",
-    href: buildPortfolioDetailsUrl(projectId)
+    href: hasCustomDetailsUrl || hasMatchingDetails
+      ? hasCustomDetailsUrl
+        ? project.details.trim()
+        : buildPortfolioDetailsUrl(projectId)
+      : ""
   };
 }
 
@@ -65,8 +71,29 @@ export function getPortfolioProjectsFromPage(pageData) {
   return portfolioSection?.data?.projects ?? [];
 }
 
-export function getLatestWorksFromPortfolioPage(pageData) {
-  return sortProjectsForDisplay(getPortfolioProjectsFromPage(pageData).filter(isProjectVisible)).map(
-    mapProjectToLatestWork
+export function getDetailProjectsFromPage(pageData) {
+  const detailsSection = (pageData?.sections ?? []).find(
+    (section) => section.type === "portfolioDetailsData"
+  );
+  return detailsSection?.data?.projects ?? [];
+}
+
+export function buildDetailProjectIds(detailProjects) {
+  if (!Array.isArray(detailProjects)) {
+    return new Set();
+  }
+
+  return new Set(
+    detailProjects
+      .map((item) => (typeof item.id === "string" ? item.id.trim() : ""))
+      .filter(Boolean)
+  );
+}
+
+export function getLatestWorksFromPortfolioPage(portfolioPage, detailsPage) {
+  const detailProjectIds = buildDetailProjectIds(getDetailProjectsFromPage(detailsPage));
+
+  return sortProjectsForDisplay(getPortfolioProjectsFromPage(portfolioPage).filter(isProjectVisible)).map(
+    (project) => mapProjectToLatestWork(project, detailProjectIds)
   );
 }

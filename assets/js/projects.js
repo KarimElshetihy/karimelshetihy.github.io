@@ -4,6 +4,7 @@ import {
   getProjectCategories
 } from "./portfolio/categories.js";
 import {
+  buildDetailProjectIds,
   buildProjectId,
   getFeaturedFlag,
   isProjectVisible,
@@ -114,18 +115,6 @@ function renderProjectCard(project, detailProjectIds) {
         </div>
       </div>
     </div>`;
-}
-
-function buildDetailProjectIds(detailProjects) {
-  if (!Array.isArray(detailProjects)) {
-    return new Set();
-  }
-
-  return new Set(
-    detailProjects
-      .map((item) => (typeof item.id === "string" ? item.id.trim() : ""))
-      .filter(Boolean)
-  );
 }
 
 function loadJsonFile(url, label) {

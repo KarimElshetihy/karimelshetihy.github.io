@@ -2,6 +2,8 @@
  * Injects shared header/footer from assets/data/site.json
  */
 
+import { filterVisibleItems } from "./itemVisibility.js";
+
 function escapeHtml(text) {
   return String(text ?? "")
     .replace(/&/g, "&amp;")
@@ -93,7 +95,7 @@ function headerSocialHtml(links, options = {}) {
         </button>`
     : "";
 
-  const linksHtml = (links ?? [])
+  const linksHtml = filterVisibleItems(links)
     .map((l) => {
       const aria = l.label ? ` aria-label="${escapeAttr(l.label)}"` : "";
       const headerIcon = l.iconHeader ?? l.icon;
@@ -110,7 +112,7 @@ function headerSocialHtml(links, options = {}) {
 }
 
 function footerSocialHtml(links) {
-  return (links ?? [])
+  return filterVisibleItems(links)
     .map((l) => {
       const href = l.href ?? "";
       if (!href) return "";
@@ -160,7 +162,7 @@ export function renderSiteChrome(site, activeNavId) {
   const footerLocation = String(footerBrand.location ?? "").trim();
   const footerMetaParts = [footerTagline, footerLocation].filter(Boolean);
   const footerMetaLine = footerMetaParts.join(" · ");
-  const footerSocial = footer.social ?? [];
+  const footerSocial = filterVisibleItems(footer.social);
   const copyright = footer.copyright ?? {};
   const copyrightPrefix = copyright.prefix ?? "©";
   const copyrightYear = copyright.year ?? new Date().getFullYear();
@@ -192,7 +194,7 @@ export function renderSiteChrome(site, activeNavId) {
           )}</strong> <span>${escapeHtml(copyrightSuffix)}<br></span></p>
         </div>
         <div class="social-links d-flex justify-content-center">
-          ${footerSocialHtml(footer.social)}
+          ${footerSocialHtml(footerSocial)}
         </div>
         <div class="credits">${footer.creditsHtml ?? ""}</div>
       `;

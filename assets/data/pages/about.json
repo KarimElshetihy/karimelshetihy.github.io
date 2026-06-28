@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Karim — Home",
+    "title": "Karim ELShetihy | Data Engineer & Data Management Engineer",
     "description": ""
   },
   "sections": [
@@ -19,7 +19,7 @@
           "headlineHighlight": "Data Management Engineer",
           "bio": "Data Engineer focused on building scalable data platforms, APIs, and analytics solutions. Experienced in ETL, data modeling, and BI to deliver reliable data systems and actionable insights.",
           "location": "",
-          "photo": "assets/img/profile-img.jpg",
+          "photo": "assets/img/about/profile-img.jpg",
           "photoAlt": "Karim"
         },
         "contacts": {

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Portfolio — Karim",
+    "title": "Karim ELShetihy | Portfolio",
     "description": ""
   },
   "sections": [
@@ -14,7 +14,7 @@
             "id": "financial-analytics-platform",
             "title": "Financial Analytics Platform",
             "description": "",
-            "image": "assets/img/Coming Soon Dark.png",
+            "image": "assets/img/portfolio-details/financial-analytics-platform.jpg",
             "github": "",
             "url": "",
             "demo": "",
@@ -42,7 +42,7 @@
             "id": "ssas-version-control-ci-cd-pipeline",
             "title": "SSAS Version Control & CI/CD Pipeline",
             "description": "",
-            "image": "assets/img/Coming Soon.png",
+            "image": "assets/img/portfolio-details/ssas-version-control-ci-cd-pipeline.jpg",
             "github": "",
             "url": "",
             "demo": "",
@@ -71,7 +71,7 @@
             "id": "unified-master-fees-calculation-model",
             "title": "Unified Master Fees Calculation Model",
             "description": "",
-            "image": "assets/img/Coming Soon Dark.png",
+            "image": "assets/img/portfolio-details/unified-master-fees-calculation-model.jpg",
             "github": "",
             "url": "",
             "demo": "",
@@ -96,10 +96,40 @@
             ]
           },
           {
+            "id": "rag-based-ai-assistant",
+            "title": "RAG-based AI Assistant",
+            "description": "",
+            "image": "assets/img/portfolio/Coming Soon.jpg",
+            "github": "",
+            "url": "",
+            "demo": "",
+            "is_featured": 0,
+            "is_visible": 1,
+            "tools": ["Vector Databases", "RAG", "LLMs", "Python", "Fine Tuning", "Chatbots", "Transformers", "Semantic Search"],
+            "categories": [
+              "AI & Machine Learning"
+            ]
+          },
+          {
+            "id": "agentic-ai-workflow",
+            "title": "Agentic AI Workflow",
+            "description": "",
+            "image": "assets/img/portfolio/Coming Soon.jpg",
+            "github": "",
+            "url": "",
+            "demo": "",
+            "is_featured": 0,
+            "is_visible": 1,
+            "tools": ["Vector Databases", "RAG", "LLMs", "Python", "APIs", "Chatbots", "MCP", "Text Generation"],
+            "categories": [
+              "AI & Machine Learning"
+            ]
+          },
+          {
             "id": "master-data-management-system",
             "title": "Master Data Management System",
             "description": "",
-            "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+            "image": "assets/img/portfolio-details/master-data-management-system.jpg",
             "github": "",
             "url": "",
             "demo": "",

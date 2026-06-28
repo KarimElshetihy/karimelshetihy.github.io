@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "Karim",
+    "name": "Karim E.",
     "homeHref": "index.html",
     "logoSrc": null,
     "logoAlt": ""
@@ -21,19 +21,39 @@
       "label": "Upwork",
       "href": "https://www.upwork.com/freelancers/karimelshetihy",
       "icon": "assets/img/icons/Brand-Upwork--Streamline-Gray.svg",
-      "iconHover": "assets/img/icons/Brand-Upwork--Streamline-Theme.svg"
+      "iconHover": "assets/img/icons/Brand-Upwork--Streamline-Theme.svg",
+      "is_visible": false
     },
     {
       "class": "mostaqel",
       "label": "Mostaqel",
       "href": "https://mostaqel.sa/en/freelancer/karim-elshetihy",
-      "icon": "bi-stop-circle-fill"
+      "icon": "bi-stop-circle-fill",
+      "is_visible": false
     },
     {
       "class": "linkedin",
       "label": "LinkedIn",
       "href": "https://www.linkedin.com/in/karim-elshetihy",
       "icon": "bi-linkedin"
+    },
+    {
+      "class": "github",
+      "label": "GitHub",
+      "href": "https://github.com/karimelshetihy",
+      "icon": "bi-github"
+    },
+    {
+      "class": "portfolio",
+      "label": "Portfolio",
+      "href": "portfolio.html",
+      "icon": "bi-bar-chart-fill"
+    },
+    {
+      "class": "contact",
+      "label": "Contact",
+      "href": "contact.html",
+      "icon": "bi-envelope-fill"
     }
   ]
 }

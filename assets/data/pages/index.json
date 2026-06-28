@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Karim — Home",
+    "title": "Karim ELShetihy | About Me",
     "description": ""
   },
   "sections": [
@@ -19,26 +19,33 @@
           "headlineHighlight": "Data Management Engineer",
           "bio": "Data Engineer focused on building scalable data platforms, APIs, and analytics solutions. Experienced in ETL, data modeling, and BI to deliver reliable data systems and actionable insights.",
           "location": "",
-          "photo": "assets/img/profile-img.jpg",
+          "photo": "assets/img/about/profile-img.jpg",
           "photoAlt": "Karim"
         },
         "contacts": {
           "primaryCta": {
             "label": "Book a Call",
             "href": "contact.html",
-            "icon": "bi-calendar-check"
+            "icon": "bi-calendar-event-fill"
           }
         },
         "quickLinks": [
           {
             "label": "Portfolio",
-            "icon": "bi-graph-up-arrow",
+            "icon": "bi-bar-chart-fill",
             "href": "portfolio.html"
           },
           {
-            "label": "Resume",
-            "icon": "bi-mortarboard",
-            "href": "resume.html"
+            "label": "Upwork",
+            "icon": "assets/img/icons/Brand-Upwork--Streamline-Theme.svg",
+            "href": "https://www.upwork.com/freelancers/karimelshetihy",
+            "is_visible": false
+          },
+          {
+            "label": "مستقل",
+            "icon": "bi-stop-circle-fill",
+            "href": "https://mostaqel.sa/en/freelancer/karim-elshetihy",
+            "is_visible": false
           }
         ],
         "socialLinks": [
@@ -46,16 +53,6 @@
             "label": "LinkedIn",
             "icon": "bi-linkedin",
             "href": "https://www.linkedin.com/in/karim-elshetihy"
-          },
-          {
-            "label": "Upwork",
-            "icon": "assets/img/icons/Brand-Upwork--Streamline-Theme.svg",
-            "href": "https://www.upwork.com/freelancers/karimelshetihy"
-          },
-          {
-            "label": "مستقل",
-            "icon": "bi-stop-circle-fill",
-            "href": "https://mostaqel.sa/en/freelancer/karim-elshetihy"
           },
           {
             "label": "GitHub",
@@ -283,7 +280,7 @@
           "subtitle": "If you need a data engineer to build reliable pipelines, clean data models, and practical analytics solutions, let's work together.",
           "buttonLabel": "Hire Me",
           "buttonHref": "mailto:karim.elshetihy@gmail.com",
-          "backgroundImage": "assets/img/hero-bg.jpg"
+          "backgroundImage": "assets/img/about/hero-bg.jpg"
         }
       }
     }

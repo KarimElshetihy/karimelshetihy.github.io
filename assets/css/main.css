@@ -2114,21 +2114,31 @@ body.about-page .about-skills-split > .container {
 body.about-page .rl-profile-hero-photo-wrap {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-shrink: 0;
-  width: 180px;
-  height: 180px;
+  width: 196px;
+  height: 196px;
   border-radius: 50%;
-  overflow: hidden;
   margin-inline: auto;
-  box-shadow: 0 16px 36px color-mix(in srgb, var(--heading-color), transparent 86%);
+  box-sizing: border-box;
+  padding: 6px;
+  border: 4px solid var(--accent-color);
+  background: var(--background-color);
+  box-shadow:
+    0 14px 32px color-mix(in srgb, var(--heading-color), transparent 70%),
+    inset 0 2px 6px color-mix(in srgb, var(--heading-color), transparent 70%);
 }
 
 body.about-page .rl-profile-hero-photo {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 50%;
+  box-shadow:
+    inset 0 8px 18px color-mix(in srgb, var(--heading-color), transparent 78%),
+    inset 0 -4px 10px color-mix(in srgb, var(--background-color), transparent 35%),
+    inset 0 0 0 1px color-mix(in srgb, var(--heading-color), transparent 92%);
 }
 
 body.about-page .rl-profile-hero-content {
@@ -2685,6 +2695,17 @@ body.resume-page .resume-layout .rl-work-card {
 
 body.resume-page .resume-layout .rl-work-card:hover {
   color: inherit;
+}
+
+body.resume-page .resume-layout .rl-work-card--static {
+  cursor: default;
+  pointer-events: none;
+}
+
+body.resume-page .resume-layout .rl-work-card--static:hover .rl-work-img,
+body.resume-page .resume-layout .rl-work-card--static:hover .rl-work-arrow {
+  transform: none;
+  color: var(--heading-color);
 }
 
 body.resume-page .resume-layout .rl-work-thumb {
