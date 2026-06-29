@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "Karim ELShetihy | Explore Topic",
+    "description": ""
+  },
+  "sections": [
+    {
+      "type": "exploreDetailsData",
+      "data": {
+        "title": "Explore Topic",
+        "subtitle": "In-depth notes and learning paths.",
+        "infoTitle": "Topic information",
+        "topics": [
+          {
+            "id": "de-fundamentals",
+            "title": "DE Fundamentals",
+            "subtitle": "Core concepts every data engineer should understand before scaling pipelines and platforms.",
+            "infoTitle": "Topic information",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Topics",
+                "value": "Pipelines, Warehousing, Modeling, Ingestion, Quality"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ],
+            "articleNav": {
+              "enabled": true,
+              "title": "On this page",
+              "minItems": 2,
+              "levels": [2],
+              "defaultExpanded": true
+            },
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Data engineering fundamentals cover how data moves from source systems into models and products that teams can trust. Before orchestration tools or cloud platforms, the core ideas are ingestion, transformation, storage, and delivery."
+              },
+              {
+                "type": "paragraph",
+                "text": "Strong fundamentals make every later decision easier — whether you are choosing batch vs. streaming, designing a warehouse schema, or debugging a failed pipeline at 2 a.m."
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Core building blocks"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Ingestion: APIs, files, databases, event streams, and change-data-capture patterns.",
+                  "Transformation: cleaning, joining, aggregating, and applying business rules.",
+                  "Storage: warehouses, lakes, lakehouses, and when to use each.",
+                  "Modeling: staging, intermediate, and mart layers with clear grain and keys.",
+                  "Serving: APIs, BI semantic models, and reverse ETL to operational tools."
+                ]
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "What to learn next"
+              },
+              {
+                "type": "paragraph",
+                "text": "Once fundamentals are solid, move into orchestration (Airflow, Dagster), distributed processing (Spark), and architecture patterns like medallion and data mesh — each builds directly on the concepts above."
+              }
+            ]
+          },
+          {
+            "id": "data-architecture",
+            "title": "Data Architecture",
+            "subtitle": "Lakehouse, medallion, and data mesh patterns for scalable platforms.",
+            "infoTitle": "Topic information",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Patterns",
+                "value": "Lakehouse, Medallion, Data Mesh, Hub-and-Spoke"
+              },
+              {
+                "label": "Level",
+                "value": "Intermediate"
+              }
+            ],
+            "articleNav": {
+              "enabled": true,
+              "title": "On this page",
+              "minItems": 2,
+              "levels": [2],
+              "defaultExpanded": true
+            },
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Data architecture defines how systems connect, how ownership is divided, and how data flows from raw ingestion to governed analytics products. The right pattern depends on team size, domain complexity, and platform maturity."
+              },
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Common patterns"
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Medallion (bronze / silver / gold): progressive quality layers in a lakehouse.",
+                  "Data mesh: domain-oriented data products with federated governance.",
+                  "Hub-and-spoke: centralized warehouse with departmental marts.",
+                  "Lambda / Kappa: batch and streaming paths for the same logical dataset."
+                ]
+              },
+              {
+                "type": "quote",
+                "text": "Architecture is not about picking the trendiest stack — it is about matching structure to how your organization actually creates and consumes data."
+              }
+            ]
+          },
+          {
+            "id": "bi-fundamentals",
+            "title": "BI Fundamentals",
+            "subtitle": "Semantic models, metrics, and self-service reporting foundations.",
+            "infoTitle": "Topic information",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Analytics"
+              },
+              {
+                "label": "Tools",
+                "value": "Power BI, DAX, SSAS, Semantic Models"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ],
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Overview"
+              },
+              {
+                "type": "paragraph",
+                "text": "Business intelligence fundamentals start with a clear metric layer — defined once, reused everywhere. Semantic models, star schemas, and DAX measures are the building blocks of trustworthy dashboards."
+              },
+              {
+                "type": "list",
+                "style": "unordered",
+                "items": [
+                  "Define grain before building visuals.",
+                  "Separate dimensions from facts and measures.",
+                  "Use a shared metrics catalog for cross-team alignment.",
+                  "Apply row-level security for multi-tenant reporting."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Karim ELShetihy | Explore",
+    "description": "Explore data engineering, analytics, science, DataOps, and AI topics."
+  },
+  "sections": [
+    {
+      "type": "exploreData",
+      "data": {
+        "title": "Explore Data Fields",
+        "subtitle": "Navigate through the core domains of modern data work. Select a field to browse topics and deep-dive guides.",
+        "categories": [
+          {
+            "id": "data-engineering",
+            "title": "Data Engineering",
+            "description": "Infrastructure that moves, transforms, and stores data at scale.",
+            "longDescription": "Data engineering is the foundation of every modern data platform. It covers how raw data is ingested, modeled, orchestrated, and delivered reliably to downstream analytics, science, and product teams.",
+            "icon": "bi-wrench-adjustable",
+            "default": true,
+            "soon": true,
+            "order": 1
+          },
+          {
+            "id": "data-analytics",
+            "title": "Data Analytics & BI",
+            "description": "Turning data into insights through BI, metrics, and reporting.",
+            "longDescription": "Data analytics focuses on measurement, visualization, and decision support — from semantic models and dashboards to self-service reporting and KPI design.",
+            "icon": "bi-bar-chart-line-fill",
+            "soon": true,
+            "order": 2
+          },
+          {
+            "id": "data-science",
+            "title": "Data Science & ML",
+            "description": "Statistical modeling, experimentation, and predictive analytics.",
+            "longDescription": "Data science combines statistics, programming, and domain knowledge to build models, run experiments, and extract patterns that guide strategic decisions.",
+            "icon": "bi-bezier2",
+            "soon": true,
+            "order": 3
+          },
+          {
+            "id": "cloud-dataops",
+            "title": "Cloud & DataOps",
+            "description": "Cloud computing, CI/CD, observability, and quality for data systems.",
+            "longDescription": "Cloud computing, CI/CD, observability, and quality for data systems. DataOps applies software engineering practices to data pipelines — version control, testing, monitoring, and deployment automation for trustworthy data delivery.",
+            "icon": "bi-cpu-fill",
+            "soon": true,
+            "order": 5
+          },
+          {
+            "id": "data-architecture",
+            "title": "Data Architecture",
+            "description": "Lakehouse, medallion, and data mesh patterns for scalable platforms.",
+            "longDescription": "Data architecture covers lakehouse, medallion, and data mesh patterns for scalable platforms.",
+            "icon": "bi-layers-fill",
+            "soon": true,
+            "order": 4
+          },
+          {
+            "id": "agentic-ai",
+            "title": "Agentic AI",
+            "description": "Agentic AI workflows, LLMs,RAG, and prompt engineering",
+            "longDescription": "Agentic AI covers agentic AI workflows, large language models, retrieval-augmented generation, prompt engineering, and practical agent workflows for business automation.",
+            "icon": "bi-robot",
+            "soon": true,
+            "order": 6
+          }
+        ],
+        "topics": [
+          {
+            "id": "de-fundamentals",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "DE Fundamentals",
+            "description": "Core Concepts, Pipelines, Warehousing",
+            "icon": "bi-diagram-3-fill"
+          },
+          {
+            "id": "big-data-tools",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Big Data Tools",
+            "description": "Spark, Hadoop Ecosystem, Kafka",
+            "icon": "bi-hdd-stack-fill",
+            "soon": true
+          },
+          {
+            "id": "orchestration",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Orchestration",
+            "description": "Airflow, Prefect, Dagster",
+            "icon": "bi-diagram-2-fill",
+            "soon": true
+          },
+          {
+            "id": "data-architecture",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Data Architecture",
+            "description": "Lakehouse, Medallion, Data Mesh",
+            "icon": "bi-layers-fill",
+            "soon": true
+          },
+          {
+            "id": "stream-processing",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Stream Processing",
+            "description": "Kafka, Flink, Spark Streaming",
+            "icon": "bi-lightning-charge-fill",
+            "soon": true
+          },
+          {
+            "id": "cloud-de",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Cloud DE",
+            "description": "AWS, Azure, GCP",
+            "icon": "bi-cloud-fill",
+            "soon": true
+          },
+          {
+            "id": "bi-fundamentals",
+            "categoryId": "data-analytics-bi",
+            "categoryLabel": "Data Analytics & BI",
+            "title": "BI Fundamentals",
+            "description": "Semantic Models, DAX, Metrics",
+            "icon": "bi-graph-up-arrow",
+            "soon": true
+          },
+          {
+            "id": "dashboard-design",
+            "categoryId": "data-analytics",
+            "categoryLabel": "Data Analytics",
+            "title": "Dashboard Design",
+            "description": "UX, Storytelling, KPIs",
+            "icon": "bi-easel-fill",
+            "soon": true
+          },
+          {
+            "id": "ml-fundamentals",
+            "categoryId": "data-science",
+            "categoryLabel": "Data Science",
+            "title": "ML Fundamentals",
+            "description": "Supervised, Unsupervised, Evaluation",
+            "icon": "bi-bezier2",
+            "soon": true
+          },
+          {
+            "id": "pipeline-observability",
+            "categoryId": "cloud-dataops",
+            "categoryLabel": "Cloud & DataOps",
+            "title": "Pipeline Observability",
+            "description": "Monitoring, Alerting, Lineage",
+            "icon": "bi-eye-fill",
+            "soon": true
+          },
+          {
+            "id": "rag-patterns",
+            "categoryId": "agentic-ai",
+            "categoryLabel": "Agentic AI",
+            "title": "RAG Patterns",
+            "description": "Embeddings, Retrieval, Evaluation",
+            "icon": "bi-search",
+            "soon": true
+          }
+        ]
+      }
+    }
+  ]
+}

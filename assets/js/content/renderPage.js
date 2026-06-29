@@ -18,6 +18,7 @@ import {
   renderProjectInfoItem
 } from "../portfolio/renderProjectInfo.js";
 import { findProjectById, getRequestedProjectId } from "../portfolio/projectIdFromUrl.js";
+import { findTopicById, getRequestedTopicId } from "../explore/exploreTopicUrl.js";
 import { filterVisibleItems } from "./itemVisibility.js";
 import { sortByOrder } from "./sortByOrder.js";
 
@@ -1019,12 +1020,144 @@ function renderStarterData(data) {
     </section>`;
 }
 
-function renderPortfolioDetailsData(data) {
-  const requestedProjectId = getRequestedProjectId();
-  const projectVariants = Array.isArray(data.projects) ? data.projects : [];
-  const matchedProject = findProjectById(projectVariants, requestedProjectId);
-  const selectedProject = matchedProject ?? projectVariants[0];
-  const detailsData = selectedProject ?? data;
+function getExploreSoonLabel(item) {
+  const label = String(item?.soonLabel ?? item?.soonTag ?? "").trim();
+  return label || "Soon";
+}
+
+function isExploreItemSoon(item) {
+  return item?.soon === true || Number(item?.soon) === 1 || item?.unavailable === true;
+}
+
+function renderExploreTopicCard(topic) {
+  const href = String(topic?.href ?? "").trim();
+  const isClickable = Boolean(href);
+  const showSoon = isExploreItemSoon(topic) || !isClickable;
+  const tag = isClickable ? "a" : "div";
+  const attrs = isClickable
+    ? ` href="${escapeAttr(href)}"`
+    : ` aria-disabled="true" tabindex="-1"`;
+  const cardClass = isClickable
+    ? "rl-explore-topic-card"
+    : "rl-explore-topic-card rl-explore-topic-card--static";
+
+  return `
+    <${tag}${attrs} class="${cardClass}">
+      <div class="rl-explore-topic-card-header">
+        ${topic.icon ? `<span class="rl-explore-topic-icon" aria-hidden="true"><i class="bi ${escapeAttr(topic.icon)}"></i></span>` : ""}
+        <h4 class="rl-explore-topic-title">${escapeHtml(topic.title ?? "")}</h4>
+        ${showSoon ? `<span class="rl-explore-soon-badge">${escapeHtml(getExploreSoonLabel(topic))}</span>` : ""}
+      </div>
+      ${topic.description ? `<p class="rl-explore-topic-desc mb-0">${escapeHtml(topic.description)}</p>` : ""}
+    </${tag}>`;
+}
+
+function renderExploreData(data) {
+  const title = escapeHtml(data.title ?? "Explore");
+  const subtitle = escapeHtml(data.subtitle ?? "");
+  const categories = data.categories ?? [];
+  const topics = data.topics ?? [];
+  const defaultCategoryId =
+    categories.find((item) => item.default === true || item.is_default === true)?.id
+    ?? categories.find((item) => item.soon !== true && Number(item.soon) !== 1)?.id
+    ?? categories[0]?.id
+    ?? "";
+
+  const topicsByCategory = topics.reduce((groups, topic) => {
+    const categoryId = String(topic.categoryId ?? "").trim();
+    if (!categoryId) return groups;
+    if (!groups[categoryId]) groups[categoryId] = [];
+    groups[categoryId].push(topic);
+    return groups;
+  }, {});
+
+  const categoriesHtml = categories.map((category) => {
+    const isSoon = category.soon === true || Number(category.soon) === 1;
+    const isDefault = category.id === defaultCategoryId;
+    return `
+      <button
+        type="button"
+        class="rl-explore-category-card${isDefault ? " is-active" : ""}${isSoon ? " is-soon" : ""}"
+        data-explore-category="${escapeAttr(category.id ?? "")}"
+        data-explore-title="${escapeAttr(category.title ?? "")}"
+        data-explore-long-description="${escapeAttr(category.longDescription ?? category.description ?? "")}"
+        ${isSoon ? "disabled aria-disabled=\"true\" tabindex=\"-1\"" : ""}
+        aria-pressed="${isDefault ? "true" : "false"}">
+        <span class="rl-explore-category-card-inner">
+          ${category.icon ? `<span class="rl-explore-category-icon" aria-hidden="true"><i class="bi ${escapeAttr(category.icon)}"></i></span>` : ""}
+          <span class="rl-explore-category-text">
+            <span class="rl-explore-category-title">${escapeHtml(category.title ?? "")}</span>
+            <span class="rl-explore-category-summary">${escapeHtml(category.description ?? "")}</span>
+          </span>
+        </span>
+        ${isSoon ? `<span class="rl-explore-soon-badge">${escapeHtml(getExploreSoonLabel(category))}</span>` : ""}
+      </button>`;
+  }).join("");
+
+  const topicPanelsHtml = categories.map((category) => {
+    const categoryTopics = topicsByCategory[category.id] ?? [];
+    const isDefault = category.id === defaultCategoryId;
+    return `
+      <div
+        class="rl-explore-topics${isDefault ? " is-active" : ""}"
+        data-explore-topics-panel
+        data-category="${escapeAttr(category.id ?? "")}"
+        ${isDefault ? "" : "hidden"}>
+        ${categoryTopics.map((topic) => renderExploreTopicCard(topic)).join("")}
+      </div>`;
+  }).join("");
+
+  const defaultCategory = categories.find((item) => item.id === defaultCategoryId);
+  const defaultDescription = escapeHtml(
+    defaultCategory?.longDescription ?? defaultCategory?.description ?? ""
+  );
+  const defaultTopicCount = (topicsByCategory[defaultCategoryId] ?? []).length;
+
+  return `
+    <section id="explore" class="explore section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>${title}</h2>
+        ${subtitle ? `<p>${subtitle}</p>` : ""}
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="rl-explore" data-explore-root data-default-category="${escapeAttr(defaultCategoryId)}">
+          <div class="rl-explore-categories" role="tablist" aria-label="Explore categories">
+            ${categoriesHtml}
+          </div>
+          <div class="rl-explore-topics-section">
+            <div class="rl-explore-topics-head">
+              <div class="rl-explore-topics-head-text">
+                <h3 class="rl-explore-topics-title mb-0" data-explore-topics-title>${escapeHtml(defaultCategory?.title ?? "")}</h3>
+                <p class="rl-explore-category-desc mb-0" data-explore-description-panel>${defaultDescription}</p>
+              </div>
+              <span class="rl-explore-topics-count" data-explore-topics-count>${defaultTopicCount} topic${defaultTopicCount === 1 ? "" : "s"}</span>
+            </div>
+            <div class="rl-explore-topics-panels" data-explore-topics-panels>
+              ${topicPanelsHtml}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
+function renderContentDetailsSection(data, config) {
+  const {
+    getRequestedId,
+    findById,
+    itemsKey,
+    backHref,
+    backLabel,
+    sectionId,
+    sectionClass,
+    defaultInfoTitle
+  } = config;
+
+  const requestedId = getRequestedId();
+  const variants = Array.isArray(data[itemsKey]) ? data[itemsKey] : [];
+  const matchedItem = findById(variants, requestedId);
+  const selectedItem = matchedItem ?? variants[0];
+  const detailsData = selectedItem ?? data;
 
   const sliderImages = detailsData.sliderImages ?? data.sliderImages ?? [];
   const projectInfo = detailsData.projectInfo ?? data.projectInfo ?? [];
@@ -1043,7 +1176,7 @@ function renderPortfolioDetailsData(data) {
         minItems: articleNavConfig.minItems,
         placement: "embedded",
         defaultExpanded: articleNavConfig.defaultExpanded,
-        panelId: `article-nav-${slugifyHeading(detailsData.id ?? requestedProjectId ?? "project")}`
+        panelId: `article-nav-${slugifyHeading(detailsData.id ?? requestedId ?? "item")}`
       })
     : "";
 
@@ -1056,9 +1189,9 @@ function renderPortfolioDetailsData(data) {
   };
 
   return `
-    <section id="portfolio-details" class="portfolio-details section">
+    <section id="${escapeAttr(sectionId)}" class="${escapeAttr(sectionClass)} section">
       <div class="container section-title" data-aos="fade-up">
-        <h2>${escapeHtml(detailsData.title ?? data.title ?? "Portfolio Details")}</h2>
+        <h2>${escapeHtml(detailsData.title ?? data.title ?? "")}</h2>
         <p>${escapeHtml(detailsData.subtitle ?? data.subtitle ?? "")}</p>
       </div>
 
@@ -1084,7 +1217,7 @@ function renderPortfolioDetailsData(data) {
             <article class="portfolio-article${sliderImages.length ? " portfolio-article--with-slider" : ""}" data-aos="fade-up" data-aos-delay="200">
               ${articleHtml}
               <p class="portfolio-article-back">
-                <a href="portfolio.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> Back to portfolio</a>
+                <a href="${escapeAttr(backHref)}"><i class="bi bi-arrow-left" aria-hidden="true"></i> ${escapeHtml(backLabel)}</a>
               </p>
             </article>`
               : ""}
@@ -1092,7 +1225,7 @@ function renderPortfolioDetailsData(data) {
 
           <div class="col-lg-4">
             <div class="portfolio-info portfolio-info--sidebar" data-aos="fade-up" data-aos-delay="200">
-              <h3>${escapeHtml(detailsData.infoTitle ?? data.infoTitle ?? "Project information")}</h3>
+              <h3>${escapeHtml(detailsData.infoTitle ?? data.infoTitle ?? defaultInfoTitle)}</h3>
               ${articleNavHtml}
               <ul>
                 ${projectInfo.map((item) => renderProjectInfoItem(item)).join("")}
@@ -1103,6 +1236,32 @@ function renderPortfolioDetailsData(data) {
         </div>
       </div>
     </section>`;
+}
+
+function renderPortfolioDetailsData(data) {
+  return renderContentDetailsSection(data, {
+    getRequestedId: getRequestedProjectId,
+    findById: findProjectById,
+    itemsKey: "projects",
+    backHref: "portfolio.html",
+    backLabel: "Back to portfolio",
+    sectionId: "portfolio-details",
+    sectionClass: "portfolio-details",
+    defaultInfoTitle: "Project information"
+  });
+}
+
+function renderExploreDetailsData(data) {
+  return renderContentDetailsSection(data, {
+    getRequestedId: getRequestedTopicId,
+    findById: findTopicById,
+    itemsKey: "topics",
+    backHref: "explore.html",
+    backLabel: "Back to explore",
+    sectionId: "explore-details",
+    sectionClass: "portfolio-details explore-details",
+    defaultInfoTitle: "Topic information"
+  });
 }
 
 export function renderSection(section) {
@@ -1126,6 +1285,10 @@ export function renderSection(section) {
       return renderStarterData(data);
     case "portfolioDetailsData":
       return renderPortfolioDetailsData(data);
+    case "exploreData":
+      return renderExploreData(data);
+    case "exploreDetailsData":
+      return renderExploreDetailsData(data);
     default:
       console.warn("[renderPage] Unknown section type:", type);
       return "";
@@ -1141,8 +1304,70 @@ export function renderPage(pageData) {
   initAboutSkillsToggle(root);
   initProfileHeroTooltips(root);
   initCareerTimeline(root);
+  initExplorePage(root);
   initPrintSelection(root);
   initArticleNav(root);
+}
+
+function initExplorePage(root) {
+  const exploreRoot = root.querySelector("[data-explore-root]");
+  if (!exploreRoot || exploreRoot.dataset.bound === "true") return;
+  exploreRoot.dataset.bound = "true";
+
+  const categoryButtons = Array.from(exploreRoot.querySelectorAll("[data-explore-category]"));
+  const topicPanels = Array.from(exploreRoot.querySelectorAll("[data-explore-topics-panel]"));
+  const descriptionEl = exploreRoot.querySelector("[data-explore-description-panel]");
+  const topicsTitleEl = exploreRoot.querySelector("[data-explore-topics-title]");
+  const topicsCountEl = exploreRoot.querySelector("[data-explore-topics-count]");
+  const defaultCategoryId = exploreRoot.dataset.defaultCategory ?? "";
+
+  function showCategory(categoryId, description, categoryTitle) {
+    categoryButtons.forEach((button) => {
+      const isActive = button.dataset.exploreCategory === categoryId;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+
+    if (descriptionEl) {
+      descriptionEl.textContent = description;
+    }
+
+    if (topicsTitleEl) {
+      topicsTitleEl.textContent = categoryTitle;
+    }
+
+    topicPanels.forEach((panel) => {
+      const isActive = panel.dataset.category === categoryId;
+      panel.classList.toggle("is-active", isActive);
+      panel.hidden = !isActive;
+      if (isActive && topicsCountEl) {
+        const count = panel.querySelectorAll(".rl-explore-topic-card").length;
+        topicsCountEl.textContent = `${count} topic${count === 1 ? "" : "s"}`;
+      }
+    });
+  }
+
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.disabled) return;
+      showCategory(
+        button.dataset.exploreCategory ?? "",
+        button.dataset.exploreLongDescription ?? "",
+        button.dataset.exploreTitle ?? ""
+      );
+    });
+  });
+
+  if (defaultCategoryId) {
+    const defaultButton = categoryButtons.find(
+      (button) => button.dataset.exploreCategory === defaultCategoryId
+    );
+    showCategory(
+      defaultCategoryId,
+      defaultButton?.dataset.exploreLongDescription ?? descriptionEl?.textContent ?? "",
+      defaultButton?.dataset.exploreTitle ?? topicsTitleEl?.textContent ?? ""
+    );
+  }
 }
 
 function initCareerTimeline(root) {

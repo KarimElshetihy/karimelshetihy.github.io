@@ -8,6 +8,7 @@ import { loadJson } from "./loadJson.js";
 import { renderSiteChrome } from "./renderSiteChrome.js";
 import { renderPage } from "./renderPage.js";
 import { getLatestWorksFromPortfolioPage } from "../portfolio/projectUtils.js";
+import { enrichExploreTopics, getExploreSection } from "./exploreUtils.js";
 
 const PAGE_TO_NAV = {
   index: "home",
@@ -17,8 +18,10 @@ const PAGE_TO_NAV = {
   services: "services",
   portfolio: "portfolio",
   portfolio_dynamic: "portfolio",
+  explore: "explore",
   contact: "contact",
   portfolio_details: "portfolio",
+  explore_details: "explore",
   starter_page: "home"
 };
 
@@ -88,6 +91,17 @@ async function enrichLatestWorksFromPortfolio(pageData) {
   return pageData;
 }
 
+async function enrichExplorePage(pageData) {
+  const exploreSection = getExploreSection(pageData);
+  if (!exploreSection?.data) {
+    return pageData;
+  }
+
+  const detailsPage = await loadJson("assets/data/pages/explore_details.json");
+  exploreSection.data = enrichExploreTopics(exploreSection.data, detailsPage);
+  return pageData;
+}
+
 async function bootstrap() {
   const pageKey = document.body.dataset.page || "index";
 
@@ -119,8 +133,9 @@ async function bootstrap() {
 
   try {
     pageData = await enrichLatestWorksFromPortfolio(pageData);
+    pageData = await enrichExplorePage(pageData);
   } catch (error) {
-    showFatal(error.message || "Could not load portfolio projects.");
+    showFatal(error.message || "Could not load page dependencies.");
     return;
   }
 
