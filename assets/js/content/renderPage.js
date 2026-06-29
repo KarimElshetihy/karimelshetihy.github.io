@@ -1055,7 +1055,7 @@ function renderExploreTopicCard(topic) {
 function renderExploreData(data) {
   const title = escapeHtml(data.title ?? "Explore");
   const subtitle = escapeHtml(data.subtitle ?? "");
-  const categories = data.categories ?? [];
+  const categories = sortByOrder(data.categories ?? []);
   const topics = data.topics ?? [];
   const defaultCategoryId =
     categories.find((item) => item.default === true || item.is_default === true)?.id
@@ -1070,6 +1070,10 @@ function renderExploreData(data) {
     groups[categoryId].push(topic);
     return groups;
   }, {});
+
+  Object.keys(topicsByCategory).forEach((categoryId) => {
+    topicsByCategory[categoryId] = sortByOrder(topicsByCategory[categoryId]);
+  });
 
   const categoriesHtml = categories.map((category) => {
     const isSoon = category.soon === true || Number(category.soon) === 1;
@@ -1161,15 +1165,23 @@ function renderContentDetailsSection(data, config) {
 
   const sliderImages = detailsData.sliderImages ?? data.sliderImages ?? [];
   const projectInfo = detailsData.projectInfo ?? data.projectInfo ?? [];
-  const articleContent = normalizeProjectContent(detailsData);
   const articleNavConfig = resolveArticleNavConfig(detailsData, data);
-  const articleAnchors = articleNavConfig.enabled
-    ? collectHeadingAnchors(articleContent, { levels: articleNavConfig.levels })
-    : [];
-  const articleHtml = renderPortfolioContent(articleContent, {
-    anchors: articleAnchors,
-    anchorLevels: articleNavConfig.levels
-  });
+  let articleAnchors = [];
+  let articleHtml = "";
+
+  if (detailsData._markdown?.html) {
+    articleHtml = detailsData._markdown.html;
+    articleAnchors = articleNavConfig.enabled ? (detailsData._markdown.anchors ?? []) : [];
+  } else {
+    const articleContent = normalizeProjectContent(detailsData);
+    articleAnchors = articleNavConfig.enabled
+      ? collectHeadingAnchors(articleContent, { levels: articleNavConfig.levels })
+      : [];
+    articleHtml = renderPortfolioContent(articleContent, {
+      anchors: articleAnchors,
+      anchorLevels: articleNavConfig.levels
+    });
+  }
   const articleNavHtml = articleNavConfig.enabled
     ? renderArticleNav(articleAnchors, {
         title: articleNavConfig.title,

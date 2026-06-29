@@ -3404,7 +3404,14 @@ body.resume-page .resume-layout .rl-work-client {
   margin: 36px 0 16px;
 }
 
-.portfolio-details .portfolio-article-heading--h2:first-child {
+.portfolio-details .portfolio-article-heading--h1 {
+  font-size: 34px;
+  margin: 0 0 18px;
+  line-height: 1.25;
+}
+
+.portfolio-details .portfolio-article-heading--h2:first-child,
+.portfolio-details .portfolio-article-heading--h1:first-child {
   margin-top: 0;
 }
 
@@ -3617,6 +3624,119 @@ body.resume-page .resume-layout .rl-work-client {
   margin: 32px 0;
   border: 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.portfolio-details .portfolio-article-table-wrap {
+  margin: 24px 0 28px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 10px;
+  background: var(--surface-color);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--heading-color), transparent 94%);
+}
+
+.portfolio-details .portfolio-article-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--default-color), transparent 8%);
+}
+
+.portfolio-details .portfolio-article-table thead {
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+
+.portfolio-details .portfolio-article-table th,
+.portfolio-details .portfolio-article-table td {
+  padding: 0.85rem 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  text-align: left;
+}
+
+.portfolio-details .portfolio-article-table th {
+  font-family: var(--heading-font);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--heading-color);
+  white-space: nowrap;
+}
+
+.portfolio-details .portfolio-article-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.portfolio-details .portfolio-article-table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--background-color), transparent 35%);
+}
+
+.portfolio-details .portfolio-article-table td strong {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+.portfolio-details .portfolio-article-inline-code,
+.portfolio-details .portfolio-article-table code:not(.portfolio-article-code) {
+  padding: 0.12rem 0.38rem;
+  border-radius: 0.35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--heading-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+}
+
+.portfolio-details .portfolio-article-code-wrap {
+  position: relative;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.portfolio-details .portfolio-article-code-lang {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  z-index: 1;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-family: var(--heading-font);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--contrast-color), transparent 10%);
+  background: color-mix(in srgb, var(--contrast-color), transparent 78%);
+}
+
+.portfolio-details .portfolio-article-code-block {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--heading-color), transparent 72%);
+  background: color-mix(in srgb, var(--heading-color), transparent 8%);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--heading-color), transparent 90%);
+  -webkit-overflow-scrolling: touch;
+}
+
+.portfolio-details .portfolio-article-code {
+  display: block;
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--contrast-color), transparent 6%);
+  white-space: pre;
+  tab-size: 2;
+}
+
+.portfolio-details .portfolio-article-code-wrap:has(.portfolio-article-code-lang) .portfolio-article-code-block {
+  padding-top: 2rem;
 }
 
 .portfolio-details .portfolio-article-back {

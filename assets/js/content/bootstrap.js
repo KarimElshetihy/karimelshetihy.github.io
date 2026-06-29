@@ -8,7 +8,9 @@ import { loadJson } from "./loadJson.js";
 import { renderSiteChrome } from "./renderSiteChrome.js";
 import { renderPage } from "./renderPage.js";
 import { getLatestWorksFromPortfolioPage } from "../portfolio/projectUtils.js";
-import { enrichExploreTopics, getExploreSection } from "./exploreUtils.js";
+import { enrichExploreTopics, getExploreSection, mergeExploreTopicOrder } from "./exploreUtils.js";
+import { enrichPortfolioMarkdown } from "../portfolio/enrichPortfolioMarkdown.js";
+import { enrichExploreMarkdown } from "../explore/enrichExploreMarkdown.js";
 
 const PAGE_TO_NAV = {
   index: "home",
@@ -134,6 +136,14 @@ async function bootstrap() {
   try {
     pageData = await enrichLatestWorksFromPortfolio(pageData);
     pageData = await enrichExplorePage(pageData);
+    if (pageKey === "portfolio_details") {
+      pageData = await enrichPortfolioMarkdown(pageData);
+    }
+    if (pageKey === "explore_details") {
+      const explorePage = await loadJson("assets/data/pages/explore.json");
+      pageData = mergeExploreTopicOrder(pageData, explorePage);
+      pageData = await enrichExploreMarkdown(pageData);
+    }
   } catch (error) {
     showFatal(error.message || "Could not load page dependencies.");
     return;

@@ -34,50 +34,262 @@
               "enabled": true,
               "title": "On this page",
               "minItems": 2,
-              "levels": [2],
+              "levels": [
+                2
+              ],
               "defaultExpanded": true
             },
-            "content": [
+            "contentFile": "assets/content/explore/de-fundamentals.md"
+          },
+          {
+            "id": "slowly-changing-dimensions",
+            "title": "Slowly Changing Dimensions",
+            "subtitle": "Type 1, Type 2, Type 3",
+            "infoTitle": "Topic information",
+            "projectInfo": [
               {
-                "type": "heading",
-                "level": 2,
-                "text": "Overview"
+                "label": "Field",
+                "value": "Data Engineering"
               },
               {
-                "type": "paragraph",
-                "text": "Data engineering fundamentals cover how data moves from source systems into models and products that teams can trust. Before orchestration tools or cloud platforms, the core ideas are ingestion, transformation, storage, and delivery."
+                "label": "Type",
+                "value": "Type 1, Type 2, Type 3"
               },
               {
-                "type": "paragraph",
-                "text": "Strong fundamentals make every later decision easier — whether you are choosing batch vs. streaming, designing a warehouse schema, or debugging a failed pipeline at 2 a.m."
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ],
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/slowly-changing-dimensions.md"
+          },
+          {
+            "id": "clustering-bucketing",
+            "title": "Clustering & Bucketing",
+            "subtitle": "Clustering, Bucketing, Z-ordering",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/clustering-bucketing.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
               },
               {
-                "type": "divider"
+                "label": "Type",
+                "value": "Clustering, Bucketing, Z-ordering"
               },
               {
-                "type": "heading",
-                "level": 2,
-                "text": "Core building blocks"
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "data-partitioning",
+            "title": "Data Partitioning",
+            "subtitle": "Partitioning, Clustering, Bucketing",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/data-partitioning.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
               },
               {
-                "type": "list",
-                "style": "unordered",
-                "items": [
-                  "Ingestion: APIs, files, databases, event streams, and change-data-capture patterns.",
-                  "Transformation: cleaning, joining, aggregating, and applying business rules.",
-                  "Storage: warehouses, lakes, lakehouses, and when to use each.",
-                  "Modeling: staging, intermediate, and mart layers with clear grain and keys.",
-                  "Serving: APIs, BI semantic models, and reverse ETL to operational tools."
-                ]
+                "label": "Type",
+                "value": "Partitioning, Clustering, Bucketing"
               },
               {
-                "type": "heading",
-                "level": 2,
-                "text": "What to learn next"
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "dwh-modeling",
+            "title": "Data Warehouse Modeling",
+            "subtitle": "Star Schema, Snowflake Schema, Galaxy Schema, Kimball Approach, Inmon Approach",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/dwh-modeling.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
               },
               {
-                "type": "paragraph",
-                "text": "Once fundamentals are solid, move into orchestration (Airflow, Dagster), distributed processing (Spark), and architecture patterns like medallion and data mesh — each builds directly on the concepts above."
+                "label": "Type",
+                "value": "Star Schema, Snowflake Schema, Galaxy Schema, Kimball Approach, Inmon Approach"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "fact-dimension-tables",
+            "title": "Fact vs Dimension Tables",
+            "subtitle": "Fact Tables, Dimensions, Conformed Dimensions",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/fact-dimension-tables.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Type",
+                "value": "Fact Tables, Dimensions, Conformed Dimensions"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "surrogate-keys",
+            "title": "Surrogate Keys",
+            "subtitle": "Surrogate Keys, Degenerate Dimensions",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/surrogate-keys.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Type",
+                "value": "Surrogate Keys, Degenerate Dimensions"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "data-skew",
+            "title": "Data Skew",
+            "subtitle": "Data Skew, Data Skew Handling",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/data-skew.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Type",
+                "value": "Data Skew, Data Skew Handling"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "late-arriving-data",
+            "title": "Late-Arriving Data",
+            "subtitle": "Late-Arriving Data, Late-Arriving Facts, Late-Arriving Dimensions",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/late-arriving-data.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Type",
+                "value": "Late-Arriving Data, Late-Arriving Facts, Late-Arriving Dimensions"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "deduplication",
+            "title": "Deduplication",
+            "subtitle": "Deduplication, Deduplication Handling",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/deduplication.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Type",
+                "value": "Deduplication, Deduplication Handling"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "incremental-loading",
+            "title": "Incremental Loading",
+            "subtitle": "Incremental Loading, Incremental Loading Handling",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/incremental-loading.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Type",
+                "value": "Incremental Loading, Incremental Loading Handling"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "idempotency",
+            "title": "Idempotency",
+            "subtitle": "Idempotency, Idempotency Handling",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/idempotency.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Type",
+                "value": "Idempotency, Idempotency Handling"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
+              }
+            ]
+          },
+          {
+            "id": "query-optimization",
+            "title": "Query Optimization",
+            "subtitle": "Query Optimization, Query Optimization Handling",
+            "infoTitle": "Topic information",
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/query-optimization.md",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Type",
+                "value": "Query Optimization, Query Optimization Handling"
+              },
+              {
+                "label": "Level",
+                "value": "Foundation"
               }
             ]
           },
@@ -104,39 +316,12 @@
               "enabled": true,
               "title": "On this page",
               "minItems": 2,
-              "levels": [2],
+              "levels": [
+                2
+              ],
               "defaultExpanded": true
             },
-            "content": [
-              {
-                "type": "heading",
-                "level": 2,
-                "text": "Overview"
-              },
-              {
-                "type": "paragraph",
-                "text": "Data architecture defines how systems connect, how ownership is divided, and how data flows from raw ingestion to governed analytics products. The right pattern depends on team size, domain complexity, and platform maturity."
-              },
-              {
-                "type": "heading",
-                "level": 2,
-                "text": "Common patterns"
-              },
-              {
-                "type": "list",
-                "style": "unordered",
-                "items": [
-                  "Medallion (bronze / silver / gold): progressive quality layers in a lakehouse.",
-                  "Data mesh: domain-oriented data products with federated governance.",
-                  "Hub-and-spoke: centralized warehouse with departmental marts.",
-                  "Lambda / Kappa: batch and streaming paths for the same logical dataset."
-                ]
-              },
-              {
-                "type": "quote",
-                "text": "Architecture is not about picking the trendiest stack — it is about matching structure to how your organization actually creates and consumes data."
-              }
-            ]
+            "contentFile": "assets/content/explore/data-architecture.md"
           },
           {
             "id": "bi-fundamentals",
@@ -157,27 +342,7 @@
                 "value": "Foundation"
               }
             ],
-            "content": [
-              {
-                "type": "heading",
-                "level": 2,
-                "text": "Overview"
-              },
-              {
-                "type": "paragraph",
-                "text": "Business intelligence fundamentals start with a clear metric layer — defined once, reused everywhere. Semantic models, star schemas, and DAX measures are the building blocks of trustworthy dashboards."
-              },
-              {
-                "type": "list",
-                "style": "unordered",
-                "items": [
-                  "Define grain before building visuals.",
-                  "Separate dimensions from facts and measures.",
-                  "Use a shared metrics catalog for cross-team alignment.",
-                  "Apply row-level security for multi-tenant reporting."
-                ]
-              }
-            ]
+            "contentFile": "assets/content/explore/bi-fundamentals.md"
           }
         ]
       }

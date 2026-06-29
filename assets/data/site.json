@@ -13,7 +13,7 @@
     { "id": "home", "label": "Home", "href": "index.html" },
     { "id": "services", "label": "Services", "href": "services.html" },
     { "id": "portfolio", "label": "Portfolio", "href": "portfolio.html" },
-    { "id": "explore", "label": "Explore", "href": "explore.html" },
+    { "id": "explore", "label": "Learn", "href": "explore.html" },
     { "id": "contact", "label": "Contact", "href": "contact.html" }
   ],
   "headerSocial": [

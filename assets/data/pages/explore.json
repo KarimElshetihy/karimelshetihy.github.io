@@ -17,7 +17,6 @@
             "longDescription": "Data engineering is the foundation of every modern data platform. It covers how raw data is ingested, modeled, orchestrated, and delivered reliably to downstream analytics, science, and product teams.",
             "icon": "bi-wrench-adjustable",
             "default": true,
-            "soon": true,
             "order": 1
           },
           {
@@ -74,6 +73,117 @@
             "title": "DE Fundamentals",
             "description": "Core Concepts, Pipelines, Warehousing",
             "icon": "bi-diagram-3-fill"
+          },
+          {
+            "id": "slowly-changing-dimensions",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Slowly Changing Dimensions",
+            "description": "Type 1, Type 2, Type 3",
+            "icon": "bi-bezier2",
+            "order": 5
+          },
+          {
+            "id": "clustering-bucketing",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Clustering & Bucketing",
+            "description": "Clustering, Bucketing, Z-ordering",
+            "icon": "bi-bezier2",
+            "order": 6
+          },
+          {
+            "id": "data-partitioning",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Data Partitioning",
+            "description": "Partitioning, Clustering, Bucketing",
+            "icon": "bi-bezier2",
+            "order": 4
+          },
+          {
+            "id": "dwh-modeling",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Data Warehouse Modeling",
+            "description": "Star Schema, Snowflake Schema, Galaxy Schema, Kimball Approach, Inmon Approach",
+            "icon": "bi-bezier2",
+            "order": 3
+          },
+          {
+            "id": "fact-dimension-tables",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Fact vs Dimension Tables",
+            "description": "Fact Tables, Dimensions, Conformed Dimensions",
+            "icon": "bi-bezier2",
+            "order": 2
+          },
+          {
+            "id": "surrogate-keys",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Surrogate Keys",
+            "description": "Surrogate Keys, Degenerate Dimensions",
+            "icon": "bi-bezier2",
+            "order": 7
+          },
+          {
+            "id": "data-skew",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Data Skew",
+            "description": "Data Skew, Data Skew Handling",
+            "icon": "bi-bezier2"
+          },
+          {
+            "id": "late-arriving-data",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Late-Arriving Data",
+            "description": "Late-Arriving Data, Late-Arriving Facts, Late-Arriving Dimensions",
+            "icon": "bi-bezier2"
+          },
+          {
+            "id": "deduplication",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Deduplication",
+            "description": "Deduplication, Deduplication Handling",
+            "icon": "bi-bezier2"
+          },
+          {
+            "id": "incremental-loading",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Incremental Loading",
+            "description": "Incremental Loading, Incremental Loading Handling",
+            "icon": "bi-bezier2"
+          },
+          {
+            "id": "idempotency",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Idempotency",
+            "description": "Idempotency, Idempotency Handling",
+            "icon": "bi-bezier2"
+          },
+          {
+            "id": "query-optimization",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "Query Optimization",
+            "description": "Query Optimization, Query Optimization Handling",
+            "icon": "bi-bezier2"
+          },
+          {
+            "id": "cdc-patterns",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "CDC Patterns",
+            "description": "CDC Patterns, CDC Patterns Handling",
+            "icon": "bi-bezier2",
+            "soon": true
           },
           {
             "id": "big-data-tools",
