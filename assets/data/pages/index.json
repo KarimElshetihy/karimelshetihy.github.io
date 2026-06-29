@@ -157,8 +157,9 @@
               "value": 33
             },
             {
-              "label": "Data Sources Integrated",
-              "value": 38
+              "label": "Tools & Technologies",
+              "value": 24,
+              "suffix": "+"
             }
           ]
         },
