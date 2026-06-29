@@ -19,7 +19,7 @@
           "headlineHighlight": "Data Management Engineer",
           "bio": "Data Engineer focused on building scalable data platforms, APIs, and analytics solutions. Experienced in ETL, data modeling, and BI to deliver reliable data systems and actionable insights.",
           "location": "",
-          "photo": "assets/img/about/profile-img.jpg",
+          "photo": "assets/img/about/Profile Photo.png",
           "photoAlt": "Karim"
         },
         "contacts": {
@@ -71,9 +71,9 @@
           "title": "About Me",
           "paragraphs": [
             "I transform complex, multi-source datasets into reliable data platforms, clean models, and analytics that stakeholders understand and trust.",
-            "My approach combines strong data engineering fundamentals with practical BI delivery — from ETL and APIs to dashboards and governance — so teams can move faster with confidence in their numbers."
+            "My approach combines strong data engineering fundamentals with practical BI delivery, from ETL and APIs to dashboards and governance, so teams can move faster with confidence in their numbers."
           ],
-          "quote": "Great data work is not just about pipelines — it is about making insights accessible, repeatable, and trusted across the business.",
+          "quote": "Great data work is not just about pipelines, it is about making insights accessible, repeatable, and trusted across the business.",
           "highlights": [
             {
               "icon": "bi-diagram-3-fill",
@@ -92,8 +92,8 @@
             },
             {
               "icon": "bi-cpu-fill",
-              "title": "APIs & Integration",
-              "description": "FastAPI services and connectors across diverse data sources."
+              "title": "AI & Machine Learning",
+              "description": "Machine Learning models and AI agents to support data-driven decision-making."
             }
           ],
           "languages": [
@@ -117,24 +117,24 @@
         "expertiseTitle": "Technical Expertise",
         "skillCategories": [
           {
-            "name": "Data Analytics & BI",
-            "skills": ["Power BI", "DAX", "SSAS", "Data Visualization", "Reporting", "Jaspersoft"]
-          },
-          {
             "name": "Data Engineering",
-            "skills": ["ETL", "Data Pipelines", "Data Modeling", "Data Cleaning", "SQL", "MongoDB"]
+            "skills": ["Data Pipelines", "Data Modeling", "ETL", "REST APIs", "RAG", "SQL", "Apache Spark", "Apache Airflow", "Apche Kafka", "MongoDB"]
           },
           {
-            "name": "Programming & APIs",
-            "skills": ["Python", "FastAPI", "REST APIs", "Pandas", "Automation"]
+            "name": "Data Analytics & BI",
+            "skills": ["Power BI", "DAX", "SSAS", "Data Visualization", "Reporting", "Jaspersoft", "Looker", "Tableau"]
+          },
+          {
+            "name": "Programming & Automation",
+            "skills": ["Python", "FastAPI", "Pandas", "NumPy", "n8n", "Shell Scripting", "ODI", "Alteryx"]
           },
           {
             "name": "Cloud & Infrastructure",
-            "skills": ["Google Cloud", "SQL Server", "PostgreSQL", "Oracle", "MySQL"]
+            "skills": ["GCP", "Azure", "Docker", "Git", "Microsoft Fabric", "Terraform", "GitHub Actions"]
           },
           {
-            "name": "AI & Automation",
-            "skills": ["Machine Learning", "PyTorch", "n8n", "Data Governance", "Security"]
+            "name": "AI & Machine Learning",
+            "skills": ["Machine Learning", "PyTorch", "TensorFlow", "Keras", "Scikit-learn", "LLMs", "AI Agents", "DataOps", "RAG"]
           }
         ],
         "stats": {
@@ -146,19 +146,19 @@
             },
             {
               "label": "Projects",
-              "value": 40
+              "value": 43
             },
             {
               "label": "Dashboards",
-              "value": 60
-            },
-            {
-              "label": "Pipelines",
               "value": 35
             },
             {
+              "label": "Pipelines",
+              "value": 33
+            },
+            {
               "label": "Data Sources Integrated",
-              "value": 20
+              "value": 38
             }
           ]
         },
@@ -170,10 +170,10 @@
           "awardsTitle": "Awards & Recognition",
           "experience": [
             {
-              "dates": "MAR 2025 – PRESENT",
+              "dates": "MAR 2025 – MAR 2026",
               "title": "Backend & Data Platform Developer",
               "subtitle": "Fractal Investors",
-              "expanded": true,
+              "order": 3,
               "highlights": [
                 "Developed a scalable backend application using FastAPI, building RESTful APIs and integrating with PostgreSQL for robust data storage and querying.",
                 "Containerized the backend with Docker and deployed it on Azure Cloud to ensure consistent environments and reliable deployment.",
@@ -184,6 +184,7 @@
               "dates": "OCT 2023 – MAR 2025",
               "title": "Power BI Developer",
               "subtitle": "Fractal Investors",
+              "order": 4,
               "highlights": [
                 "Developed financial reporting dashboards using Power BI connected to PostgreSQL, delivering interactive insights for business and financial analysis.",
                 "Implemented Row-Level Security (RLS) and managed workspace access to ensure secure, role-based data visibility for different stakeholders.",
@@ -194,6 +195,8 @@
               "dates": "SEP 2022 – PRESENT",
               "title": "Senior Data Management Engineer",
               "subtitle": "E-Finance",
+              "order": 1,
+              "expanded": true,
               "highlights": [
                 "Designed centralized data models to unify data across the E-Finance Investment group, enhancing the Fees Profile model and improving consistency of enterprise data.",
                 "Integrated data from multiple ERP systems using APIs and ETL pipelines, with a strong focus on automation and reliable data workflows.",
@@ -201,9 +204,10 @@
               ]
             },
             {
-              "dates": "SEP 2022 – PRESENT",
+              "dates": "SEP 2022 – MAR 2025",
               "title": "Data Management Engineer",
               "subtitle": "E-Finance",
+              "order": 2,
               "highlights": [
                 "Developed and maintained analytical reports and dashboards using Power BI, Power BI Report Server, and Jaspersoft.",
                 "Built and optimized data models and queries across SQL Server, Oracle, PostgreSQL, MySQL, and MongoDB using SSAS and DAX.",
@@ -216,13 +220,13 @@
               "degree": "Master of Business Administration (MBA)",
               "period": "2025 – Present",
               "school": "ESLSCA University",
-              "description": "Part-time MBA focused on business strategy, leadership, and applying data-driven decision-making in enterprise contexts."
+              "description": "Part-time MBA focused on digital transformation, business strategy, digital marketing, and data-driven decision-making."
             },
             {
-              "degree": "Bachelor of Technology — Biomedical Engineering",
-              "period": "2022",
+              "degree": "Bachelor of Technology of Biomedical Engineering",
+              "period": "2015 - 2020",
               "school": "Menoufia University — Faculty of Applied Medical Sciences",
-              "description": "Engineering foundation in systems thinking, analytics, and technical problem-solving that shaped my path into data engineering."
+              "description": "Bachelor of Technology in Biomedical Engineering emphasizing medical device development, signal processing, and healthcare technology."
             }
           ],
           "awards": [

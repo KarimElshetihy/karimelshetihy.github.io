@@ -1271,6 +1271,14 @@ body.about-page .rl-expertise-tag {
   transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
+.portfolio-details .portfolio-info-tag--category:hover,
+.portfolio-details .portfolio-info-tag--stack:hover,
+body.about-page .rl-expertise-tag:hover {
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
 @media (max-width: 991.98px) {
   body.about-page .rl-expertise-card {
     margin-top: 0.5rem;
@@ -3331,13 +3339,6 @@ body.resume-page .resume-layout .rl-work-client {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-}
-
-.portfolio-details .portfolio-info-tag--category:hover,
-.portfolio-details .portfolio-info-tag--stack:hover {
-  border-color: var(--accent-color);
-  color: var(--contrast-color);
-  background: var(--accent-color);
 }
 
 .portfolio-details .portfolio-info-note {

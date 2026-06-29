@@ -19,6 +19,7 @@ import {
 } from "../portfolio/renderProjectInfo.js";
 import { findProjectById, getRequestedProjectId } from "../portfolio/projectIdFromUrl.js";
 import { filterVisibleItems } from "./itemVisibility.js";
+import { sortByOrder } from "./sortByOrder.js";
 
 function escapeHtml(text) {
   return String(text ?? "")
@@ -548,7 +549,7 @@ function renderAboutSkillsSplitSection(data) {
 function renderCareerSection(career) {
   if (!career || typeof career !== "object") return "";
 
-  const experience = career.experience ?? [];
+  const experience = sortByOrder(career.experience);
   const education = career.education ?? [];
   const awards = career.awards ?? [];
   if (!experience.length && !education.length && !awards.length) return "";

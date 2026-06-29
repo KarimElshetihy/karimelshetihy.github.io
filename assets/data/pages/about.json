@@ -120,24 +120,24 @@
         "expertiseTitle": "Technical Expertise",
         "skillCategories": [
           {
-            "name": "Data Analytics & BI",
-            "skills": ["Power BI", "DAX", "SSAS", "Data Visualization", "Reporting", "Jaspersoft"]
-          },
-          {
             "name": "Data Engineering",
-            "skills": ["ETL", "Data Pipelines", "Data Modeling", "Data Cleaning", "SQL", "MongoDB"]
+            "skills": ["Data Pipelines", "Data Modeling", "ETL", "Restful APIs", "RAG", "SQL", "Apache Spark", "Apache Airflow", "Apche Kafka", "MongoDB"]
           },
           {
-            "name": "Programming & APIs",
-            "skills": ["Python", "FastAPI", "REST APIs", "Pandas", "Automation"]
+            "name": "Data Analytics & BI",
+            "skills": ["Power BI", "DAX", "SSAS", "Data Visualization", "Reporting", "Jaspersoft", "Looker", "Tableau"]
+          },
+          {
+            "name": "Programming & Automation",
+            "skills": ["Python", "FastAPI", "Pandas", "NumPy", "n8n", "Shell Scripting", "ODI", "Alteryx"]
           },
           {
             "name": "Cloud & Infrastructure",
-            "skills": ["Google Cloud", "SQL Server", "PostgreSQL", "Oracle", "MySQL"]
+            "skills": ["GCP", "Azure", "Docker", "Git", "Microsoft Fabric", "Terraform", "GitHub Actions"]
           },
           {
-            "name": "AI & Automation",
-            "skills": ["Machine Learning", "PyTorch", "n8n", "Data Governance", "Security"]
+            "name": "AI & Machine Learning",
+            "skills": ["Machine Learning", "PyTorch", "TensorFlow", "Keras", "Scikit-learn", "LLMs", "DataOps", "RAG"]
           }
         ],
         "stats": {

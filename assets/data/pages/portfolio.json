@@ -58,13 +58,8 @@
               "Azure DevOps"
             ],
             "categories": [
-              "Modeling & Warehousing",
-              "Analytics & Reporting",
-              "Integration & Pipelines",
-              "Governance & Quality",
-              "Performance & Optimization",
               "DataOps & Observability",
-              "AI & Machine Learning"
+              "Integration & Pipelines"
             ]
           },
           {
@@ -88,18 +83,14 @@
             "categories": [
               "Modeling & Warehousing",
               "Analytics & Reporting",
-              "Integration & Pipelines",
-              "Governance & Quality",
-              "Performance & Optimization",
-              "DataOps & Observability",
-              "AI & Machine Learning"
+              "Integration & Pipelines"
             ]
           },
           {
             "id": "rag-based-ai-assistant",
             "title": "RAG-based AI Assistant",
             "description": "",
-            "image": "assets/img/portfolio/Coming Soon.jpg",
+            "image": "assets/img/portfolio/Coming Soon.png",
             "github": "",
             "url": "",
             "demo": "",
@@ -114,7 +105,7 @@
             "id": "agentic-ai-workflow",
             "title": "Agentic AI Workflow",
             "description": "",
-            "image": "assets/img/portfolio/Coming Soon.jpg",
+            "image": "assets/img/portfolio/Coming Soon.png",
             "github": "",
             "url": "",
             "demo": "",
