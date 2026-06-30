@@ -1,5 +1,5 @@
 /**
- * One-time migration: portfolio_details.json inline content → markdown files.
+ * One-time migration: portfolio.json inline content → markdown files.
  * Usage: node scripts/migrate-portfolio-content-to-md.js
  */
 
@@ -7,7 +7,9 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
-const JSON_PATH = path.join(ROOT, "assets/data/pages/portfolio_details.json");
+const JSON_PATH = path.join(ROOT, "assets/data/pages/portfolio.json");
+const SECTION_TYPE = "portfolioDynamic";
+const ITEMS_KEY = "projects";
 const MD_DIR = path.join(ROOT, "assets/content/projects");
 
 function encodeImagePath(src) {
@@ -103,8 +105,8 @@ function blocksToMarkdown(blocks) {
 
 function migrate() {
   const pageData = JSON.parse(fs.readFileSync(JSON_PATH, "utf8"));
-  const section = (pageData.sections ?? []).find((item) => item.type === "portfolioDetailsData");
-  const projects = section?.data?.projects;
+  const section = (pageData.sections ?? []).find((item) => item.type === SECTION_TYPE);
+  const projects = section?.data?.[ITEMS_KEY];
 
   if (!Array.isArray(projects)) {
     throw new Error("No portfolio projects found.");

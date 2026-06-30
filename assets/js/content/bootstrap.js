@@ -8,7 +8,11 @@ import { loadJson } from "./loadJson.js";
 import { renderSiteChrome } from "./renderSiteChrome.js";
 import { renderPage } from "./renderPage.js";
 import { getLatestWorksFromPortfolioPage } from "../portfolio/projectUtils.js";
-import { enrichExploreTopics, getExploreSection, mergeExploreTopicOrder } from "./exploreUtils.js";
+import { enrichExploreTopics, getExploreSection } from "./exploreUtils.js";
+import {
+  buildExploreDetailsPageData,
+  buildPortfolioDetailsPageData
+} from "./buildDetailsPageData.js";
 import { enrichPortfolioMarkdown } from "../portfolio/enrichPortfolioMarkdown.js";
 import { enrichExploreMarkdown } from "../explore/enrichExploreMarkdown.js";
 
@@ -81,8 +85,7 @@ async function enrichLatestWorksFromPortfolio(pageData) {
   }
 
   const portfolioPage = await loadJson("assets/data/pages/portfolio.json");
-  const detailsPage = await loadJson("assets/data/pages/portfolio_details.json");
-  const latestWorks = getLatestWorksFromPortfolioPage(portfolioPage, detailsPage);
+  const latestWorks = getLatestWorksFromPortfolioPage(portfolioPage);
 
   sections.forEach((section) => {
     if (section.type === "aboutData" && section.data?.latestWorksSource === "portfolio") {
@@ -99,9 +102,22 @@ async function enrichExplorePage(pageData) {
     return pageData;
   }
 
-  const detailsPage = await loadJson("assets/data/pages/explore_details.json");
-  exploreSection.data = enrichExploreTopics(exploreSection.data, detailsPage);
+  exploreSection.data = enrichExploreTopics(exploreSection.data);
   return pageData;
+}
+
+async function loadPageData(pageKey) {
+  if (pageKey === "portfolio_details") {
+    const portfolioPage = await loadJson("assets/data/pages/portfolio.json");
+    return buildPortfolioDetailsPageData(portfolioPage);
+  }
+
+  if (pageKey === "explore_details") {
+    const explorePage = await loadJson("assets/data/pages/explore.json");
+    return buildExploreDetailsPageData(explorePage);
+  }
+
+  return loadJson(`assets/data/pages/${pageKey}.json`);
 }
 
 async function bootstrap() {
@@ -127,7 +143,7 @@ async function bootstrap() {
 
   let pageData;
   try {
-    pageData = await loadJson(`assets/data/pages/${pageKey}.json`);
+    pageData = await loadPageData(pageKey);
   } catch (error) {
     showFatal(error.message || "Could not load page data.");
     return;
@@ -140,8 +156,6 @@ async function bootstrap() {
       pageData = await enrichPortfolioMarkdown(pageData);
     }
     if (pageKey === "explore_details") {
-      const explorePage = await loadJson("assets/data/pages/explore.json");
-      pageData = mergeExploreTopicOrder(pageData, explorePage);
       pageData = await enrichExploreMarkdown(pageData);
     }
   } catch (error) {

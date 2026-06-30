@@ -4093,8 +4093,21 @@ body.resume-page .rl-resume-print:hover {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1.25rem;
+  padding-bottom: 0.85rem;
+}
+
+.rl-explore-topics-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
   padding-bottom: 1rem;
   border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+}
+
+.rl-explore-topics-toolbar--count-only {
+  justify-content: flex-end;
 }
 
 .rl-explore-topics-head-text {
@@ -4114,8 +4127,7 @@ body.resume-page .rl-resume-print:hover {
 
 .rl-explore-topics-count {
   flex-shrink: 0;
-  margin-top: 0.15rem;
-  padding: 0.3rem 0.65rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 999px;
   font-size: 0.68rem;
   font-weight: 700;
@@ -4123,6 +4135,118 @@ body.resume-page .rl-resume-print:hover {
   text-transform: uppercase;
   color: var(--accent-color);
   background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+}
+
+.rl-explore-level-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.45rem 0.55rem 0.45rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface-color), var(--background-color) 35%);
+}
+
+.rl-explore-level-filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  white-space: nowrap;
+}
+
+.rl-explore-level-filter-label i {
+  font-size: 0.82rem;
+  color: var(--accent-color);
+}
+
+.rl-explore-level-filter-options {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.rl-explore-level-chip {
+  padding: 0.32rem 0.72rem;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 999px;
+  background: var(--surface-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.rl-explore-level-chip:hover:not(.is-active) {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
+  color: var(--heading-color);
+  transform: translateY(-1px);
+}
+
+.rl-explore-level-chip:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.rl-explore-level-chip.is-active {
+  border-color: transparent;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--heading-color), transparent 88%);
+}
+
+.rl-explore-level-chip.is-active:not(.rl-explore-level-chip--beginner):not(.rl-explore-level-chip--intermediate):not(.rl-explore-level-chip--advanced):not(.rl-explore-level-chip--default) {
+  color: var(--contrast-color);
+  background: var(--heading-color);
+}
+
+.rl-explore-level-chip--beginner.is-active {
+  color: #15803d;
+  background: color-mix(in srgb, #22c55e, transparent 82%);
+  border-color: color-mix(in srgb, #22c55e, transparent 62%);
+  box-shadow: 0 4px 14px color-mix(in srgb, #22c55e, transparent 78%);
+}
+
+.rl-explore-level-chip--intermediate.is-active {
+  color: #b45309;
+  background: color-mix(in srgb, #f59e0b, transparent 82%);
+  border-color: color-mix(in srgb, #f59e0b, transparent 62%);
+  box-shadow: 0 4px 14px color-mix(in srgb, #f59e0b, transparent 78%);
+}
+
+.rl-explore-level-chip--advanced.is-active {
+  color: #6d28d9;
+  background: color-mix(in srgb, #8b5cf6, transparent 82%);
+  border-color: color-mix(in srgb, #8b5cf6, transparent 62%);
+  box-shadow: 0 4px 14px color-mix(in srgb, #8b5cf6, transparent 78%);
+}
+
+.rl-explore-level-chip--default.is-active {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 84%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 62%);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-color), transparent 78%);
+}
+
+.rl-explore-level-chip[data-level="all"].is-active {
+  color: var(--contrast-color);
+  background: var(--heading-color);
+  border-color: var(--heading-color);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--heading-color), transparent 78%);
+}
+
+.rl-explore-topic-card[hidden] {
+  display: none !important;
 }
 
 .rl-explore-topics-panels {
@@ -4236,6 +4360,37 @@ body.resume-page .rl-resume-print:hover {
   background: color-mix(in srgb, var(--default-color), transparent 92%);
 }
 
+.rl-explore-topic-level-tag {
+  flex-shrink: 0;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+}
+
+.rl-explore-topic-level-tag--beginner {
+  color: #15803d;
+  background: color-mix(in srgb, #22c55e, transparent 84%);
+}
+
+.rl-explore-topic-level-tag--intermediate {
+  color: #b45309;
+  background: color-mix(in srgb, #f59e0b, transparent 84%);
+}
+
+.rl-explore-topic-level-tag--advanced {
+  color: #6d28d9;
+  background: color-mix(in srgb, #8b5cf6, transparent 84%);
+}
+
+.rl-explore-topic-level-tag--default {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+}
+
 .rl-explore-category-card .rl-explore-soon-badge {
   position: absolute;
   top: 0.55rem;
@@ -4291,13 +4446,34 @@ body.resume-page .rl-resume-print:hover {
   }
 
   .rl-explore-topics-head {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 0.65rem;
   }
 
+  .rl-explore-topics-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .rl-explore-level-filter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.85rem;
+  }
+
+  .rl-explore-level-filter-options {
+    width: 100%;
+  }
+
+  .rl-explore-level-chip {
+    flex: 1 1 calc(50% - 0.35rem);
+    text-align: center;
+  }
+
   .rl-explore-topics-count {
-    margin-top: 0;
+    align-self: flex-end;
   }
 
   .rl-explore-topic-desc {

@@ -4,7 +4,10 @@ import {
   getProjectCategories
 } from "./portfolio/categories.js";
 import {
-  buildDetailProjectIds,
+  hasCustomDetailsUrl,
+  isLinkableProject
+} from "./content/contentAvailability.js";
+import {
   buildProjectId,
   getFeaturedFlag,
   isProjectVisible,
@@ -26,21 +29,13 @@ function startPortfolio() {
 
   if (!projectsContainer || !filtersContainer) return;
 
-  Promise.all([
-    loadJsonFile("assets/data/pages/portfolio.json", "portfolio.json"),
-    loadJsonFile("assets/data/pages/portfolio_details.json", "portfolio_details.json")
-  ])
-    .then(([pageData, detailsPageData]) => {
+  loadJsonFile("assets/data/pages/portfolio.json", "portfolio.json")
+    .then((pageData) => {
       const portfolioSection = (pageData.sections || []).find(
         (section) => section.type === "portfolioDynamic"
       );
       const allProjects = portfolioSection?.data?.projects || [];
       const projects = allProjects.filter(isProjectVisible);
-      const detailsSection = (detailsPageData.sections || []).find(
-        (section) => section.type === "portfolioDetailsData"
-      );
-      const detailProjects = detailsSection?.data?.projects || [];
-      const detailProjectIds = buildDetailProjectIds(detailProjects);
 
       if (!Array.isArray(allProjects) || allProjects.length === 0) {
         throw new Error("No projects found in portfolio page data.");
@@ -54,7 +49,7 @@ function startPortfolio() {
 
       renderFilterButtons(filtersContainer, collectCategoryFilters(sortedProjects));
       projectsContainer.innerHTML = sortedProjects
-        .map((project) => renderProjectCard(project, detailProjectIds))
+        .map((project) => renderProjectCard(project))
         .join("");
 
       refreshPortfolioPlugins(projectsContainer);
@@ -73,7 +68,7 @@ function renderFilterButtons(filtersContainer, categories) {
   });
 }
 
-function renderProjectCard(project, detailProjectIds) {
+function renderProjectCard(project) {
   const projectId = buildProjectId(project);
   const categories = getProjectCategories(project);
   const filterClasses = getFilterClassNames(categories);
@@ -90,15 +85,13 @@ function renderProjectCard(project, detailProjectIds) {
   const demoLink = project.demo
     ? `<a href="${project.demo}" title="Live Demo" class="portfolio-action-link" target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>`
     : "";
-  const hasCustomDetailsUrl = typeof project.details === "string" && project.details.trim();
-  const hasMatchingDetails = detailProjectIds.has(projectId);
-  const detailsUrl = hasCustomDetailsUrl
+  const linkable = isLinkableProject(project);
+  const detailsUrl = hasCustomDetailsUrl(project)
     ? project.details.trim()
     : buildPortfolioDetailsUrl(projectId);
-  const detailsLink =
-    hasCustomDetailsUrl || hasMatchingDetails
-      ? `<a href="${detailsUrl}" title="See project details" class="portfolio-action-link"><i class="bi bi-arrow-up-right-circle-fill"></i></a>`
-      : "";
+  const detailsLink = linkable
+    ? `<a href="${detailsUrl}" title="See project details" class="portfolio-action-link"><i class="bi bi-arrow-up-right-circle-fill"></i></a>`
+    : "";
 
   return `
     <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterClasses}${isFeatured ? " is-featured" : ""}">

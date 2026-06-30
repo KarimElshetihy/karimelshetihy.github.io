@@ -1,4 +1,8 @@
 import { buildPortfolioDetailsUrl } from "./projectIdFromUrl.js";
+import {
+  hasCustomDetailsUrl,
+  isLinkableProject
+} from "../content/contentAvailability.js";
 
 export function buildProjectId(project) {
   if (typeof project.id === "string" && project.id.trim()) {
@@ -34,11 +38,9 @@ export function sortProjectsForDisplay(projects) {
   );
 }
 
-export function mapProjectToLatestWork(project, detailProjectIds = new Set()) {
+export function mapProjectToLatestWork(project) {
   const projectId = buildProjectId(project);
   const description = String(project.description ?? "").trim();
-  const hasCustomDetailsUrl = typeof project.details === "string" && project.details.trim();
-  const hasMatchingDetails = detailProjectIds.has(projectId);
   let client = "";
   let subtitle = "";
 
@@ -50,14 +52,16 @@ export function mapProjectToLatestWork(project, detailProjectIds = new Set()) {
     subtitle = project.tools.slice(0, 4).join(" · ");
   }
 
+  const linkable = isLinkableProject(project);
+
   return {
     title: project.title ?? "",
     client,
     subtitle,
     image: project.image ?? "",
     alt: project.title ?? "",
-    href: hasCustomDetailsUrl || hasMatchingDetails
-      ? hasCustomDetailsUrl
+    href: linkable
+      ? hasCustomDetailsUrl(project)
         ? project.details.trim()
         : buildPortfolioDetailsUrl(projectId)
       : ""
@@ -71,29 +75,8 @@ export function getPortfolioProjectsFromPage(pageData) {
   return portfolioSection?.data?.projects ?? [];
 }
 
-export function getDetailProjectsFromPage(pageData) {
-  const detailsSection = (pageData?.sections ?? []).find(
-    (section) => section.type === "portfolioDetailsData"
-  );
-  return detailsSection?.data?.projects ?? [];
-}
-
-export function buildDetailProjectIds(detailProjects) {
-  if (!Array.isArray(detailProjects)) {
-    return new Set();
-  }
-
-  return new Set(
-    detailProjects
-      .map((item) => (typeof item.id === "string" ? item.id.trim() : ""))
-      .filter(Boolean)
-  );
-}
-
-export function getLatestWorksFromPortfolioPage(portfolioPage, detailsPage) {
-  const detailProjectIds = buildDetailProjectIds(getDetailProjectsFromPage(detailsPage));
-
+export function getLatestWorksFromPortfolioPage(portfolioPage) {
   return sortProjectsForDisplay(getPortfolioProjectsFromPage(portfolioPage).filter(isProjectVisible)).map(
-    (project) => mapProjectToLatestWork(project, detailProjectIds)
+    (project) => mapProjectToLatestWork(project)
   );
 }

@@ -36,7 +36,37 @@
               "Analytics & Reporting",
               "Integration & Pipelines",
               "Governance & Quality"
-            ]
+            ],
+            "subtitle": "End-to-end financial data analytics platform that provides a unified view of organizational financial performance",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "",
+                "alt": ""
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Data Modeling, ETL/ELT, Data Integration, Visualisation, Reporting, Data Ingestion, Governance, Forecasting"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, Python/Jython, Oracle ODI, Power BI, DWH, SSAS, Oracle Fusion, ERP, Oracle Apex, APIs"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/financial-analytics-platform.md"
           },
           {
             "id": "ssas-version-control-ci-cd-pipeline",
@@ -60,7 +90,37 @@
             "categories": [
               "DataOps & Observability",
               "Integration & Pipelines"
-            ]
+            ],
+            "subtitle": "Automated build, test, and deployment for SSAS tabular and multidimensional models.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/Coming Soon.png",
+                "alt": "SSAS Version Control and CI/CD Pipeline overview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "DataOps & Observability, Analytics & Reporting, Integration & Pipelines"
+              },
+              {
+                "label": "Stack",
+                "value": "SSAS, PowerShell, Git, Jenkins, Ansible, Azure DevOps, CI/CD"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Pipeline",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/ssas-version-control-ci-cd-pipeline.md"
           },
           {
             "id": "unified-master-fees-calculation-model",
@@ -84,7 +144,37 @@
               "Modeling & Warehousing",
               "Analytics & Reporting",
               "Integration & Pipelines"
-            ]
+            ],
+            "subtitle": "Single governed model for fee calculation across products and channels.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/Coming Soon.png",
+                "alt": "Unified Master Fees Calculation Model preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Data Warehouse, Data Modeling, SQL, Apex, Business Analysis, APIs"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/unified-master-fees-calculation-model.md"
           },
           {
             "id": "rag-based-ai-assistant",
@@ -96,7 +186,16 @@
             "demo": "",
             "is_featured": 0,
             "is_visible": 1,
-            "tools": ["Vector Databases", "RAG", "LLMs", "Python", "Fine Tuning", "Chatbots", "Transformers", "Semantic Search"],
+            "tools": [
+              "Vector Databases",
+              "RAG",
+              "LLMs",
+              "Python",
+              "Fine Tuning",
+              "Chatbots",
+              "Transformers",
+              "Semantic Search"
+            ],
             "categories": [
               "AI & Machine Learning"
             ]
@@ -111,7 +210,16 @@
             "demo": "",
             "is_featured": 0,
             "is_visible": 1,
-            "tools": ["Vector Databases", "RAG", "LLMs", "Python", "APIs", "Chatbots", "MCP", "Text Generation"],
+            "tools": [
+              "Vector Databases",
+              "RAG",
+              "LLMs",
+              "Python",
+              "APIs",
+              "Chatbots",
+              "MCP",
+              "Text Generation"
+            ],
             "categories": [
               "AI & Machine Learning"
             ]
@@ -141,7 +249,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Governed golden records with workflows for master data quality and stewardship.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Master Data Management System preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Data Modeling, Oracle Apex, Data Integration, Data Governance, Data Quality"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/master-data-management-system.md"
           },
           {
             "id": "master-data-modeling",
@@ -170,7 +308,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Enterprise master data models aligned to analytics and operational consumption.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Master Data Modeling preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, Data Modeling, Data Warehouse, Data Integration, Data Governance, Data Quality, Data Architecture"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/master-data-modeling.md"
           },
           {
             "id": "rls-and-data-access-control-system",
@@ -196,7 +364,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Row-level security and role-based access across SSAS, Power BI, and Apex.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "RLS & Data Access Control System preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, SSAS, Power BI, Reporting, Oracle Apex"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/rls-and-data-access-control-system.md"
           },
           {
             "id": "erp-analytics-warehouse",
@@ -224,7 +422,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Analytics-ready warehouse built on Oracle Fusion ERP operational data.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "ERP Analytics Warehouse preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, SSAS, Power BI, Reporting, Oracle Apex, Oracle Fusion, APIs"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/erp-analytics-warehouse.md"
           },
           {
             "id": "fuel-consumption-analytics",
@@ -249,7 +477,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Fleet fuel consumption monitoring, benchmarking, and variance analysis.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Fuel Consumption Analytics preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, SSAS, Power BI, Reporting"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/fuel-consumption-analytics.md"
           },
           {
             "id": "fuel-consumption-fraud-detection",
@@ -274,7 +532,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Anomaly detection on fuel transactions to flag potential misuse or fraud.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Fuel Consumption Fraud Detection preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, SSAS, Power BI, Machine Learning"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/fuel-consumption-fraud-detection.md"
           },
           {
             "id": "retail-management-analysis",
@@ -302,7 +590,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Retail performance analytics for Fractal Investors — sales, margin, and inventory insights.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Retail Management Analysis preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "SQL, Data Warehouse, Power BI, DAX, Git, GitHub, Fabric"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/retail-management-analysis.md"
           },
           {
             "id": "currencies-conversion-rate-scraping",
@@ -326,7 +644,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Automated daily FX rate collection for downstream financial calculations.",
+            "isConfidential": false,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Currencies Conversion Rate Scraping preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, Web Scraping, APIs"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/currencies-conversion-rate-scraping.md"
           },
           {
             "id": "stock-market-streak-analysis",
@@ -351,7 +699,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Python analysis of winning and losing streaks in market price series.",
+            "isConfidential": false,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Stock Market Streak Analysis preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, Pandas, APIs, Bash"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/stock-market-streak-analysis.md"
           },
           {
             "id": "atm-data-parsing-solution",
@@ -377,7 +755,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Parsing messy ATM log files into structured warehouse-ready datasets.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "ATM Data Parsing Solution preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, Pandas, Regex, DWH, Bash"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/atm-data-parsing-solution.md"
           },
           {
             "id": "retail-financial-analytics-dashboard",
@@ -407,7 +815,37 @@
               "Performance & Optimization",
               "DataOps & Observability",
               "AI & Machine Learning"
-            ]
+            ],
+            "subtitle": "Full-stack retail financial dashboard with API, database, and modern frontend.",
+            "isConfidential": true,
+            "infoTitle": "Project information",
+            "sliderImages": [
+              {
+                "src": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+                "alt": "Retail Financial Analytics Dashboard preview"
+              }
+            ],
+            "projectInfo": [
+              {
+                "label": "Category",
+                "value": "Modeling & Warehousing, Analytics & Reporting, Integration & Pipelines, Governance & Quality"
+              },
+              {
+                "label": "Stack",
+                "value": "Python, FastAPI, PostgreSQL, Docker, Git, GitHub, Typescript, Data Governance, Data Warehouse"
+              },
+              {
+                "label": "Repository",
+                "value": "Soon",
+                "href": ""
+              },
+              {
+                "label": "Dashboard",
+                "value": "Soon",
+                "href": ""
+              }
+            ],
+            "contentFile": "assets/content/projects/retail-financial-analytics-dashboard.md"
           }
         ]
       }

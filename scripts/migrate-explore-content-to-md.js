@@ -1,5 +1,5 @@
 /**
- * One-time migration: explore_details.json inline content → markdown files.
+ * One-time migration: explore.json inline content → markdown files.
  * Usage: node scripts/migrate-explore-content-to-md.js
  */
 
@@ -7,7 +7,9 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
-const JSON_PATH = path.join(ROOT, "assets/data/pages/explore_details.json");
+const JSON_PATH = path.join(ROOT, "assets/data/pages/explore.json");
+const SECTION_TYPE = "exploreData";
+const ITEMS_KEY = "topics";
 const MD_DIR = path.join(ROOT, "assets/content/explore");
 
 function encodeImagePath(src) {
@@ -103,8 +105,8 @@ function blocksToMarkdown(blocks) {
 
 function migrate() {
   const pageData = JSON.parse(fs.readFileSync(JSON_PATH, "utf8"));
-  const section = (pageData.sections ?? []).find((item) => item.type === "exploreDetailsData");
-  const topics = section?.data?.topics;
+  const section = (pageData.sections ?? []).find((item) => item.type === SECTION_TYPE);
+  const topics = section?.data?.[ITEMS_KEY];
 
   if (!Array.isArray(topics)) {
     throw new Error("No explore topics found.");

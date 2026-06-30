@@ -19,6 +19,7 @@ import {
 } from "../portfolio/renderProjectInfo.js";
 import { findProjectById, getRequestedProjectId } from "../portfolio/projectIdFromUrl.js";
 import { findTopicById, getRequestedTopicId } from "../explore/exploreTopicUrl.js";
+import { collectTopicLevelOptions, getTopicLevel, getTopicLevelSlug, getTopicLevelTagClass } from "../explore/exploreTopicMeta.js";
 import { filterVisibleItems } from "./itemVisibility.js";
 import { sortByOrder } from "./sortByOrder.js";
 
@@ -1033,6 +1034,11 @@ function renderExploreTopicCard(topic) {
   const href = String(topic?.href ?? "").trim();
   const isClickable = Boolean(href);
   const showSoon = isExploreItemSoon(topic) || !isClickable;
+  const level = getTopicLevel(topic);
+  const levelSlug = level ? getTopicLevelSlug(level) || "default" : "none";
+  const levelTag = level
+    ? `<span class="${escapeAttr(getTopicLevelTagClass(level))}">${escapeHtml(level)}</span>`
+    : "";
   const tag = isClickable ? "a" : "div";
   const attrs = isClickable
     ? ` href="${escapeAttr(href)}"`
@@ -1042,10 +1048,11 @@ function renderExploreTopicCard(topic) {
     : "rl-explore-topic-card rl-explore-topic-card--static";
 
   return `
-    <${tag}${attrs} class="${cardClass}">
+    <${tag}${attrs} class="${cardClass}" data-topic-level="${escapeAttr(levelSlug)}">
       <div class="rl-explore-topic-card-header">
         ${topic.icon ? `<span class="rl-explore-topic-icon" aria-hidden="true"><i class="bi ${escapeAttr(topic.icon)}"></i></span>` : ""}
         <h4 class="rl-explore-topic-title">${escapeHtml(topic.title ?? "")}</h4>
+        ${levelTag}
         ${showSoon ? `<span class="rl-explore-soon-badge">${escapeHtml(getExploreSoonLabel(topic))}</span>` : ""}
       </div>
       ${topic.description ? `<p class="rl-explore-topic-desc mb-0">${escapeHtml(topic.description)}</p>` : ""}
@@ -1116,6 +1123,33 @@ function renderExploreData(data) {
     defaultCategory?.longDescription ?? defaultCategory?.description ?? ""
   );
   const defaultTopicCount = (topicsByCategory[defaultCategoryId] ?? []).length;
+  const levelOptions = collectTopicLevelOptions(topics);
+  const levelFilterHtml = levelOptions.length
+    ? `
+            <div class="rl-explore-level-filter">
+              <span class="rl-explore-level-filter-label">
+                <i class="bi bi-sliders" aria-hidden="true"></i>
+                Filter by level
+              </span>
+              <div
+                class="rl-explore-level-filter-options"
+                data-explore-level-filter
+                role="group"
+                aria-label="Filter topics by level">
+                <button
+                  type="button"
+                  class="rl-explore-level-chip is-active"
+                  data-level="all"
+                  aria-pressed="true">All</button>
+                ${levelOptions
+                  .map(
+                    (option) =>
+                      `<button type="button" class="rl-explore-level-chip rl-explore-level-chip--${escapeAttr(option.slug)}" data-level="${escapeAttr(option.slug)}" aria-pressed="false">${escapeHtml(option.label)}</button>`
+                  )
+                  .join("")}
+              </div>
+            </div>`
+    : "";
 
   return `
     <section id="explore" class="explore section">
@@ -1134,6 +1168,9 @@ function renderExploreData(data) {
                 <h3 class="rl-explore-topics-title mb-0" data-explore-topics-title>${escapeHtml(defaultCategory?.title ?? "")}</h3>
                 <p class="rl-explore-category-desc mb-0" data-explore-description-panel>${defaultDescription}</p>
               </div>
+            </div>
+            <div class="rl-explore-topics-toolbar${levelOptions.length ? "" : " rl-explore-topics-toolbar--count-only"}">
+              ${levelFilterHtml}
               <span class="rl-explore-topics-count" data-explore-topics-count>${defaultTopicCount} topic${defaultTopicCount === 1 ? "" : "s"}</span>
             </div>
             <div class="rl-explore-topics-panels" data-explore-topics-panels>
@@ -1331,7 +1368,55 @@ function initExplorePage(root) {
   const descriptionEl = exploreRoot.querySelector("[data-explore-description-panel]");
   const topicsTitleEl = exploreRoot.querySelector("[data-explore-topics-title]");
   const topicsCountEl = exploreRoot.querySelector("[data-explore-topics-count]");
+  const levelFilterRoot = exploreRoot.querySelector("[data-explore-level-filter]");
+  const levelFilterButtons = levelFilterRoot
+    ? Array.from(levelFilterRoot.querySelectorAll("[data-level]"))
+    : [];
   const defaultCategoryId = exploreRoot.dataset.defaultCategory ?? "";
+
+  function getActiveLevelFilter() {
+    const activeButton = levelFilterButtons.find((button) => button.classList.contains("is-active"));
+    return activeButton?.dataset.level ?? "all";
+  }
+
+  function setActiveLevelFilter(levelSlug) {
+    const filterValue = levelSlug || "all";
+
+    levelFilterButtons.forEach((button) => {
+      const isActive = button.dataset.level === filterValue;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
+  function updateTopicCount() {
+    if (!topicsCountEl) {
+      return;
+    }
+
+    const activePanel = topicPanels.find((panel) => !panel.hidden);
+    if (!activePanel) {
+      return;
+    }
+
+    const count = activePanel.querySelectorAll(".rl-explore-topic-card:not([hidden])").length;
+    topicsCountEl.textContent = `${count} topic${count === 1 ? "" : "s"}`;
+  }
+
+  function applyLevelFilter(levelSlug = "all") {
+    const filterValue = levelSlug || "all";
+
+    topicPanels.forEach((panel) => {
+      panel.querySelectorAll(".rl-explore-topic-card").forEach((card) => {
+        const cardLevel = card.dataset.topicLevel ?? "none";
+        const visible = filterValue === "all" || cardLevel === filterValue;
+        card.hidden = !visible;
+      });
+    });
+
+    setActiveLevelFilter(filterValue);
+    updateTopicCount();
+  }
 
   function showCategory(categoryId, description, categoryTitle) {
     categoryButtons.forEach((button) => {
@@ -1352,11 +1437,9 @@ function initExplorePage(root) {
       const isActive = panel.dataset.category === categoryId;
       panel.classList.toggle("is-active", isActive);
       panel.hidden = !isActive;
-      if (isActive && topicsCountEl) {
-        const count = panel.querySelectorAll(".rl-explore-topic-card").length;
-        topicsCountEl.textContent = `${count} topic${count === 1 ? "" : "s"}`;
-      }
     });
+
+    applyLevelFilter(getActiveLevelFilter());
   }
 
   categoryButtons.forEach((button) => {
@@ -1367,6 +1450,12 @@ function initExplorePage(root) {
         button.dataset.exploreLongDescription ?? "",
         button.dataset.exploreTitle ?? ""
       );
+    });
+  });
+
+  levelFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      applyLevelFilter(button.dataset.level ?? "all");
     });
   });
 
