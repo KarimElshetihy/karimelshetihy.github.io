@@ -15,6 +15,18 @@ export function getTopicLevel(topic) {
   return String(levelEntry?.value ?? "").trim();
 }
 
+export function getTopicType(topic) {
+  if (typeof topic?.topicType === "string" && topic.topicType.trim()) {
+    return topic.topicType.trim();
+  }
+
+  if (typeof topic?.type === "string" && topic.type.trim()) {
+    return topic.type.trim();
+  }
+
+  return "";
+}
+
 const LEVEL_SLUGS = {
   beginner: "beginner",
   foundation: "beginner",
@@ -43,6 +55,10 @@ export function getTopicLevelTagClass(level) {
   }
 
   return `rl-explore-topic-level-tag rl-explore-topic-level-tag--${slug}`;
+}
+
+export function getTopicTypeTagClass(_type) {
+  return "rl-explore-topic-type-tag";
 }
 
 export function collectTopicLevelOptions(topics) {

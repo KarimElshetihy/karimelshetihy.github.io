@@ -26,7 +26,7 @@
             "longDescription": "Data analytics focuses on measurement, visualization, and decision support — from semantic models and dashboards to self-service reporting and KPI design.",
             "icon": "bi-bar-chart-line-fill",
             "soon": true,
-            "order": 2
+            "order": 3
           },
           {
             "id": "data-science",
@@ -35,7 +35,7 @@
             "longDescription": "Data science combines statistics, programming, and domain knowledge to build models, run experiments, and extract patterns that guide strategic decisions.",
             "icon": "bi-bezier2",
             "soon": true,
-            "order": 3
+            "order": 5
           },
           {
             "id": "cloud-dataops",
@@ -44,7 +44,7 @@
             "longDescription": "Cloud computing, CI/CD, observability, and quality for data systems. DataOps applies software engineering practices to data pipelines — version control, testing, monitoring, and deployment automation for trustworthy data delivery.",
             "icon": "bi-cpu-fill",
             "soon": true,
-            "order": 5
+            "order": 4
           },
           {
             "id": "data-architecture",
@@ -52,8 +52,7 @@
             "description": "Lakehouse, medallion, and data mesh patterns for scalable platforms.",
             "longDescription": "Data architecture covers lakehouse, medallion, and data mesh patterns for scalable platforms.",
             "icon": "bi-layers-fill",
-            "soon": true,
-            "order": 4
+            "order": 2
           },
           {
             "id": "agentic-ai",
@@ -67,6 +66,58 @@
         ],
         "topics": [
           {
+            "id": "dbt-basics",
+            "categoryId": "data-architecture",
+            "categoryLabel": "Data Architecture",
+            "title": "Data Build Tools (dbt) Fundamentals",
+            "description": "dbt Basics, dbt Materializations, dbt Tests, dbt Snapshots, dbt Seeds, dbt Macros, dbt Docs",
+            "icon": "bi-tools",
+            "order": 1,
+            "type": "Study",
+            "infoTitle": "Topic information",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Architecture"
+              },
+              {
+                "label": "Type",
+                "value": "dbt"
+              },
+              {
+                "label": "Level",
+                "value": "Beginner"
+              }
+            ],
+            "contentFile": "assets/content/explore/Data Architecture/Data Modeling/dbt-basics.md"
+          },
+          {
+            "id": "dbt-building-practical-project",
+            "categoryId": "data-architecture",
+            "categoryLabel": "Data Architecture",
+            "title": "Building a Practical dbt Project",
+            "description": "Building a Practical dbt Project, Building a Practical dbt Project Handling",
+            "icon": "bi-tools",
+            "order": 2,
+            "type": "Study",
+            "infoTitle": "Topic information",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Architecture"
+              },
+              {
+                "label": "Type",
+                "value": "dbt"
+              },
+              {
+                "label": "Level",
+                "value": "Beginner"
+              }
+            ],
+            "contentFile": "assets/content/explore/Data Architecture/Data Modeling/dbt-building-practical-project.md"
+          },
+          {
             "id": "de-fundamentals",
             "categoryId": "data-engineering",
             "categoryLabel": "Data Engineering",
@@ -74,6 +125,7 @@
             "description": "Core Concepts, Pipelines, Warehousing",
             "icon": "bi-diagram-3-fill",
             "subtitle": "Core concepts every data engineer should understand before scaling pipelines and platforms.",
+            "type": "Study",
             "infoTitle": "Topic information",
             "projectInfo": [
               {
@@ -109,6 +161,7 @@
             "icon": "bi-bezier2",
             "order": 5,
             "subtitle": "Type 1, Type 2, Type 3",
+            "type": "Interview",
             "infoTitle": "Topic information",
             "projectInfo": [
               {
@@ -125,6 +178,33 @@
               }
             ],
             "contentFile": "assets/content/explore/Data Engineering Fundamentals/slowly-changing-dimensions.md"
+          },
+          {
+            "id": "dbt",
+            "categoryId": "data-engineering",
+            "categoryLabel": "Data Engineering",
+            "title": "dbt",
+            "description": "dbt, dbt Handling",
+            "icon": "bi-bezier2",
+            "order": 6,
+            "subtitle": "dbt, dbt Handling",
+            "type": "Interview",
+            "infoTitle": "Topic information",
+            "projectInfo": [
+              {
+                "label": "Field",
+                "value": "Data Engineering"
+              },
+              {
+                "label": "Type",
+                "value": "dbt"
+              },
+              {
+                "label": "Level",
+                "value": "Beginner"
+              }
+            ],
+            "contentFile": "assets/content/explore/Data Engineering Fundamentals/dbt.md"
           },
           {
             "id": "clustering-bucketing",

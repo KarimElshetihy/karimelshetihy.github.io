@@ -2,6 +2,7 @@
  * Renders page sections declared in assets/data/pages/*.json
  */
 
+import { initMermaid } from "../markdown/initMermaid.js";
 import {
   normalizeProjectContent,
   renderPortfolioContent
@@ -19,7 +20,7 @@ import {
 } from "../portfolio/renderProjectInfo.js";
 import { findProjectById, getRequestedProjectId } from "../portfolio/projectIdFromUrl.js";
 import { findTopicById, getRequestedTopicId } from "../explore/exploreTopicUrl.js";
-import { collectTopicLevelOptions, getTopicLevel, getTopicLevelSlug, getTopicLevelTagClass } from "../explore/exploreTopicMeta.js";
+import { collectTopicLevelOptions, getTopicLevel, getTopicLevelSlug, getTopicLevelTagClass, getTopicType, getTopicTypeTagClass } from "../explore/exploreTopicMeta.js";
 import { filterVisibleItems } from "./itemVisibility.js";
 import { sortByOrder } from "./sortByOrder.js";
 
@@ -1035,9 +1036,16 @@ function renderExploreTopicCard(topic) {
   const isClickable = Boolean(href);
   const showSoon = isExploreItemSoon(topic) || !isClickable;
   const level = getTopicLevel(topic);
+  const topicType = getTopicType(topic);
   const levelSlug = level ? getTopicLevelSlug(level) || "default" : "none";
   const levelTag = level
     ? `<span class="${escapeAttr(getTopicLevelTagClass(level))}">${escapeHtml(level)}</span>`
+    : "";
+  const typeTag = topicType
+    ? `<span class="${escapeAttr(getTopicTypeTagClass(topicType))}">${escapeHtml(topicType)}</span>`
+    : "";
+  const metaTags = typeTag || levelTag
+    ? `<div class="rl-explore-topic-card-tags">${typeTag}${levelTag}</div>`
     : "";
   const tag = isClickable ? "a" : "div";
   const attrs = isClickable
@@ -1051,8 +1059,10 @@ function renderExploreTopicCard(topic) {
     <${tag}${attrs} class="${cardClass}" data-topic-level="${escapeAttr(levelSlug)}">
       <div class="rl-explore-topic-card-header">
         ${topic.icon ? `<span class="rl-explore-topic-icon" aria-hidden="true"><i class="bi ${escapeAttr(topic.icon)}"></i></span>` : ""}
-        <h4 class="rl-explore-topic-title">${escapeHtml(topic.title ?? "")}</h4>
-        ${levelTag}
+        <div class="rl-explore-topic-card-main">
+          <h4 class="rl-explore-topic-title">${escapeHtml(topic.title ?? "")}</h4>
+          ${metaTags}
+        </div>
         ${showSoon ? `<span class="rl-explore-soon-badge">${escapeHtml(getExploreSoonLabel(topic))}</span>` : ""}
       </div>
       ${topic.description ? `<p class="rl-explore-topic-desc mb-0">${escapeHtml(topic.description)}</p>` : ""}
@@ -1356,6 +1366,7 @@ export function renderPage(pageData) {
   initExplorePage(root);
   initPrintSelection(root);
   initArticleNav(root);
+  initMermaid(root);
 }
 
 function initExplorePage(root) {

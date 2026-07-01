@@ -150,6 +150,12 @@ ${body}
       code({ text, lang, escaped }) {
         const language = String(lang ?? "").trim().split(/\s+/)[0] ?? "";
         const code = String(text ?? "").replace(/\n$/, "");
+
+        if (language === "mermaid") {
+          const safeCode = code.replace(/<\/(pre|script)/gi, "<\\/$1");
+          return `<div class="portfolio-article-mermaid-wrap"><pre class="mermaid">${safeCode}</pre></div>\n`;
+        }
+
         const safeCode = escaped ? code : escapeHtml(code);
         const langClass = language ? ` portfolio-article-code--${escapeAttr(language)}` : "";
         const langLabel = language

@@ -3697,6 +3697,26 @@ body.resume-page .resume-layout .rl-work-client {
   margin: 1.25rem 0 1.5rem;
 }
 
+.portfolio-details .portfolio-article-mermaid-wrap {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 0.75rem;
+  background: var(--surface-color);
+  overflow-x: auto;
+}
+
+.portfolio-details .portfolio-article-mermaid-wrap .mermaid {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-details .portfolio-article-mermaid-wrap .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 .portfolio-details .portfolio-article-code-lang {
   position: absolute;
   top: 0.65rem;
@@ -4282,9 +4302,24 @@ body.resume-page .rl-resume-print:hover {
 
 .rl-explore-topic-card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.65rem;
   min-height: 2rem;
+}
+
+.rl-explore-topic-card-main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.rl-explore-topic-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .rl-explore-topic-card:not(.rl-explore-topic-card--static):hover {
@@ -4320,8 +4355,6 @@ body.resume-page .rl-resume-print:hover {
 }
 
 .rl-explore-topic-title {
-  flex: 1 1 auto;
-  min-width: 0;
   font-family: var(--heading-font);
   font-size: 0.9rem;
   font-weight: 700;
@@ -4389,6 +4422,17 @@ body.resume-page .rl-resume-print:hover {
 .rl-explore-topic-level-tag--default {
   color: var(--accent-color);
   background: color-mix(in srgb, var(--accent-color), transparent 88%);
+}
+
+.rl-explore-topic-type-tag {
+  flex-shrink: 0;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--contrast-color);
+  background: var(--heading-color);
 }
 
 .rl-explore-category-card .rl-explore-soon-badge {
