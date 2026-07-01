@@ -70,10 +70,11 @@ from raw.orders
 ```
 
 You write:
-
+{% raw %}
 ```sql
 from {{ source('raw', 'orders') }}
 ```
+{% endraw %}
 
 ---
 
@@ -98,6 +99,7 @@ models/staging/stg_orders.sql
 
 Code:
 
+{% raw %}
 ```sql
 select
     id as order_id,
@@ -107,6 +109,7 @@ select
     amount
 from {{ source('raw', 'orders') }}
 ```
+{% endraw %}
 
 ---
 
@@ -130,6 +133,7 @@ flowchart LR
 
 Simple rule:
 
+{% raw %}
 ```sql
 -- Raw table
 {{ source('raw', 'orders') }}
@@ -137,6 +141,7 @@ Simple rule:
 -- dbt model
 {{ ref('stg_orders') }}
 ```
+{% endraw %}
 
 ---
 
@@ -372,6 +377,7 @@ snapshots/customers_snapshot.sql
 
 Code:
 
+{% raw %}
 ```sql
 {% snapshot customers_snapshot %}
 
@@ -393,6 +399,7 @@ from {{ source('raw', 'customers') }}
 
 {% endsnapshot %}
 ```
+{% endraw %}
 
 ---
 
@@ -569,6 +576,7 @@ tests/generic/not_negative.sql
 
 Code:
 
+{% raw %}
 ```sql
 {% test not_negative(model, column_name) %}
 
@@ -578,6 +586,7 @@ where {{ column_name }} < 0
 
 {% endtest %}
 ```
+{% endraw %}
 
 The test should return bad rows.
 
@@ -622,6 +631,7 @@ So the test fails.
 
 Check that a percentage is between 0 and 100.
 
+{% raw %}
 ```sql
 {% test percentage_between_0_and_100(model, column_name) %}
 
@@ -632,6 +642,7 @@ where {{ column_name }} < 0
 
 {% endtest %}
 ```
+{% endraw %}
 
 Use it:
 
@@ -852,6 +863,7 @@ models/
 
 ## Staging model example
 
+{% raw %}
 ```sql
 select
     id as order_id,
@@ -860,11 +872,13 @@ select
     status
 from {{ source('raw', 'orders') }}
 ```
+{% endraw %}
 
 ---
 
 ## Intermediate model example
 
+{% raw %}
 ```sql
 select
     orders.order_id,
@@ -875,11 +889,13 @@ from {{ ref('stg_orders') }} as orders
 left join {{ ref('stg_payments') }} as payments
     on orders.order_id = payments.order_id
 ```
+{% endraw %}
 
 ---
 
 ## Mart model example
 
+{% raw %}
 ```sql
 select
     customer_id,
@@ -888,6 +904,8 @@ select
 from {{ ref('int_order_payments') }}
 group by customer_id
 ```
+{% endraw %}
+
 
 ---
 
@@ -989,6 +1007,7 @@ sources:
 
 ### `stg_orders.sql`
 
+{% raw %}
 ```sql
 select
     id as order_id,
@@ -997,9 +1016,11 @@ select
     lower(status) as status
 from {{ source('raw', 'orders') }}
 ```
+{% endraw %}
 
 ### `stg_payments.sql`
 
+{% raw %}
 ```sql
 select
     id as payment_id,
@@ -1008,9 +1029,11 @@ select
     payment_method
 from {{ source('raw', 'payments') }}
 ```
+{% endraw %}
 
 ### `stg_customers.sql`
 
+{% raw %}
 ```sql
 select
     id as customer_id,
@@ -1021,6 +1044,7 @@ select
     updated_at
 from {{ source('raw', 'customers') }}
 ```
+{% endraw %}
 
 ---
 
@@ -1028,6 +1052,7 @@ from {{ source('raw', 'customers') }}
 
 ### `int_order_payments.sql`
 
+{% raw %}
 ```sql
 select
     orders.order_id,
@@ -1039,6 +1064,7 @@ left join {{ ref('stg_payments') }} as payments
     on orders.order_id = payments.order_id
 where orders.status = 'paid'
 ```
+{% endraw %}
 
 ---
 
@@ -1046,6 +1072,7 @@ where orders.status = 'paid'
 
 ### `dim_customers.sql`
 
+{% raw %}
 ```sql
 select
     customers.customer_id,
@@ -1063,6 +1090,7 @@ group by
     customers.last_name,
     customers.email
 ```
+{% endraw %}
 
 ---
 
@@ -1106,6 +1134,7 @@ tests/generic/not_negative.sql
 
 Code:
 
+{% raw %}
 ```sql
 {% test not_negative(model, column_name) %}
 
@@ -1115,11 +1144,13 @@ where {{ column_name }} < 0
 
 {% endtest %}
 ```
+{% endraw %}
 
 ---
 
 ## Step 7: Add snapshot
 
+{% raw %}
 ```sql
 {% snapshot customers_snapshot %}
 
@@ -1143,6 +1174,7 @@ from {{ ref('stg_customers') }}
 
 {% endsnapshot %}
 ```
+{% endraw %}
 
 ---
 
