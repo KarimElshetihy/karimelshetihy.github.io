@@ -1,0 +1,149 @@
+import {
+  collectCategoryFilters,
+  getFilterClassNames,
+  getProjectCategories
+} from "./portfolio/categories.js";
+import {
+  hasCustomDetailsUrl,
+  isLinkableProject
+} from "./content/contentAvailability.js";
+import {
+  buildProjectId,
+  getFeaturedFlag,
+  isProjectVisible,
+  sortProjectsForDisplay
+} from "./portfolio/projectUtils.js";
+import { buildPortfolioDetailsUrl } from "./portfolio/projectIdFromUrl.js";
+import { getPortfolioPage } from "./content/configStore.js";
+
+document.addEventListener(
+  "site:ready",
+  () => {
+    startPortfolio();
+  },
+  { once: false }
+);
+
+function startPortfolio() {
+  const projectsContainer = document.getElementById("portfolio-container");
+  const filtersContainer = document.getElementById("portfolio-filters");
+
+  if (!projectsContainer || !filtersContainer) return;
+
+  try {
+    const pageData = getPortfolioPage();
+    const portfolioSection = (pageData.sections || []).find(
+      (section) => section.type === "portfolioDynamic"
+    );
+    const allProjects = portfolioSection?.data?.projects || [];
+    const projects = allProjects.filter(isProjectVisible);
+
+    if (!Array.isArray(allProjects) || allProjects.length === 0) {
+      throw new Error("No projects found in portfolio page data.");
+    }
+
+    if (projects.length === 0) {
+      throw new Error("No visible projects in portfolio page data.");
+    }
+
+    const sortedProjects = sortProjectsForDisplay(projects);
+
+    renderFilterButtons(filtersContainer, collectCategoryFilters(sortedProjects));
+    projectsContainer.innerHTML = sortedProjects
+      .map((project) => renderProjectCard(project))
+      .join("");
+
+    refreshPortfolioPlugins(projectsContainer);
+  } catch (error) {
+    projectsContainer.innerHTML = `<p class="text-center text-danger">${error.message}</p>`;
+  }
+}
+
+function renderFilterButtons(filtersContainer, categories) {
+  categories.forEach((label, categoryId) => {
+    const filter = document.createElement("li");
+    filter.setAttribute("data-filter", `.filter-${categoryId}`);
+    filter.textContent = label;
+    filtersContainer.appendChild(filter);
+  });
+}
+
+function renderProjectCard(project) {
+  const projectId = buildProjectId(project);
+  const categories = getProjectCategories(project);
+  const filterClasses = getFilterClassNames(categories);
+  const isFeatured = getFeaturedFlag(project) === 1;
+  const featuredTag = isFeatured
+    ? '<span class="portfolio-featured-tag"><i class="bi bi-star-fill" aria-hidden="true"></i> Featured</span>'
+    : "";
+  const tools = Array.isArray(project.tools)
+    ? project.tools.map((tool) => `<span class="portfolio-tool-tag">${tool}</span>`).join("")
+    : "";
+  const githubLink = project.github
+    ? `<a href="${project.github}" title="GitHub Repository" class="portfolio-action-link" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>`
+    : "";
+  const demoLink = project.demo
+    ? `<a href="${project.demo}" title="Live Demo" class="portfolio-action-link" target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>`
+    : "";
+  const linkable = isLinkableProject(project);
+  const detailsUrl = hasCustomDetailsUrl(project)
+    ? project.details.trim()
+    : buildPortfolioDetailsUrl(projectId);
+  const detailsLink = linkable
+    ? `<a href="${detailsUrl}" title="See project details" class="portfolio-action-link"><i class="bi bi-arrow-up-right-circle-fill"></i></a>`
+    : "";
+  const cardHitLink = linkable
+    ? `<a href="${detailsUrl}" class="portfolio-card-hit" aria-label="View ${escapeAttr(project.title ?? "project")} details"></a>`
+    : "";
+  const clickableClass = linkable ? " is-clickable" : "";
+
+  return `
+    <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterClasses}${isFeatured ? " is-featured" : ""}${clickableClass}">
+      ${cardHitLink}
+      <img src="${project.image}" class="img-fluid" alt="${project.title}">
+      ${featuredTag}
+      <div class="portfolio-info">
+        <h4>${project.title}</h4>
+        <p>${project.description}</p>
+        <div class="portfolio-tools">${tools}</div>
+        <div class="portfolio-actions">
+          ${detailsLink}
+          ${githubLink}
+          ${demoLink}
+        </div>
+      </div>
+    </div>`;
+}
+
+function escapeAttr(text) {
+  return String(text ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function refreshPortfolioPlugins(projectsContainer) {
+  if (typeof GLightbox === "function") {
+    GLightbox({ selector: ".glightbox" });
+  }
+
+  if (typeof imagesLoaded === "function" && typeof Isotope === "function") {
+    imagesLoaded(projectsContainer, () => {
+      const isotopeInstance = new Isotope(projectsContainer, {
+        itemSelector: ".portfolio-item",
+        layoutMode: "masonry"
+      });
+
+      document.querySelectorAll("#portfolio-filters li").forEach((filterButton) => {
+        filterButton.addEventListener("click", function () {
+          document
+            .querySelector("#portfolio-filters .filter-active")
+            ?.classList.remove("filter-active");
+          this.classList.add("filter-active");
+          isotopeInstance.arrange({ filter: this.getAttribute("data-filter") });
+        });
+      });
+    });
+  }
+}
